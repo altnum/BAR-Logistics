@@ -1,1 +1,171 @@
-1111	Шаси	3	Варна
+1111,accelerator,1,Plovdiv,1.1
+1112,air conditioner,1,Varna,1.1
+1113,air conditioning,1,Sofia ,1.1
+1114,air filter,1,Sofia ,1.1
+1115,air vent,1,Ruse,1.1
+1116,airbag,1,Burgas,1.1
+1117,alarm,1,Plovdiv,1.1
+1118,all-wheel drive,1,Varna,1.1
+1119,alternator,1,Sofia ,1.1
+1120,antenna,1,Sofia ,1.1
+1121,anti-lock brakes,1,Ruse,1.1
+1122,armrest,1,Burgas,1.1
+1123,auto,1,Plovdiv,1.1
+1124,automatic transmission,1,Varna,1.1
+1125,automobile,1,Sofia ,1.1
+1126,axle,1,Sofia ,1.1
+1127,back-up lights,1,Ruse,1.1
+1128,battery,1,Burgas,1.1
+1129,bench seat,1,Plovdiv,1.1
+1130,bonnet,1,Varna,1.1
+1131,brake light,1,Sofia ,1.1
+1132,brake pedal,1,Sofia ,1.1
+1133,brakes,1,Ruse,1.1
+1134,bucket seat,1,Burgas,1.1
+1135,bumper,1,Plovdiv,1.1
+1136,camshaft,1,Varna,1.1
+1137,car,1,Sofia ,1.1
+1138,carburetor,1,Sofia ,1.1
+1139,catalytic converter,1,Ruse,1.1
+1140,chassis,1,Burgas,1.1
+1141,chrome trim,1,Plovdiv,1.1
+1142,clutch,1,Varna,1.1
+1143,computer,1,Sofia ,1.1
+1144,console,1,Sofia ,1.1
+1145,cooling system,1,Ruse,1.1
+1146,crankshaft,1,Burgas,1.1
+1147,cruise control,1,Plovdiv,1.1
+1148,cylinder,1,Varna,1.1
+1149,dashboard,1,Sofia ,1.1
+1150,defroster,1,Sofia ,1.1
+1151,diesel engine,1,Ruse,1.1
+1152,differential,1,Burgas,1.1
+1153,dip stick,1,Plovdiv,1.1
+1154,door,1,Varna,1.1
+1155,door handle,1,Sofia ,1.1
+1156,drive belt,1,Sofia ,1.1
+1157,drive shaft,1,Ruse,1.1
+1158,driver's seat,1,Burgas,1.1
+1159,emergency brake,1,Plovdiv,1.1
+1160,emergency lights,1,Varna,1.1
+1161,emissions,1,Sofia ,1.1
+1162,engine,1,Sofia ,1.1
+1163,engine block,1,Ruse,1.1
+1164,exhaust pipe,1,Burgas,1.1
+1165,exhaust system,1,Plovdiv,1.1
+1166,fan belt,1,Varna,1.1
+1167,fender,1,Sofia ,1.1
+1168,filter,1,Sofia ,1.1
+1169,floor mat,1,Ruse,1.1
+1170,fog light,1,Burgas,1.1
+1171,four-wheel drive,1,Plovdiv,1.1
+1172,frame,1,Varna,1.1
+1173,fuel cap,1,Sofia ,1.1
+1174,fuel gauge,1,Sofia ,1.1
+1175,fuse,1,Ruse,1.1
+1176,gas,1,Sofia ,1.1
+1177,gas gauge,1,Plovdiv,1.1
+1178,gas pedal,1,Varna,1.1
+1179,gas tank,1,Sofia ,1.1
+1180,gasket,1,Sofia ,1.1
+1181,gasoline,1,Ruse,1.1
+1182,gauge,1,Burgas,1.1
+1183,gear shift,1,Plovdiv,1.1
+1184,gear stick,1,Varna,1.1
+1185,gearbox,1,Sofia ,1.1
+1186,glove compartment,1,Sofia ,1.1
+1187,GPS,1,Ruse,1.1
+1188,grille,1,Burgas,1.1
+1189,hand brake,1,Plovdiv,1.1
+1190,headlamp,1,Varna,1.1
+1191,headlight,1,Sofia ,1.1
+1192,headrest,1,Sofia ,1.1
+1193,heater,1,Ruse,1.1
+1194,high-beam headlights,1,Burgas,1.1
+1195,hood,1,Plovdiv,1.1
+1196,horn,1,Varna,1.1
+1197,hubcap,1,Sofia ,1.1
+1198,hybrid,1,Sofia ,1.1
+1199,ignition,1,Ruse,1.1
+1200,instrument panel,1,Burgas,1.1
+1201,interior light,1,Plovdiv,1.1
+1202,internal combustion engine,1,Varna,1.1
+1203,jack,1,Sofia ,1.1
+1204,key,1,Sofia ,1.1
+1205,license plate,1,Ruse,1.1
+1206,lights,1,Burgas,1.1
+1207,lock,1,Plovdiv,1.1
+1208,low-beam headlights,1,Varna,1.1
+1209,lug bolt,1,Sofia ,1.1
+1210,lug nut,1,Sofia ,1.1
+1211,manifold,1,Ruse,1.1
+1212,manual transmission,1,Burgas,1.1
+1213,mat,1,Plovdiv,1.1
+1214,mirror,1,Varna,1.1
+1215,moon roof,1,Sofia ,1.1
+1216,motor,1,Sofia ,1.1
+1217,mud flap,1,Ruse,1.1
+1218,muffler,1,Burgas,1.1
+1219,navigation system,1,Plovdiv,1.1
+1220,odometer,1,Varna,1.1
+1221,oil,1,Sofia ,1.1
+1222,oil filter,1,Sofia ,1.1
+1223,oil tank,1,Ruse,1.1
+1224,parking brake,1,Burgas,1.1
+1225,parking lights,1,Plovdiv,1.1
+1226,passenger seat,1,Varna,1.1
+1227,pedal,1,Sofia ,1.1
+1228,piston,1,Sofia ,1.1
+1229,power brakes,1,Ruse,1.1
+1230,power steering,1,Burgas,1.1
+1231,power window switch,1,Plovdiv,1.1
+1232,radiator,1,Varna,1.1
+1233,radio,1,Sofia ,1.1
+1234,rag top,1,Sofia ,1.1
+1235,rear window defroster,1,Ruse,1.1
+1236,rear-view mirror,1,Burgas,1.1
+1237,reverse light,1,Plovdiv,1.1
+1238,rims,1,Varna,1.1
+1239,roof,1,Sofia ,1.1
+1240,roof rack,1,Sofia ,1.1
+1241,rotary engine,1,Ruse,1.1
+1242,seat,1,Burgas,1.1
+1243,seat belt,1,Plovdiv,1.1
+1244,shift,1,Varna,1.1
+1245,shock absorber,1,Sofia ,1.1
+1246,side airbags,1,Sofia ,1.1
+1247,side mirror,1,Ruse,1.1
+1248,spare tire,1,Burgas,1.1
+1249,spark plug,1,Plovdiv,1.1
+1250,speaker,1,Varna,1.1
+1251,speedometer,1,Sofia ,1.1
+1252,spoiler,1,Sofia ,1.1
+1253,starter,1,Ruse,1.1
+1254,steering column,1,Burgas,1.1
+1255,steering wheel,1,Plovdiv,1.1
+1256,sun visor,1,Varna,1.1
+1257,sunroof,1,Sofia ,1.1
+1258,suspension,1,Sofia ,1.1
+1259,tachometer,1,Ruse,1.1
+1260,tailgate,1,Burgas,1.1
+1261,temperature gauge,1,Plovdiv,1.1
+1262,thermometer,1,Varna,1.1
+1263,tire,1,Sofia ,1.1
+1264,trailer hitch,1,Sofia ,1.1
+1265,transmission,1,Ruse,1.1
+1266,trim,1,Burgas,1.1
+1267,trip computer,1,Plovdiv,1.1
+1268,trunk,1,Varna,1.1
+1269,turbo charger,1,Sofia ,1.1
+1270,turn signal,1,Sofia ,1.1
+1271,undercarriage,1,Ruse,1.1
+1272,unleaded gas,1,Burgas,1.1
+1273,valve,1,Plovdiv,1.1
+1274,vents,1,Varna,1.1
+1275,visor,1,Sofia ,1.1
+1276,warning light,1,Sofia ,1.1
+1277,wheel,1,Ruse,1.1
+1278,wheel well,1,Burgas,1.1
+1279,window,1,Plovdiv,1.1
+1280,windshield,1,Varna,1.1
+1281,windshield wiper,1,Sofia ,1.1
