@@ -3,7 +3,8 @@ package com.bar.BARLogistics.entities;
 
 import javax.persistence.*;
 
-@Table(name="vehicle_info")
+@Entity
+@Table(name="vehicle_inventory")
 public class VehicleInventory {
 
     @Id
