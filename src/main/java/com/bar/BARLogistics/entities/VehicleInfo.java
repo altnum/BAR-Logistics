@@ -3,9 +3,11 @@ package com.bar.BARLogistics.entities;
 
 import javax.persistence.*;
 
+@Entity
 @Table(name="vehicle_info")
 public class VehicleInfo {
 
+    @Id
     @Column (name = "type")
     private String type;
 

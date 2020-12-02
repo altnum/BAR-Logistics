@@ -2,10 +2,12 @@ package com.bar.BARLogistics.entities;
 
 import javax.persistence.*;
 
+@Entity
 @Table(name="orders")
 public class Orders {
 
-    @Column(name = "order_id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer order_id;
 
     @Column(name = "user_id")
@@ -13,6 +15,15 @@ public class Orders {
 
     @Column(name = "products_id")
     private Integer products_id;
+
+    public Orders() {
+    }
+
+    public Orders(Integer order_id, Integer user_id, Integer products_id) {
+        this.order_id = order_id;
+        this.user_id = user_id;
+        this.products_id = products_id;
+    }
 
     public Integer getOrder_id() {
         return order_id;
