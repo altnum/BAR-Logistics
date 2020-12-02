@@ -3,9 +3,11 @@ package com.bar.BARLogistics.entities;
 
 import javax.persistence.*;
 
+@Entity
 @Table(name="parts_locations")
 public class PartsLocations {
 
+    @Id
     @Column (name = "name")
     private String name;
 

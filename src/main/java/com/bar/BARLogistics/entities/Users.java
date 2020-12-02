@@ -3,6 +3,7 @@ package com.bar.BARLogistics.entities;
 
 import javax.persistence.*;
 
+@Entity
 @Table(name="users")
 public class Users {
 
@@ -25,11 +26,25 @@ public class Users {
     @Column (name = "address")
     private String address;
 
-    @Column (name = "order_in_process")
-    private Integer order_in_process;
+    @Column (name = "order_in_progress")
+    private Integer order_in_progress;
 
     @Column (name = "order_id")
     private Integer order_id;
+
+    public Users() {
+    }
+
+    public Users(Long id, String username, String password, String first_name, String last_name, String address, Integer order_in_progress, Integer order_id) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.address = address;
+        this.order_in_progress = order_in_progress;
+        this.order_id = order_id;
+    }
 
     public Long getId() {
         return id;
@@ -75,16 +90,16 @@ public class Users {
         return address;
     }
 
-    public void setAddress(String adress) {
-        this.address = adress;
+    public void setAddress(String address) {
+        this.address = this.address;
     }
 
-    public Integer getOrder_in_process() {
-        return order_in_process;
+    public Integer getOrder_in_progress() {
+        return order_in_progress;
     }
 
-    public void setOrder_in_process(Integer order_in_process) {
-        this.order_in_process = order_in_process;
+    public void setOrder_in_progress(Integer order_in_progress) {
+        this.order_in_progress = order_in_progress;
     }
 
     public Integer getOrder_id() {

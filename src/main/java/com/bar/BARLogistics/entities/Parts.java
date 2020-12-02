@@ -2,9 +2,11 @@ package com.bar.BARLogistics.entities;
 
 import javax.persistence.*;
 
+@Entity
 @Table(name="parts")
 public class Parts {
 
+    @Id
     @Column(name = "part_num")
     private Integer part_num;
 
@@ -19,6 +21,17 @@ public class Parts {
 
     @Column(name = "price")
     private double price;
+
+    public Parts() {
+    }
+
+    public Parts(Integer part_num, String part_name, Integer vehicle_id, String location, double price) {
+        this.part_num = part_num;
+        this.part_name = part_name;
+        this.vehicle_id = vehicle_id;
+        this.location = location;
+        this.price = price;
+    }
 
     public Integer getPart_num() {
         return part_num;

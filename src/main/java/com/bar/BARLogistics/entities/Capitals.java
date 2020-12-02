@@ -2,9 +2,11 @@ package com.bar.BARLogistics.entities;
 
 import javax.persistence.*;
 
+@Entity
 @Table(name="capitals")
 public class Capitals {
 
+    @Id
     @Column (name = "name")
     private String name;
 
@@ -16,6 +18,8 @@ public class Capitals {
 
     @Column (name = "abroad")
     private Boolean abroad;
+
+
 
     public Boolean getTrans_continental() {
         return trans_continental;
