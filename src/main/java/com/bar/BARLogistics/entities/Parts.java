@@ -1,20 +1,22 @@
 package com.bar.BARLogistics.entities;
 
 import javax.persistence.*;
+import java.math.BigInteger;
 
 @Entity
 @Table(name="parts")
 public class Parts {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "part_num")
-    private Integer part_num;
+    private BigInteger part_num;
 
     @Column(name = "part_name")
     private String part_name;
 
-    @Column(name = "vehicle_id")
-    private Integer vehicle_id;
+    @Column(name = "vehicle_type")
+    private String vehicle_type;
 
     @Column(name = "location")
     private String location;
@@ -25,19 +27,19 @@ public class Parts {
     public Parts() {
     }
 
-    public Parts(Integer part_num, String part_name, Integer vehicle_id, String location, double price) {
+    public Parts(BigInteger part_num, String part_name, String vehicle_type, String location, double price) {
         this.part_num = part_num;
         this.part_name = part_name;
-        this.vehicle_id = vehicle_id;
+        this.vehicle_type = vehicle_type;
         this.location = location;
         this.price = price;
     }
 
-    public Integer getPart_num() {
+    public BigInteger getPart_num() {
         return part_num;
     }
 
-    public void setPart_num(Integer part_num) {
+    public void setPart_num(BigInteger part_num) {
         this.part_num = part_num;
     }
 
@@ -49,12 +51,12 @@ public class Parts {
         this.part_name = part_name;
     }
 
-    public Integer getVehicle_id() {
-        return vehicle_id;
+    public String getVehicle_type() {
+        return vehicle_type;
     }
 
-    public void setVehicle_id(Integer vehicle_id) {
-        this.vehicle_id = vehicle_id;
+    public void setVehicle_type(String vehicle_type) {
+        this.vehicle_type = vehicle_type;
     }
 
     public String getLocation() {
