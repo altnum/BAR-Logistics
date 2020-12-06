@@ -15,14 +15,15 @@ public class Parts {
     @Column(name = "part_name")
     private String part_name;
 
-    @Column(name = "vehicle_type")
-    private String vehicle_type;
-
-    @Column(name = "location")
-    private String location;
+    @ManyToOne
+    @JoinColumn(name = "location")
+    private PartsLocations location;
 
     @Column(name = "price")
     private double price;
+
+    @Column(name = "volume")
+    private Integer volume;
 
     public Parts() {
     }
@@ -31,12 +32,12 @@ public class Parts {
         this.part_num = part_num;
     }
 
-    public Parts(BigInteger part_num, String part_name, String vehicle_type, String location, double price) {
+    public Parts(BigInteger part_num, String part_name, PartsLocations location, double price, Integer volume) {
         this.part_num = part_num;
         this.part_name = part_name;
-        this.vehicle_type = vehicle_type;
         this.location = location;
         this.price = price;
+        this.volume = volume;
     }
 
     public BigInteger getPart_num() {
@@ -55,19 +56,11 @@ public class Parts {
         this.part_name = part_name;
     }
 
-    public String getVehicle_type() {
-        return vehicle_type;
-    }
-
-    public void setVehicle_type(String vehicle_type) {
-        this.vehicle_type = vehicle_type;
-    }
-
-    public String getLocation() {
+    public PartsLocations getLocation() {
         return location;
     }
 
-    public void setLocation(String location) {
+    public void setLocation(PartsLocations location) {
         this.location = location;
     }
 
@@ -77,5 +70,13 @@ public class Parts {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public Integer getVolume() {
+        return volume;
+    }
+
+    public void setVolume(Integer volume) {
+        this.volume = volume;
     }
 }

@@ -14,8 +14,8 @@ public class VehicleInfo {
     @Column (name = "fuel_consumption")
     private Integer fuel_consumption;
 
-    @Column (name = "speed")
-    private Integer speed;
+    @Column (name = "avg_speed")
+    private Integer avg_speed;
 
     public String getType() {
         return type;
@@ -33,11 +33,11 @@ public class VehicleInfo {
         this.fuel_consumption = fuel_consumption;
     }
 
-    public Integer getSpeed() {
-        return speed;
+    public Integer getAvg_speed() {
+        return avg_speed;
     }
 
-    public void setSpeed(Integer speed) {
-        this.speed = speed;
+    public void setAvg_speed(Integer avg_speed) {
+        this.avg_speed = avg_speed;
     }
 }

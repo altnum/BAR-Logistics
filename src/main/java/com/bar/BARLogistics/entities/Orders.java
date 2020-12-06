@@ -1,9 +1,5 @@
 package com.bar.BARLogistics.entities;
 
-import com.bar.BARLogistics.repositories.OrdersRepository;
-import com.bar.BARLogistics.repositories.Orders_partsRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
 import java.util.*;
 
@@ -25,14 +21,8 @@ public class Orders {
     @Column(name = "ship_date")
     private String ship_date;
 
-    @Column(name = "finished")
-    private boolean finished;
-
-    @Column(name = "vehicle_type")
-    private String vehicle_type;
-
-    @Column(name = "vehicle_id")
-    private Integer vehicle_id;
+    @Column(name = "status")
+    private String status;
 
     @ManyToMany
     @JoinTable(name = "orders_parts", joinColumns = @JoinColumn(name = "order_id"), inverseJoinColumns = @JoinColumn(name = "part_id"))
@@ -41,14 +31,12 @@ public class Orders {
     public Orders() {
     }
 
-    public Orders(Integer order_id, Users user, String order_date, String ship_date, boolean finished, String vehicle_type, Integer vehicle_id, List<Parts> parts) {
+    public Orders(Integer order_id, Users user, String order_date, String ship_date, String status, List<Parts> parts) {
         this.order_id = order_id;
         this.user = user;
         this.order_date = order_date;
         this.ship_date = ship_date;
-        this.finished = finished;
-        this.vehicle_type = vehicle_type;
-        this.vehicle_id = vehicle_id;
+        this.status = status;
         this.parts = parts;
     }
 
@@ -84,28 +72,12 @@ public class Orders {
         this.ship_date = ship_date;
     }
 
-    public boolean isFinished() {
-        return finished;
+    public String getStatus() {
+        return status;
     }
 
-    public void setFinished(boolean finished) {
-        this.finished = finished;
-    }
-
-    public String getVehicle_type() {
-        return vehicle_type;
-    }
-
-    public void setVehicle_type(String vehicle_type) {
-        this.vehicle_type = vehicle_type;
-    }
-
-    public Integer getVehicle_id() {
-        return vehicle_id;
-    }
-
-    public void setVehicle_id(Integer vehicle_id) {
-        this.vehicle_id = vehicle_id;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public List<Parts> getParts() {
@@ -113,18 +85,6 @@ public class Orders {
     }
 
     public void setParts(List<Parts> parts) {
-       /* List<Parts> newParts = new ArrayList<>();
-
-        for (int i = 0; i < this.quantities.size(); i++) {
-            for (int j = 1; j < this.quantities.get(i).getQuantity(); j++) {
-                newParts.add(this.parts.get(i));
-            }
-        }
-
-        this.parts = Stream.concat(parts.stream(), newParts.stream()).collect(Collectors.toList());
-
-        */
-
         this.parts = parts;
     }
 }
