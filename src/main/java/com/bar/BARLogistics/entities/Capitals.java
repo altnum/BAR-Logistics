@@ -13,28 +13,15 @@ public class Capitals {
     @Column (name = "distance_from_bar")
     private Integer distance_from_bar;
 
-    @Column (name = "trans_continental")
-    private Boolean trans_continental;
+    @Column (name = "import_tax")
+    private double import_tax;
 
-    @Column (name = "abroad")
-    private Boolean abroad;
-
-
-
-    public Boolean getTrans_continental() {
-        return trans_continental;
+    public double getImport_tax() {
+        return import_tax;
     }
 
-    public void setTrans_continental(Boolean trans_continental) {
-        this.trans_continental = trans_continental;
-    }
-
-    public Boolean getAbroad() {
-        return abroad;
-    }
-
-    public void setAbroad(Boolean abroad) {
-        this.abroad = abroad;
+    public void setImport_tax(double import_tax) {
+        this.import_tax = import_tax;
     }
 
     public String getName() {

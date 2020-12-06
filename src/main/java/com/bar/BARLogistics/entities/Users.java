@@ -23,23 +23,20 @@ public class Users {
     @Column (name = "last_name")
     private String last_name;
 
-    @Column (name = "address")
-    private String address;
-
-    @Column (name = "order_in_progress")
-    private Integer order_in_progress;
+    @ManyToOne
+    @JoinColumn (name = "address")
+    private Capitals address;
 
     public Users() {
     }
 
-    public Users(Long id, String username, String password, String first_name, String last_name, String address, Integer order_in_progress, Integer order_id) {
+    public Users(Long id, String username, String password, String first_name, String last_name, Capitals address) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.first_name = first_name;
         this.last_name = last_name;
         this.address = address;
-        this.order_in_progress = order_in_progress;
     }
 
     public Long getId() {
@@ -82,19 +79,11 @@ public class Users {
         this.last_name = last_name;
     }
 
-    public String getAddress() {
+    public Capitals getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
-        this.address = this.address;
-    }
-
-    public Integer getOrder_in_progress() {
-        return order_in_progress;
-    }
-
-    public void setOrder_in_progress(Integer order_in_progress) {
-        this.order_in_progress = order_in_progress;
+    public void setAddress(Capitals address) {
+        this.address = address;
     }
 }

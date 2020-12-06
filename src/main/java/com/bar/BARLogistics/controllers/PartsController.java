@@ -2,6 +2,7 @@ package com.bar.BARLogistics.controllers;
 
 import com.bar.BARLogistics.entities.Parts;
 import com.bar.BARLogistics.repositories.PartsRepository;
+import com.bar.BARLogistics.repositories.VehicleInventoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +20,8 @@ public class PartsController {
 
     @Autowired
     PartsRepository partsRepository;
+    @Autowired
+    VehicleInventoryRepository vehicleInventoryRepository;
 
     @GetMapping("/all")
     public List<Parts> getAllParts() {
@@ -45,11 +48,12 @@ public class PartsController {
         return result.isPresent() ? ResponseEntity.ok(result.get()) : ResponseEntity.ok("Няма намерена част!");
     }
 
-    @PostMapping("/save")
-    public ResponseEntity<?> savePart(@RequestParam(required = false) BigInteger part_num, String part_name, String vehicle_type, String location, Double price) {
+   /* @PostMapping("/save")
+    public ResponseEntity<?> savePart(@RequestParam(required = false) BigInteger part_num, String part_name, String location, Double price, Integer volume) {
         boolean isNew = part_num == null;
 
-        Parts part = new Parts(part_num, part_name, vehicle_type, location, price);
+
+        Parts part = new Parts(part_num, part_name, location, price, volume);
         part = partsRepository.save(part);
         Map<String, Object> response = new HashMap<>();
         response.put("Генериран номер на частта:", part.getPart_num());
@@ -62,4 +66,5 @@ public class PartsController {
 
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+    */
 }

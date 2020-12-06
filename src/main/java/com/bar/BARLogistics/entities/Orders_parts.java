@@ -13,8 +13,6 @@ public class Orders_parts implements Serializable {
     @Column(name = "order_id")
     private Integer order_id;
 
-
-
     @Column(name = "quantity")
     private Integer quantity;
 

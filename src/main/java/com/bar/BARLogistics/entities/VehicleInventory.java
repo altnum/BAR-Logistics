@@ -11,11 +11,12 @@ public class VehicleInventory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column (name = "type")
-    private String type;
+    @ManyToOne
+    @JoinColumn(name = "type")
+    private VehicleInfo type;
 
-    @Column (name = "free_to_go")
-    private Boolean free_to_go;
+    @Column (name = "availability")
+    private Boolean availability;
 
     public Integer getId() {
         return id;
@@ -25,19 +26,19 @@ public class VehicleInventory {
         this.id = id;
     }
 
-    public String getType() {
+    public VehicleInfo getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(VehicleInfo type) {
         this.type = type;
     }
 
-    public Boolean getFree_to_go() {
-        return free_to_go;
+    public Boolean getAvailability() {
+        return availability;
     }
 
-    public void setFree_to_go(Boolean free_to_go) {
-        this.free_to_go = free_to_go;
+    public void setAvailability(Boolean availability) {
+        this.availability = availability;
     }
 }
