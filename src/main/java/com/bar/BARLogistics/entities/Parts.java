@@ -27,6 +27,10 @@ public class Parts {
     public Parts() {
     }
 
+    public Parts(BigInteger part_num) {
+        this.part_num = part_num;
+    }
+
     public Parts(BigInteger part_num, String part_name, String vehicle_type, String location, double price) {
         this.part_num = part_num;
         this.part_name = part_name;

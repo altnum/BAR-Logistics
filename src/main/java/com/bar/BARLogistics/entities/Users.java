@@ -29,9 +29,6 @@ public class Users {
     @Column (name = "order_in_progress")
     private Integer order_in_progress;
 
-    @Column (name = "order_id")
-    private Integer order_id;
-
     public Users() {
     }
 
@@ -43,7 +40,6 @@ public class Users {
         this.last_name = last_name;
         this.address = address;
         this.order_in_progress = order_in_progress;
-        this.order_id = order_id;
     }
 
     public Long getId() {
@@ -101,14 +97,4 @@ public class Users {
     public void setOrder_in_progress(Integer order_in_progress) {
         this.order_in_progress = order_in_progress;
     }
-
-    public Integer getOrder_id() {
-        return order_id;
-    }
-
-    public void setOrder_id(Integer order_id) {
-        this.order_id = order_id;
-    }
-
-
 }
