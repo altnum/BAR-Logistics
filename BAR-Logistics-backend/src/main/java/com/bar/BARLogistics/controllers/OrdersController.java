@@ -16,8 +16,8 @@ import java.util.List;
 @RequestMapping("orders")
 public class OrdersController {
 
-    private final OrdersRepository ordersRepository;
-    private final Orders_partsRepository orders_partsRepository;
+    private  OrdersRepository ordersRepository;
+    private  Orders_partsRepository orders_partsRepository;
 
     public OrdersController(OrdersRepository ordersRepository, Orders_partsRepository orders_partsRepository) {
         this.ordersRepository = ordersRepository;

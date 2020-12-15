@@ -1,6 +1,8 @@
 package com.bar.BARLogistics.controllers;
 
 import com.bar.BARLogistics.entities.Parts;
+import com.bar.BARLogistics.entities.PartsLocations;
+import com.bar.BARLogistics.repositories.PartsLocationsRepository;
 import com.bar.BARLogistics.repositories.PartsRepository;
 import com.bar.BARLogistics.repositories.VehicleInventoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,17 +15,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("parts")
 public class PartsController {
 
-    private final PartsRepository partsRepository;
-    private final VehicleInventoryRepository vehicleInventoryRepository;
+    private  PartsRepository partsRepository;
+    private  VehicleInventoryRepository vehicleInventoryRepository;
+    private PartsLocationsRepository partsLocationsRepository;
 
-    public PartsController(PartsRepository partsRepository, VehicleInventoryRepository vehicleInventoryRepository) {
+    public PartsController(PartsRepository partsRepository, VehicleInventoryRepository vehicleInventoryRepository, PartsLocationsRepository partsLocationsRepository) {
         this.partsRepository = partsRepository;
         this.vehicleInventoryRepository = vehicleInventoryRepository;
+        this.partsLocationsRepository = partsLocationsRepository;
     }
 
     @GetMapping("/all")
@@ -51,15 +56,21 @@ public class PartsController {
         return result.isPresent() ? ResponseEntity.ok(result.get()) : ResponseEntity.ok("Няма намерена част!");
     }
 
-   /* @PostMapping("/save")
+    @PostMapping("/save")
     public ResponseEntity<?> savePart(@RequestParam(required = false) BigInteger part_num, String part_name, String location, Double price, Integer volume) {
         boolean isNew = part_num == null;
 
+        PartsLocations partsLocations = partsLocationsRepository.findPartsLocationsByName(location);
 
-        Parts part = new Parts(part_num, part_name, location, price, volume);
+        Parts part = new Parts(part_num, part_name, partsLocations, price, volume);
         part = partsRepository.save(part);
         Map<String, Object> response = new HashMap<>();
-        response.put("Генериран номер на частта:", part.getPart_num());
+
+        List<Parts> parts = partsRepository.findAll();
+        Parts finalPart = part;
+        parts = parts.stream().filter(p -> p.getPart_num() == finalPart.getPart_num()).collect(Collectors.toList());
+
+        response.put("Генериран номер на частта:", parts.get(0).getPart_num());
 
         if (isNew) {
             response.put("message", "Частта е успешно записана!");
@@ -69,5 +80,5 @@ public class PartsController {
 
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-    */
+
 }
