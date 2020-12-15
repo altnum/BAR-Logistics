@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="BAR-Logistics-backend:war">
+    <output-path>$PROJECT_DIR$/BAR-Logistics-backend/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>BAR-Logistics-backend</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="BAR-Logistics-backend-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="BAR-Logistics-backend:war exploded" />
+    </root>
+  </artifact>
+</component>
