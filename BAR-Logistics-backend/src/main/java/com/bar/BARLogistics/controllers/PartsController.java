@@ -68,7 +68,7 @@ public class PartsController {
 
         List<Parts> parts = partsRepository.findAll();
         Parts finalPart = part;
-        parts = parts.stream().filter(p -> p.getPart_num() == finalPart.getPart_num()).collect(Collectors.toList());
+        parts = parts.stream().filter(p -> p.getPart_num().equals(finalPart.getPart_num())).collect(Collectors.toList());
 
         response.put("Генериран номер на частта:", parts.get(0).getPart_num());
 
