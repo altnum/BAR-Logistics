@@ -1,7 +1,7 @@
 <template>
   <div>
     <header>
-      <h1>Поръчки</h1>
+      <h1>Orders</h1>
       <h3>{{ content }}</h3>
     </header>
   </div>

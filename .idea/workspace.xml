@@ -28,52 +28,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34c38314-6388-434e-bdd2-1e3ec6ae334b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/orders-service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/About.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Home.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Orders.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/additional/BAR Logistics.vsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/additional/BARlogo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/additional/UpdateSequence.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/additional/capitals.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/additional/info/capitals&amp;countries.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/additional/info/townsInBG.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/additional/orders.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/additional/orders_parts.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/additional/parts.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/additional/parts_locations.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/additional/users.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/additional/vehicle_info.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/additional/vehicle_inventory.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bar/BARLogistics/BarLogisticsApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bar/BARLogistics/ServletInitializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bar/BARLogistics/controllers/ErrorHandlerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bar/BARLogistics/controllers/OrdersController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bar/BARLogistics/controllers/PartsController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bar/BARLogistics/entities/Capitals.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bar/BARLogistics/entities/Orders.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bar/BARLogistics/entities/Orders_parts.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bar/BARLogistics/entities/Parts.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bar/BARLogistics/entities/PartsLocations.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bar/BARLogistics/entities/Users.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bar/BARLogistics/entities/VehicleInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bar/BARLogistics/entities/VehicleInventory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bar/BARLogistics/repositories/CapitalsRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bar/BARLogistics/repositories/OrdersRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bar/BARLogistics/repositories/Orders_partsRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bar/BARLogistics/repositories/PartsLocationsRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bar/BARLogistics/repositories/PartsRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bar/BARLogistics/repositories/VehicleInventoryRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/bar/BARLogistics/BarLogisticsApplicationTests.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/parts-service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Parts.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Orders.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Orders.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +58,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.3\plugins\maven\lib\maven3" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -108,8 +72,10 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Java Project/TestProject" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -121,6 +87,17 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BarLogisticsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="BAR-Logistics-backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.bar.BARLogistics.BarLogisticsApplication" />
@@ -140,6 +117,7 @@
       <workItem from="1608000549360" duration="3194000" />
       <workItem from="1608004955843" duration="4944000" />
       <workItem from="1608009977270" duration="160000" />
+      <workItem from="1608043057664" duration="7412000" />
     </task>
     <servers />
   </component>
@@ -157,51 +135,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="249" y="0" key="#Project_Structure" timestamp="1608008123727">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="249" y="0" key="#Project_Structure/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1608008123727" />
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1608009741000">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1608009741000" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1608010137360">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1608010137360" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1608010137360">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1608010137360" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1608010137360">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1608010137360" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1608010137360">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1608010137360" />
-    <state width="1493" height="210" key="GridCell.Tab.1.bottom" timestamp="1608010137360">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1608010137360" />
-    <state width="1493" height="210" key="GridCell.Tab.1.center" timestamp="1608010137360">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1608010137360" />
-    <state width="1493" height="210" key="GridCell.Tab.1.left" timestamp="1608010137360">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1608010137360" />
-    <state width="1493" height="210" key="GridCell.Tab.1.right" timestamp="1608010137360">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1608010137360" />
-    <state x="249" y="0" key="SettingsEditor" timestamp="1608009805573">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="249" y="0" key="SettingsEditor/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1608009805573" />
   </component>
 </project>
