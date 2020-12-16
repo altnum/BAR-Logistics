@@ -6,6 +6,9 @@ import com.bar.BARLogistics.repositories.PartsLocationsRepository;
 import com.bar.BARLogistics.repositories.PartsRepository;
 import com.bar.BARLogistics.repositories.VehicleInventoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +27,7 @@ public class PartsController {
 
     private  PartsRepository partsRepository;
     private  VehicleInventoryRepository vehicleInventoryRepository;
-    private PartsLocationsRepository partsLocationsRepository;
+    private  PartsLocationsRepository partsLocationsRepository;
 
     public PartsController(PartsRepository partsRepository, VehicleInventoryRepository vehicleInventoryRepository, PartsLocationsRepository partsLocationsRepository) {
         this.partsRepository = partsRepository;
@@ -78,6 +81,24 @@ public class PartsController {
         } else {
             response.put("message", "Частта е успешно редактирана!");
         }
+
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+    @GetMapping("/search/pages")
+    public ResponseEntity<?> paginateParts
+            (@RequestParam(value = "CurrentPage", defaultValue = "1") int currentPage,
+             @RequestParam(value = "perPage", defaultValue = "10") int perPage,
+             @RequestParam BigInteger part_num,
+             @RequestParam String part_name){
+
+        Pageable pageable = PageRequest.of(currentPage -1, perPage);
+        Page<Parts> parts = partsRepository.findPageParts(pageable, part_num, part_name.toLowerCase());
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("result", parts.getContent());
+        response.put("currentPage", parts.getNumber());
+        response.put("totalItems", parts.getTotalElements());
+        response.put("totalPages", parts.getTotalPages());
 
         return new ResponseEntity<>(response, HttpStatus.OK);
     }

@@ -28,16 +28,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34c38314-6388-434e-bdd2-1e3ec6ae334b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/parts-service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Parts.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/repositories/PartsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/repositories/PartsRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bar-logistics-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bar-logistics-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Orders.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Orders.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/services/parts-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/parts-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Parts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Parts.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,17 +85,6 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BarLogisticsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="BAR-Logistics-backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.bar.BARLogistics.BarLogisticsApplication" />
@@ -118,6 +105,8 @@
       <workItem from="1608004955843" duration="4944000" />
       <workItem from="1608009977270" duration="160000" />
       <workItem from="1608043057664" duration="7412000" />
+      <workItem from="1608110921644" duration="8667000" />
+      <workItem from="1608122602908" duration="12003000" />
     </task>
     <servers />
   </component>
