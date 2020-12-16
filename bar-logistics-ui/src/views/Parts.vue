@@ -1,35 +1,63 @@
 <template>
   <div>
-    <header>
-      <h1>Parts</h1>
-      <h3>{{ content }}</h3>
-    </header>
+    <button class="btn" v-on:click="searchParts">Търси</button>
+    <b-table class="table" id="partsTable" striped hover bordered :items="result" :fields="fields" :current-page="currentPage">
+      <template slot="top-row" slot-scope="{ fields }">
+        <td v-for="field in fields" :key="field.name">
+          <div v-if="field.key.toString() === 'price'">
+          </div>
+          <div v-else>
+            <input v-model="filters[field.key]" :placeholder="field.label">
+          </div>
+        </td>
+      </template>
+    </b-table>
+    <b-pagination
+      v-model="currentPage"
+      pills
+      :total-rows="rows"
+      :per-page="perPage"
+      @input="searchParts"
+      aria-controls="partsTable">
+    </b-pagination>
   </div>
 </template>
 
 <script>
-import PartsService from '@/services/parts-service.js'
+import PartsService from '../services/parts-service'
 
 export default {
-  name: 'Parts',
+  name: 'Parts.vue',
   data () {
     return {
-      content: ''
+      currentPage: 1,
+      rows: '',
+      perPage: 10,
+      result: [{ part_num: '', part_name: '', price: '' }],
+      fields: [{ key: 'part_num', label: 'Част №' }, { key: 'part_name', label: 'Част' }, { key: 'price', label: 'Цена' }],
+      filters: {
+        part_num: '',
+        part_name: ''
+      },
+      totalItems: ''
     }
   },
   mounted () {
-    PartsService.getAllParts().then(
-      response => {
-        console.log(response)
-        this.content = response.data
-      },
-      error => {
-        this.content =
-          (error.response && error.response.data) ||
-          error.message ||
-          error.toString()
-      }
-    )
+    this.searchParts()
+  },
+  methods: {
+    searchParts () {
+      PartsService.getPartsPage(this.filters, this.currentPage, this.perPage).then(
+        response => {
+          this.result = response.data.result
+          this.totalItems = response.data.totalItems
+          this.rows = this.totalItems
+        },
+        error => {
+          this.result = (error.response && error.response.data) || error.message || error.toString()
+        }
+      )
+    }
   }
 }
 </script>
