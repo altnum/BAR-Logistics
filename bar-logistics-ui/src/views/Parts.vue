@@ -1,24 +1,24 @@
 <template>
   <div>
     <header>
-      <h1>Orders</h1>
+      <h1>Parts</h1>
       <h3>{{ content }}</h3>
     </header>
   </div>
 </template>
 
 <script>
-import OrdersService from '@/services/orders-service.js'
+import PartsService from '@/services/parts-service.js'
 
 export default {
-  name: 'Orders',
+  name: 'Parts',
   data () {
     return {
       content: ''
     }
   },
   mounted () {
-    OrdersService.getAllOrders().then(
+    PartsService.getAllParts().then(
       response => {
         console.log(response)
         this.content = response.data
