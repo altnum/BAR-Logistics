@@ -17,5 +17,5 @@ public interface PartsRepository extends JpaRepository<Parts, BigInteger> {
             "WHERE (p.part_num = :part_num OR :part_num IS NULL) " +
             "AND lower(p.part_name) " +
             "LIKE :#{#part_name == null || #part_name.isEmpty()? '%' : '%'+#part_name+'%'} ")
-    Page<Parts> findPageParts(Pageable page, BigInteger part_num, String part_name);
+    Page<Parts> findPageParts(Pageable page, Integer part_num, String part_name);
 }

@@ -5,7 +5,6 @@ import com.bar.BARLogistics.entities.PartsLocations;
 import com.bar.BARLogistics.repositories.PartsLocationsRepository;
 import com.bar.BARLogistics.repositories.PartsRepository;
 import com.bar.BARLogistics.repositories.VehicleInventoryRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -86,10 +85,10 @@ public class PartsController {
     }
     @GetMapping("/search/pages")
     public ResponseEntity<?> paginateParts
-            (@RequestParam(value = "CurrentPage", defaultValue = "1") int currentPage,
+            (@RequestParam(value = "currentPage", defaultValue = "1") int currentPage,
              @RequestParam(value = "perPage", defaultValue = "10") int perPage,
-             @RequestParam BigInteger part_num,
-             @RequestParam String part_name){
+             @RequestParam(required = false) Integer part_num,
+             @RequestParam(required = false) String part_name){
 
         Pageable pageable = PageRequest.of(currentPage -1, perPage);
         Page<Parts> parts = partsRepository.findPageParts(pageable, part_num, part_name.toLowerCase());
