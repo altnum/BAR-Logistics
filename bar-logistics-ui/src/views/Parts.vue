@@ -1,10 +1,12 @@
 <template>
   <div>
+    <h2>Items: {{ cart.shopList.length }}</h2>
     <button class="btn" v-on:click="searchParts">Търси</button>
     <b-table class="table" id="partsTable" striped hover bordered :items="result" :fields="fields" :current-page="currentPage">
+
       <template slot="top-row" slot-scope="{ fields }">
         <td v-for="field in fields" :key="field.name">
-          <div v-if="field.key.toString() === 'price' || field.key.toString() === 'preview'">
+          <div v-if="field.key.toString() === 'price' || field.key.toString() === 'preview' || field.key.toString() === 'checkVal'">
           </div>
           <div v-else>
             <input v-model="filters[field.key]" :placeholder="field.label">
@@ -13,6 +15,9 @@
       </template>
       <template v-slot:cell(preview)="row">
         <router-link :to="{ name: 'partsDetails', params: {part_num: row.item.part_num} }" class="btn-group">Отвори</router-link>
+      </template>
+      <template v-slot:cell(checkVal)="row">
+        <b-checkbox v-on:input="addPartToCart(row.item.part_num, row.item.checkVal)" v-model="row.item.checkVal"></b-checkbox>
       </template>
     </b-table>
     <b-pagination
@@ -36,8 +41,11 @@ export default {
       currentPage: 1,
       rows: '',
       perPage: 10,
-      result: [{ part_num: '', part_name: '', price: '', preview: '' }],
-      fields: [{ key: 'part_num', label: 'Част №' }, { key: 'part_name', label: 'Част' }, { key: 'price', label: 'Цена' }, { key: 'preview', label: 'Детайли' }],
+      cart: {
+        shopList: []
+      },
+      result: [{ part_num: '', part_name: '', price: '', preview: '', checkVal: false }],
+      fields: [{ key: 'part_num', label: 'Част №' }, { key: 'part_name', label: 'Част' }, { key: 'price', label: 'Цена за Брой' }, { key: 'preview', label: 'Детайли' }, { key: 'checkVal', label: 'Добави в Количка' }],
       filters: {
         part_num: '',
         part_name: ''
@@ -49,10 +57,17 @@ export default {
     this.searchParts()
   },
   methods: {
+    addPartToCart (partNum, checkVal) {
+      if (checkVal) {
+        this.cart.shopList.push(partNum)
+      }
+      this.searchParts()
+    },
     searchParts () {
       PartsService.getPartsPage(this.filters, this.currentPage, this.perPage).then(
         response => {
           this.result = response.data.result
+          this.result.checkVal = false
           this.totalItems = response.data.totalItems
           this.rows = this.totalItems
         },
