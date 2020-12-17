@@ -4,12 +4,15 @@
     <b-table class="table" id="partsTable" striped hover bordered :items="result" :fields="fields" :current-page="currentPage">
       <template slot="top-row" slot-scope="{ fields }">
         <td v-for="field in fields" :key="field.name">
-          <div v-if="field.key.toString() === 'price'">
+          <div v-if="field.key.toString() === 'price' || field.key.toString() === 'preview'">
           </div>
           <div v-else>
             <input v-model="filters[field.key]" :placeholder="field.label">
           </div>
         </td>
+      </template>
+      <template v-slot:cell(preview)="row">
+        <router-link :to="{ name: 'partsDetails', params: {part_num: row.item.part_num} }" class="btn-group">Отвори</router-link>
       </template>
     </b-table>
     <b-pagination
@@ -33,8 +36,8 @@ export default {
       currentPage: 1,
       rows: '',
       perPage: 10,
-      result: [{ part_num: '', part_name: '', price: '' }],
-      fields: [{ key: 'part_num', label: 'Част №' }, { key: 'part_name', label: 'Част' }, { key: 'price', label: 'Цена' }],
+      result: [{ part_num: '', part_name: '', price: '', preview: '' }],
+      fields: [{ key: 'part_num', label: 'Част №' }, { key: 'part_name', label: 'Част' }, { key: 'price', label: 'Цена' }, { key: 'preview', label: 'Детайли' }],
       filters: {
         part_num: '',
         part_name: ''
