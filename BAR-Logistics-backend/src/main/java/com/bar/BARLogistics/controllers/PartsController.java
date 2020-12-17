@@ -87,7 +87,7 @@ public class PartsController {
     public ResponseEntity<?> paginateParts
             (@RequestParam(value = "currentPage", defaultValue = "1") int currentPage,
              @RequestParam(value = "perPage", defaultValue = "10") int perPage,
-             @RequestParam(required = false) Integer part_num,
+             @RequestParam(required = false) BigInteger part_num,
              @RequestParam(required = false) String part_name){
 
         Pageable pageable = PageRequest.of(currentPage -1, perPage);
