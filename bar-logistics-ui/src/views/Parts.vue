@@ -1,6 +1,9 @@
 <template>
   <div>
-    <h2>Items: {{ cart.shopList.length }}</h2>
+    <h2>Cart: {{ cart.shopList.length }}</h2>
+    <div v-if="cart.shopList.length !== 0">
+      <router-link :to="{ name: 'cart', params: { shopList: cart.shopList } }" class="btn-group">Отвори K</router-link>
+    </div>
     <button class="btn" v-on:click="searchParts">Търси</button>
     <b-table class="table" id="partsTable" striped hover bordered :items="result" :fields="fields" :current-page="currentPage">
 

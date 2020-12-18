@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import OrdersService from '@/services/orders-service.js'
+import OrdersService from '../services/orders-service.js'
 
 export default {
   name: 'Orders',
@@ -20,7 +20,6 @@ export default {
   mounted () {
     OrdersService.getAllOrders().then(
       response => {
-        console.log(response)
         this.content = response.data
       },
       error => {
