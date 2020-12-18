@@ -3,7 +3,10 @@
     <header>
       <h1>Orders</h1>
     </header>
-      <b-table striped hover :items="content"></b-table>
+      <b-table striped hover
+               :dark="true"
+               :items="content">
+      </b-table>
   </div>
 </template>
 

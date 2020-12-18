@@ -5,7 +5,11 @@
       <router-link :to="{ name: 'cart', params: { shopList: cart.shopList } }" class="btn-group">Отвори K</router-link>
     </div>
     <button class="btn" v-on:click="searchParts">Търси</button>
-    <b-table class="table" id="partsTable" striped hover bordered :items="result" :fields="fields" :current-page="currentPage">
+    <b-table class="table" id="partsTable" striped hover bordered
+             :dark="true"
+             :items="result"
+             :fields="fields"
+             :current-page="currentPage">
 
       <template slot="top-row" slot-scope="{ fields }">
         <td v-for="field in fields" :key="field.name">
@@ -48,7 +52,7 @@ export default {
         shopList: []
       },
       result: [{ part_num: '', part_name: '', price: '', preview: '', checkVal: false }],
-      fields: [{ key: 'part_num', label: 'Част №' }, { key: 'part_name', label: 'Част' }, { key: 'price', label: 'Цена за Брой' }, { key: 'preview', label: 'Детайли' }, { key: 'checkVal', label: 'Добави в Количка' }],
+      fields: [{ key: 'part_num', sortable: true, label: 'Част №' }, { key: 'part_name', sortable: true, label: 'Част' }, { key: 'price', sortable: true, label: 'Цена за Брой' }, { key: 'preview', label: 'Детайли' }, { key: 'checkVal', label: 'Добави в Количка' }],
       filters: {
         part_num: '',
         part_name: ''
