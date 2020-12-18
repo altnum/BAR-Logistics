@@ -1,6 +1,10 @@
 <template>
   <div>
-    <b-table striped hover :items="result"></b-table>
+    <b-table striped hover
+             :dark="true"
+             :items="result"
+             :fields="fields"
+    ></b-table>
   </div>
 </template>
 
@@ -11,10 +15,14 @@ export default {
   name: 'Cart',
   data () {
     return {
-      result:
-        {
-          shopList: []
-        }
+      result: [{ part_num: '', part_name: '', price: '', location: '' }],
+      fields: [
+        { key: 'part_num', label: 'Част №' },
+        { key: 'part_name', label: 'Част' },
+        { key: 'price', label: 'Цена' },
+        { key: 'location', label: 'На склад в:' }
+      ],
+      content: { shopList: [] }
     }
   },
   beforeRouteEnter (to, from, next) {
