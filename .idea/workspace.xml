@@ -28,55 +28,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34c38314-6388-434e-bdd2-1e3ec6ae334b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_20_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Cart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/BAR_Logistics_backend_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/BAR_Logistics_backend_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d862df1-f7a6-41d4-98ac-49cc39d92dc7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d862df1-f7a6-41d4-98ac-49cc39d92dc7/storage_v2/_src_/database/AppDataBase.vFqY-g.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d862df1-f7a6-41d4-98ac-49cc39d92dc7/storage_v2/_src_/database/AppDataBase.vFqY-g/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d862df1-f7a6-41d4-98ac-49cc39d92dc7/storage_v2/_src_/database/AppDataBase.vFqY-g/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d862df1-f7a6-41d4-98ac-49cc39d92dc7/storage_v2/_src_/database/AppDataBase.vFqY-g/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d862df1-f7a6-41d4-98ac-49cc39d92dc7/storage_v2/_src_/database/AppDataBase.vFqY-g/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d862df1-f7a6-41d4-98ac-49cc39d92dc7/storage_v2/_src_/database/AppDataBase.vFqY-g/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d862df1-f7a6-41d4-98ac-49cc39d92dc7/storage_v2/_src_/database/BARLogistics.YDuxGg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d862df1-f7a6-41d4-98ac-49cc39d92dc7/storage_v2/_src_/database/BARLogistics.YDuxGg/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d862df1-f7a6-41d4-98ac-49cc39d92dc7/storage_v2/_src_/database/BARLogistics.YDuxGg/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d862df1-f7a6-41d4-98ac-49cc39d92dc7/storage_v2/_src_/database/BARLogistics.YDuxGg/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d862df1-f7a6-41d4-98ac-49cc39d92dc7/storage_v2/_src_/database/BARLogistics.YDuxGg/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d862df1-f7a6-41d4-98ac-49cc39d92dc7/storage_v2/_src_/database/BARLogistics.YDuxGg/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d862df1-f7a6-41d4-98ac-49cc39d92dc7/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d862df1-f7a6-41d4-98ac-49cc39d92dc7/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d862df1-f7a6-41d4-98ac-49cc39d92dc7/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d862df1-f7a6-41d4-98ac-49cc39d92dc7/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d862df1-f7a6-41d4-98ac-49cc39d92dc7/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d862df1-f7a6-41d4-98ac-49cc39d92dc7/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d862df1-f7a6-41d4-98ac-49cc39d92dc7/storage_v2/_src_/database/roera.93V6Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d862df1-f7a6-41d4-98ac-49cc39d92dc7/storage_v2/_src_/database/roera.93V6Bg/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d862df1-f7a6-41d4-98ac-49cc39d92dc7/storage_v2/_src_/database/roera.93V6Bg/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d862df1-f7a6-41d4-98ac-49cc39d92dc7/storage_v2/_src_/database/roera.93V6Bg/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d862df1-f7a6-41d4-98ac-49cc39d92dc7/storage_v2/_src_/database/roera.93V6Bg/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d862df1-f7a6-41d4-98ac-49cc39d92dc7/storage_v2/_src_/database/roera.93V6Bg/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/65096779-bf6b-4fd9-a65b-eaee2dc2d08a.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/65096779-bf6b-4fd9-a65b-eaee2dc2d08a/storage_v2/_src_/database/BARLogistics.YDuxGg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/65096779-bf6b-4fd9-a65b-eaee2dc2d08a/storage_v2/_src_/database/BARLogistics.YDuxGg/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/65096779-bf6b-4fd9-a65b-eaee2dc2d08a/storage_v2/_src_/database/BARLogistics.YDuxGg/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/65096779-bf6b-4fd9-a65b-eaee2dc2d08a/storage_v2/_src_/database/BARLogistics.YDuxGg/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/65096779-bf6b-4fd9-a65b-eaee2dc2d08a/storage_v2/_src_/database/BARLogistics.YDuxGg/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/65096779-bf6b-4fd9-a65b-eaee2dc2d08a/storage_v2/_src_/database/BARLogistics.YDuxGg/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/65096779-bf6b-4fd9-a65b-eaee2dc2d08a/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/65096779-bf6b-4fd9-a65b-eaee2dc2d08a/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/65096779-bf6b-4fd9-a65b-eaee2dc2d08a/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/65096779-bf6b-4fd9-a65b-eaee2dc2d08a/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/65096779-bf6b-4fd9-a65b-eaee2dc2d08a/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/65096779-bf6b-4fd9-a65b-eaee2dc2d08a/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/repositories/PartsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/repositories/PartsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/services/parts-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/parts-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Cart.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Orders.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Orders.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Parts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Parts.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +106,7 @@
       <workItem from="1608159395995" duration="224000" />
       <workItem from="1608190391450" duration="6677000" />
       <workItem from="1608227299997" duration="20694000" />
-      <workItem from="1608291508583" duration="1463000" />
+      <workItem from="1608291508583" duration="2739000" />
     </task>
     <servers />
   </component>

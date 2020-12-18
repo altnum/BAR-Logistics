@@ -20,6 +20,6 @@ public interface PartsRepository extends JpaRepository<Parts, BigInteger> {
             "LIKE :#{#part_name == null || #part_name.isEmpty()? '%' : '%'+#part_name+'%'} ")
     Page<Parts> findPageParts(Pageable page, BigInteger part_num, String part_name);
 
-    @Query("SELECT p FROM Parts p WHERE lower(p.part_num) = :part_num")
+    @Query("SELECT p FROM Parts p WHERE (p.part_num) = :part_num")
     Parts findPartsByPart_num(BigInteger part_num);
 }

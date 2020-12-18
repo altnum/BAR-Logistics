@@ -2,8 +2,8 @@
   <div>
     <header>
       <h1>Orders</h1>
-      <h3>{{ content }}</h3>
     </header>
+      <b-table striped hover :items="content"></b-table>
   </div>
 </template>
 

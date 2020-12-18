@@ -104,7 +104,11 @@ public class PartsController {
             (@RequestParam String shopList){
         String[] list = shopList.split(",");
         List<BigInteger> ids = Arrays.stream(list).map(l -> BigInteger.valueOf(Long.parseLong(l))).collect(Collectors.toList());
-        List<Parts> partsList = partsRepository.findAllById(ids);
+        List<Parts> partsList = new ArrayList<>();
+        for (BigInteger i: ids) {
+            Parts part = partsRepository.findPartsByPart_num(i);
+            partsList.add(part);
+        }
 
         return partsList;
     }
