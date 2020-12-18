@@ -15,6 +15,10 @@ class PartsService {
   getPartsById (part_num) {
     return axios.get(API_URL + '/search/part_num', { params: { part_num: part_num } })
   }
+
+  getCart (shopList) {
+    return axios.get(API_URL + '/cart', { params: { shopList: shopList } })
+  }
 }
 
 export default new PartsService()

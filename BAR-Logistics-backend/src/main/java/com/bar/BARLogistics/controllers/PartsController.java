@@ -13,10 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigInteger;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -100,6 +97,16 @@ public class PartsController {
         response.put("totalPages", parts.getTotalPages());
 
         return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @GetMapping("/cart")
+    public List<Parts> getCart
+            (@RequestParam String shopList){
+        String[] list = shopList.split(",");
+        List<BigInteger> ids = Arrays.stream(list).map(l -> BigInteger.valueOf(Long.parseLong(l))).collect(Collectors.toList());
+        List<Parts> partsList = partsRepository.findAllById(ids);
+
+        return partsList;
     }
 
 }
