@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{ result }}
+    <b-table striped hover :items="result"></b-table>
   </div>
 </template>
 
