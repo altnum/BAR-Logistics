@@ -1,23 +1,25 @@
 <template>
-  <div class="container">
-    <header class="jumbotron">
-      <h3>{{content}}</h3>
+  <div>
+    <header>
+      <h1>
+        <router-link to="/orders">Поръчки</router-link>
+      </h1>
     </header>
   </div>
 </template>
 
 <script>
-import UserService from '../services/user.service'
+import OrdersService from '../services/orders-service.js'
 
 export default {
-  name: 'Home',
+  name: 'Orders',
   data () {
     return {
       content: ''
     }
   },
   mounted () {
-    UserService.getPublicContent().then(
+    OrdersService.getAllOrders().then(
       response => {
         this.content = response.data
       },
@@ -31,3 +33,7 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+</style>

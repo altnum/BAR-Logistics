@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:8080/parts'
+const API_URL = 'http://localhost:8080/api/test/user/parts'
 
 class PartsService {
   getAllParts () {
