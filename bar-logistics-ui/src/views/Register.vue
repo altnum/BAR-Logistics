@@ -51,6 +51,16 @@
             >{{errors.first('password')}}</div>
           </div>
           <div class="form-group">
+            <label for="password1">Confirm password</label>
+            <input
+              v-model="password1"
+              v-validate="'required'"
+              type="password"
+              class="form-control"
+              name="password1"
+            />
+          </div>
+          <div class="form-group">
             <button class="btn btn-primary btn-block">Sign Up</button>
           </div>
         </div>
@@ -73,6 +83,7 @@ export default {
   data () {
     return {
       user: new User('', '', '', '', '', ''),
+      password1: '',
       submitted: false,
       successful: false,
       message: ''
@@ -89,24 +100,32 @@ export default {
     }
   },
   methods: {
+    checkPass (current) {
+      return this.user.password === current
+    },
     handleRegister () {
       this.message = ''
       this.submitted = true
       this.$validator.validate().then(isValid => {
         if (isValid) {
-          this.$store.dispatch('auth/register', this.user).then(
-            data => {
-              this.message = data.message
-              this.successful = true
-            },
-            error => {
-              this.message =
-                (error.response && error.response.data) ||
-                error.message ||
-                error.toString()
-              this.successful = false
-            }
-          )
+          if (this.checkPass(this.password1)) {
+            this.$store.dispatch('auth/register', this.user).then(
+              data => {
+                this.message = data.message
+                this.successful = true
+              },
+              error => {
+                this.message =
+                  (error.response && error.response.data) ||
+                  error.message ||
+                  error.toString()
+                this.successful = false
+              }
+            )
+          } else {
+            this.message = 'The passwords do not match!'
+            this.successful = false
+          }
         }
       })
     }

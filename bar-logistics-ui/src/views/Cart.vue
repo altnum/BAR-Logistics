@@ -20,7 +20,7 @@ export default {
         { key: 'part_num', label: 'Част №' },
         { key: 'part_name', label: 'Част' },
         { key: 'price', label: 'Цена' },
-        { key: 'location', label: 'На склад в:' }
+        { key: 'location.name', label: 'На склад в:' }
       ],
       content: { shopList: [] }
     }
