@@ -1,23 +1,27 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Orders from '../views/Orders.vue'
-import Parts from '../views/Parts.vue'
 import PartDetails from '../views/PartDetails.vue'
 import Cart from '../views/Cart.vue'
+import Login from '../views/Login.vue'
+import Register from '../views/Register.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
+    name: 'home',
+    component: Home
+  },
+  {
+    path: '/home',
     component: Home
   },
   {
     path: '/orders',
     name: 'Orders',
-    component: Orders
+    component: () => import('../views/Orders.vue')
   },
   {
     path: '/about',
@@ -30,7 +34,7 @@ const routes = [
   {
     path: '/parts',
     name: 'Parts',
-    component: Parts
+    component: () => import(/* webpackChunkName: "about" */ '../views/Parts.vue')
   },
   {
     path: '/parts_details',
@@ -41,6 +45,32 @@ const routes = [
     path: '/cart',
     name: 'cart',
     component: Cart
+  },
+  {
+    path: '/login',
+    component: Login
+  },
+  {
+    path: '/register',
+    component: Register
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    // lazy-loaded
+    component: () => import('../views/Profile.vue')
+  },
+  {
+    path: '/admin',
+    name: 'admin',
+    // lazy-loaded
+    component: () => import('../views/BoardAdmin.vue')
+  },
+  {
+    path: '/user',
+    name: 'user',
+    // lazy-loaded
+    component: () => import('../views/BoardUser.vue')
   }
 ]
 
@@ -49,3 +79,17 @@ const router = new VueRouter({
 })
 
 export default router
+
+router.beforeEach((to, from, next) => {
+  const publicPages = ['/login', '/register', '/home', '/about']
+  const authRequired = !publicPages.includes(to.path)
+  const loggedIn = localStorage.getItem('user')
+
+  // trying to access a restricted page + not logged in
+  // redirect to login page
+  if (authRequired && !loggedIn) {
+    next('/login')
+  } else {
+    next()
+  }
+})
