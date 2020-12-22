@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
+import com.bar.BARLogistics.entities.Capitals;
 import com.bar.BARLogistics.models.ERole;
 import com.bar.BARLogistics.models.Role;
 import com.bar.BARLogistics.models.User;
@@ -14,6 +15,7 @@ import com.bar.BARLogistics.payload.request.LoginRequest;
 import com.bar.BARLogistics.payload.request.SignupRequest;
 import com.bar.BARLogistics.payload.response.JwtResponse;
 import com.bar.BARLogistics.payload.response.MessageResponse;
+import com.bar.BARLogistics.repositories.CapitalsRepository;
 import com.bar.BARLogistics.repositories.RoleRepository;
 import com.bar.BARLogistics.repositories.UserRepository;
 import com.bar.BARLogistics.security.jwt.JwtUtils;
@@ -49,6 +51,9 @@ public class AuthController {
 
     @Autowired
     JwtUtils jwtUtils;
+
+    @Autowired
+    CapitalsRepository capitalsRepository;
 
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
@@ -89,10 +94,15 @@ public class AuthController {
                     .body(new MessageResponse("Error: Email is already in use!"));
         }
 
+        Capitals capitals = capitalsRepository.findCapitalsByName(signUpRequest.getCapitals());
+
         // Create new user's account
         User user = new User(signUpRequest.getUsername(),
                 signUpRequest.getEmail(),
-                encoder.encode(signUpRequest.getPassword()));
+                encoder.encode(signUpRequest.getPassword()),
+                signUpRequest.getFirst_name(),
+                signUpRequest.getLast_name(),
+                capitals);
 
         Set<String> strRoles = signUpRequest.getRole();
         Set<Role> roles = new HashSet<>();
@@ -103,23 +113,14 @@ public class AuthController {
             roles.add(userRole);
         } else {
             strRoles.forEach(role -> {
-                switch (role) {
-                    case "admin":
-                        Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
-                                .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-                        roles.add(adminRole);
-
-                        break;
-                    case "mod":
-                        Role modRole = roleRepository.findByName(ERole.ROLE_MODERATOR)
-                                .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-                        roles.add(modRole);
-
-                        break;
-                    default:
-                        Role userRole = roleRepository.findByName(ERole.ROLE_USER)
-                                .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-                        roles.add(userRole);
+                if ("admin".equals(role)) {
+                    Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
+                            .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+                    roles.add(adminRole);
+                } else {
+                    Role userRole = roleRepository.findByName(ERole.ROLE_USER)
+                            .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+                    roles.add(userRole);
                 }
             });
         }

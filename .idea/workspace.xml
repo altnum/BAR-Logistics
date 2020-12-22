@@ -28,10 +28,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34c38314-6388-434e-bdd2-1e3ec6ae334b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/CapitalsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/capitals-service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/security/jwt/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/security/jwt/JwtUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Cart.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/payload/request/SignupRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/payload/request/SignupRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/repositories/CapitalsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/repositories/CapitalsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/services/auth.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/auth.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Register.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,9 +51,9 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -91,6 +98,17 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BarLogisticsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="BAR-Logistics-backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.bar.BARLogistics.BarLogisticsApplication" />
@@ -121,6 +139,9 @@
       <workItem from="1608319492960" duration="31524000" />
       <workItem from="1608550408314" duration="4724000" />
       <workItem from="1608558936317" duration="9980000" />
+      <workItem from="1608598824410" duration="88000" />
+      <workItem from="1608631476752" duration="20000" />
+      <workItem from="1608631502884" duration="24793000" />
     </task>
     <servers />
   </component>
@@ -144,10 +165,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="668" y="304" key="#Assign_Data_Sources/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608392315511" />
-    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser" timestamp="1608508439130">
+    <state x="638" y="305" key="#ESLint" timestamp="1608645088691">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608508439130" />
+    <state x="638" y="305" key="#ESLint/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608645088691" />
+    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser" timestamp="1608634479106">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608634479106" />
+    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1608631484886">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608631484886" />
     <state x="178" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1608507916185">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -168,54 +197,54 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608394760605" />
-    <state width="1493" height="188" key="GridCell.Tab.0.bottom" timestamp="1608509787220">
+    <state width="1493" height="188" key="GridCell.Tab.0.bottom" timestamp="1608656447097">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="188" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608509787220" />
-    <state width="1493" height="188" key="GridCell.Tab.0.center" timestamp="1608509787220">
+    <state width="1493" height="188" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608656447097" />
+    <state width="1493" height="188" key="GridCell.Tab.0.center" timestamp="1608656447097">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="188" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608509787220" />
-    <state width="1493" height="188" key="GridCell.Tab.0.left" timestamp="1608509787219">
+    <state width="1493" height="188" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608656447097" />
+    <state width="1493" height="188" key="GridCell.Tab.0.left" timestamp="1608656447097">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="188" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608509787219" />
-    <state width="1493" height="188" key="GridCell.Tab.0.right" timestamp="1608509787220">
+    <state width="1493" height="188" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608656447097" />
+    <state width="1493" height="188" key="GridCell.Tab.0.right" timestamp="1608656447097">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="188" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608509787220" />
-    <state width="1493" height="188" key="GridCell.Tab.1.bottom" timestamp="1608509787220">
+    <state width="1493" height="188" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608656447097" />
+    <state width="1493" height="188" key="GridCell.Tab.1.bottom" timestamp="1608656447097">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="188" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608509787220" />
-    <state width="1493" height="188" key="GridCell.Tab.1.center" timestamp="1608509787220">
+    <state width="1493" height="188" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608656447097" />
+    <state width="1493" height="188" key="GridCell.Tab.1.center" timestamp="1608656447097">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="188" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608509787220" />
-    <state width="1493" height="188" key="GridCell.Tab.1.left" timestamp="1608509787220">
+    <state width="1493" height="188" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608656447097" />
+    <state width="1493" height="188" key="GridCell.Tab.1.left" timestamp="1608656447097">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="188" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608509787220" />
-    <state width="1493" height="188" key="GridCell.Tab.1.right" timestamp="1608509787220">
+    <state width="1493" height="188" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608656447097" />
+    <state width="1493" height="188" key="GridCell.Tab.1.right" timestamp="1608656447097">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="188" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608509787220" />
-    <state width="1493" height="188" key="GridCell.Tab.2.bottom" timestamp="1608509787220">
+    <state width="1493" height="188" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608656447097" />
+    <state width="1493" height="188" key="GridCell.Tab.2.bottom" timestamp="1608656447098">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="188" key="GridCell.Tab.2.bottom/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608509787220" />
-    <state width="1493" height="188" key="GridCell.Tab.2.center" timestamp="1608509787220">
+    <state width="1493" height="188" key="GridCell.Tab.2.bottom/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608656447098" />
+    <state width="1493" height="188" key="GridCell.Tab.2.center" timestamp="1608656447098">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="188" key="GridCell.Tab.2.center/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608509787220" />
-    <state width="1493" height="188" key="GridCell.Tab.2.left" timestamp="1608509787220">
+    <state width="1493" height="188" key="GridCell.Tab.2.center/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608656447098" />
+    <state width="1493" height="188" key="GridCell.Tab.2.left" timestamp="1608656447098">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="188" key="GridCell.Tab.2.left/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608509787220" />
-    <state width="1493" height="188" key="GridCell.Tab.2.right" timestamp="1608509787220">
+    <state width="1493" height="188" key="GridCell.Tab.2.left/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608656447098" />
+    <state width="1493" height="188" key="GridCell.Tab.2.right" timestamp="1608656447098">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="188" key="GridCell.Tab.2.right/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608509787220" />
+    <state width="1493" height="188" key="GridCell.Tab.2.right/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608656447098" />
     <state width="189" height="457" key="HiddenNamespacesPopup" timestamp="1608392354112">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -228,6 +257,27 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="478" y="145" width="579" height="534" key="find.popup/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608551807047" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/AuthController.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/AuthController.java</url>
+          <line>99</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/AuthController.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
