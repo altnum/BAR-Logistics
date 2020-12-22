@@ -1,5 +1,10 @@
+<head>
+<h1>Количка</h1>
+</head>
+
+<body>
 <template>
-  <div>
+<div>
     <b-table striped hover
              :dark="true"
              :items="result"
@@ -7,6 +12,7 @@
     ></b-table>
   </div>
 </template>
+</body>
 
 <script>
 import PartsService from '../services/parts-service'
@@ -20,7 +26,7 @@ export default {
         { key: 'part_num', label: 'Част №' },
         { key: 'part_name', label: 'Част' },
         { key: 'price', label: 'Цена' },
-        { key: 'location', label: 'На склад в:' }
+        { key: 'location.name', label: 'На склад в:' }
       ],
       content: { shopList: [] }
     }

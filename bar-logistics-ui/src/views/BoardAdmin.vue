@@ -1,9 +1,9 @@
 <template>
   <div>
     <header>
-      <h1>
-        <router-link to="/orders">Поръчки</router-link>
-      </h1>
+      <br>
+        <span class="title" font-size="16px">Преглед на настоящите поръчки:   </span>
+        <router-link to="/orders" tag="button">Поръчки</router-link>
     </header>
   </div>
 </template>

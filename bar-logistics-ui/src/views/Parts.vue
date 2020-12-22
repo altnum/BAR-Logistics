@@ -2,7 +2,7 @@
   <div>
     <h2>Cart: {{ cart.shopList.length }}</h2>
     <div v-if="cart.shopList.length !== 0">
-      <router-link :to="{ name: 'cart', params: { shopList: cart.shopList } }" class="btn-group">Отвори K</router-link>
+      <router-link :to="{ name: 'cart', params: { shopList: cart.shopList } }" class="btn-group">Към Kоличка</router-link>
     </div>
     <button class="btn" v-on:click="searchParts">Търси</button>
     <b-table class="table" id="partsTable" striped hover bordered

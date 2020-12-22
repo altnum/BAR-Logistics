@@ -9,6 +9,7 @@
 		<groupId>com.bar</groupId>
 		<artifactId>BAR-Logistics</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
+
 	</parent>
 
 	<properties>
