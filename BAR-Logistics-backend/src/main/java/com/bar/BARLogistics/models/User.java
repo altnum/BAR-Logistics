@@ -58,15 +58,13 @@ public class User {
         this.password = password;
     }
 
-    public User(Long id, @NotBlank @Size(max = 20) String username, @NotBlank @Size(max = 50) @Email String email, @NotBlank @Size(max = 120) String password, String first_name, String last_name, Capitals address, Set<Role> roles) {
-        this.id = id;
+    public User(@NotBlank @Size(max = 20) String username, @NotBlank @Size(max = 50) @Email String email, @NotBlank @Size(max = 120) String password, String first_name, String last_name, Capitals address) {
         this.username = username;
         this.email = email;
         this.password = password;
         this.first_name = first_name;
         this.last_name = last_name;
         this.address = address;
-        this.roles = roles;
     }
 
     public Long getId() {

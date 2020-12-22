@@ -28,39 +28,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34c38314-6388-434e-bdd2-1e3ec6ae334b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/CapitalsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/capitals-service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/bar-logistics-ui.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/bar-logistics-ui.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/payload/request/SignupRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/payload/request/SignupRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/repositories/CapitalsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/repositories/CapitalsRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bar-logistics-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/About.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/About.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/BoardAdmin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/BoardAdmin.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Cart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Orders.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Orders.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Parts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Parts.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Profile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Profile.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bar/BARLogistics/BarLogisticsApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bar/BARLogistics/ServletInitializer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bar/BARLogistics/controllers/ErrorHandlerController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bar/BARLogistics/controllers/OrdersController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bar/BARLogistics/controllers/PartsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bar/BARLogistics/entities/Capitals.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bar/BARLogistics/entities/Orders.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bar/BARLogistics/entities/Orders_parts.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bar/BARLogistics/entities/Parts.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bar/BARLogistics/entities/PartsLocations.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bar/BARLogistics/entities/Users.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bar/BARLogistics/entities/VehicleInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bar/BARLogistics/entities/VehicleInventory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bar/BARLogistics/repositories/CapitalsRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bar/BARLogistics/repositories/OrdersRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bar/BARLogistics/repositories/Orders_partsRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bar/BARLogistics/repositories/PartsLocationsRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bar/BARLogistics/repositories/PartsRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bar/BARLogistics/repositories/VehicleInventoryRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/bar/BARLogistics/BarLogisticsApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/services/auth.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/auth.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Register.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,14 +51,21 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1lfubNwXjV6luQxTKXEFGcAOIEi" />
   <component name="ProjectViewState">
@@ -96,25 +82,33 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TU/CarImport" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.standard" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.idesettings.emmet.jsx" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BarLogisticsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="BAR-Logistics-backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.bar.BARLogistics.BarLogisticsApplication" />
@@ -143,11 +137,11 @@
       <workItem from="1608291508583" duration="5820000" />
       <workItem from="1608301335580" duration="2399000" />
       <workItem from="1608319492960" duration="31524000" />
-      <workItem from="1608554998022" duration="4696000" />
-      <workItem from="1608564254095" duration="14103000" />
-      <workItem from="1608635858929" duration="3818000" />
-      <workItem from="1608640779095" duration="2283000" />
-      <workItem from="1608644047435" duration="5972000" />
+      <workItem from="1608550408314" duration="4724000" />
+      <workItem from="1608558936317" duration="9980000" />
+      <workItem from="1608598824410" duration="88000" />
+      <workItem from="1608631476752" duration="20000" />
+      <workItem from="1608631502884" duration="24793000" />
     </task>
     <servers />
   </component>
@@ -165,6 +159,125 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="668" y="304" key="#Assign_Data_Sources" timestamp="1608392315511">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="668" y="304" key="#Assign_Data_Sources/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608392315511" />
+    <state x="638" y="305" key="#ESLint" timestamp="1608645088691">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="638" y="305" key="#ESLint/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608645088691" />
+    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser" timestamp="1608634479106">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608634479106" />
+    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1608631484886">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608631484886" />
+    <state x="178" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1608507916185">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="178" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608507916185" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608505369117">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608505369117" />
+    <state x="297" y="238" width="942" height="348" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog" timestamp="1608388601605">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="297" y="238" width="942" height="348" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608388601605" />
+    <state width="400" height="466" key="DebuggerActiveHint" timestamp="1608395819135">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="400" height="466" key="DebuggerActiveHint/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608395819135" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1608394760605">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608394760605" />
+    <state width="1493" height="188" key="GridCell.Tab.0.bottom" timestamp="1608656447097">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="188" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608656447097" />
+    <state width="1493" height="188" key="GridCell.Tab.0.center" timestamp="1608656447097">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="188" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608656447097" />
+    <state width="1493" height="188" key="GridCell.Tab.0.left" timestamp="1608656447097">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="188" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608656447097" />
+    <state width="1493" height="188" key="GridCell.Tab.0.right" timestamp="1608656447097">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="188" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608656447097" />
+    <state width="1493" height="188" key="GridCell.Tab.1.bottom" timestamp="1608656447097">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="188" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608656447097" />
+    <state width="1493" height="188" key="GridCell.Tab.1.center" timestamp="1608656447097">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="188" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608656447097" />
+    <state width="1493" height="188" key="GridCell.Tab.1.left" timestamp="1608656447097">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="188" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608656447097" />
+    <state width="1493" height="188" key="GridCell.Tab.1.right" timestamp="1608656447097">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="188" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608656447097" />
+    <state width="1493" height="188" key="GridCell.Tab.2.bottom" timestamp="1608656447098">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="188" key="GridCell.Tab.2.bottom/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608656447098" />
+    <state width="1493" height="188" key="GridCell.Tab.2.center" timestamp="1608656447098">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="188" key="GridCell.Tab.2.center/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608656447098" />
+    <state width="1493" height="188" key="GridCell.Tab.2.left" timestamp="1608656447098">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="188" key="GridCell.Tab.2.left/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608656447098" />
+    <state width="1493" height="188" key="GridCell.Tab.2.right" timestamp="1608656447098">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="188" key="GridCell.Tab.2.right/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608656447098" />
+    <state width="189" height="457" key="HiddenNamespacesPopup" timestamp="1608392354112">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="189" height="457" key="HiddenNamespacesPopup/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608392354112" />
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1608388951698">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608388951698" />
+    <state x="478" y="145" width="579" height="534" key="find.popup" timestamp="1608551807047">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="478" y="145" width="579" height="534" key="find.popup/0.0.1536.824/1920.0.1280.984@0.0.1536.824" timestamp="1608551807047" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/AuthController.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/AuthController.java</url>
+          <line>99</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/AuthController.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
