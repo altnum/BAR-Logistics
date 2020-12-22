@@ -9,6 +9,40 @@
       <form name="form" @submit.prevent="handleRegister">
         <div v-if="!successful">
           <div class="form-group">
+            <label for="first_name">First name</label>
+            <input
+              v-model="user.first_name"
+              v-validate="'required|min:3|max:30'"
+              type="text"
+              class="form-control"
+              name="first_name"
+            />
+            <div
+              v-if="submitted && errors.has('first_name')"
+              class="alert-danger"
+            >{{errors.first('first_name')}}</div>
+          </div>
+          <div class="form-group">
+            <label for="last_name">Last name</label>
+            <input
+              v-model="user.last_name"
+              v-validate="'required|min:3|max:30'"
+              type="text"
+              class="form-control"
+              name="last_name"
+            />
+            <div
+              v-if="submitted && errors.has('last_name')"
+              class="alert-danger"
+            >{{errors.first('last_name')}}</div>
+          </div>
+            <label for="address">Address</label>
+            <select v-for="capital in capitals" v-model="capitals.selectedOption" :key="capital.options.name" class="form-control" name="address">
+              <option v-for="option in capitals.options" :value="option.name" :key="option.name" class="form-control" name="selectedCapital">
+                {{option.name}}
+              </option>
+            </select>
+          <div class="form-group">
             <label for="username">Username</label>
             <input
               v-model="user.username"
@@ -77,11 +111,27 @@
 
 <script>
 import User from '../models/user'
+import CapitalsService from '../services/capitals-service.js'
 
 export default {
   name: 'Register',
+  beforeRouteEnter (to, from, next) {
+    CapitalsService.getAllCapitals(to.params.name).then(
+      response => {
+        next(vm =>
+          vm.setData(response)
+        )
+      }
+    )
+  },
   data () {
     return {
+      capitals: [
+        {
+          options: [],
+          selectedOption: ''
+        }
+      ],
       user: new User('', '', '', '', '', ''),
       password1: '',
       submitted: false,
@@ -100,6 +150,10 @@ export default {
     }
   },
   methods: {
+    setData (response) {
+      this.capitals.options = response.data
+      this.capitals.selectedOption = this.capitals.options[0].name
+    },
     checkPass (current) {
       return this.user.password === current
     },
@@ -109,6 +163,7 @@ export default {
       this.$validator.validate().then(isValid => {
         if (isValid) {
           if (this.checkPass(this.password1)) {
+            this.user.capitals = this.capitals.selectedOption
             this.$store.dispatch('auth/register', this.user).then(
               data => {
                 this.message = data.message
