@@ -1,10 +1,5 @@
-<head>
-<h1>Количка</h1>
-</head>
-
-<body>
 <template>
-<div>
+  <div>
     <b-table striped hover
              :dark="true"
              :items="result"
@@ -12,7 +7,6 @@
     ></b-table>
   </div>
 </template>
-</body>
 
 <script>
 import PartsService from '../services/parts-service'

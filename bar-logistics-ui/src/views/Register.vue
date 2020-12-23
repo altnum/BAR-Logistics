@@ -36,12 +36,12 @@
               class="alert-danger"
             >{{errors.first('last_name')}}</div>
           </div>
-            <label for="address">Address</label>
-            <select v-for="capital in capitals" v-model="capitals.selectedOption" :key="capital.options.name" class="form-control" name="address">
-              <option v-for="option in capitals.options" :value="option.name" :key="option.name" class="form-control" name="selectedCapital">
-                {{option.name}}
-              </option>
-            </select>
+          <label for="address">Address</label>
+          <select v-for="capital in capitals" v-model="capitals.selectedOption" :key="capital.options.name" class="form-control" name="address">
+            <option v-for="option in capitals.options" :value="option.name" :key="option.name" class="form-control" name="selectedCapital">
+              {{option.name}}
+            </option>
+          </select>
           <div class="form-group">
             <label for="username">Username</label>
             <input
