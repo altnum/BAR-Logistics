@@ -29,8 +29,8 @@
   <component name="ChangeListManager">
     <list default="true" id="34c38314-6388-434e-bdd2-1e3ec6ae334b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/services/auth.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/auth.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/store/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Cart.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Parts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Parts.vue" afterDir="false" />
@@ -128,6 +128,7 @@
       <workItem from="1608631476752" duration="20000" />
       <workItem from="1608631502884" duration="24793000" />
       <workItem from="1608761147423" duration="10658000" />
+      <workItem from="1608814922872" duration="11085000" />
     </task>
     <servers />
   </component>

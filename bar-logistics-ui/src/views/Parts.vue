@@ -27,7 +27,7 @@
         <input v-model="row.item.quantity" type="number" min="1">
       </template>
       <template v-slot:cell(checkVal)="row">
-        <b-checkbox v-on:input="addPartToCart(row.item.part_num, row.item.checkVal)" v-model="row.item.checkVal"></b-checkbox>
+        <b-checkbox v-on:input="addPartToCart(row.item.part_num, row.item.checkVal, row.item.quantity)" v-model="row.item.checkVal"></b-checkbox>
       </template>
     </b-table>
     <b-pagination
@@ -43,7 +43,7 @@
 
 <script>
 import PartsService from '../services/parts-service'
-import { mapMutations, mapGetters } from 'vuex'
+import { mapState, mapMutations, mapGetters } from 'vuex'
 
 export default {
   name: 'Parts.vue',
@@ -63,19 +63,27 @@ export default {
   },
   mounted () {
     this.searchParts()
+    this.TRANSFORM_CART(JSON.parse(localStorage.getItem('cart')))
   },
   computed: {
     ...mapGetters([
       'countParts'
+    ]),
+    ...mapState([
+      'cart'
     ])
   },
   methods: {
     ...mapMutations([
-      'ADD_PART_TO_CART'
+      'ADD_PART_TO_CART',
+      'TRANSFORM_CART'
     ]),
-    addPartToCart (partNum, checkVal) {
-      if (checkVal) {
-        this.ADD_PART_TO_CART(partNum)
+    addPartToCart (partNum, checkVal, times) {
+      if (checkVal && times >= 1) {
+        for (let i = 0; i < times; i++) {
+          this.ADD_PART_TO_CART(partNum)
+        }
+        localStorage.setItem('cart', JSON.stringify(this.cart))
       }
       this.searchParts()
     },
