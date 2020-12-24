@@ -10,6 +10,7 @@
 
 <script>
 import PartsService from '../services/parts-service'
+import { mapState } from 'vuex'
 
 export default {
   name: 'Cart',
@@ -21,20 +22,22 @@ export default {
         { key: 'part_name', label: 'Част' },
         { key: 'price', label: 'Цена' },
         { key: 'location.name', label: 'На склад в:' }
-      ],
-      content: { shopList: [] }
+      ]
     }
   },
-  beforeRouteEnter (to, from, next) {
-    PartsService.getCart(to.params.shopList.toString()).then(response => {
-      next(vm =>
-        vm.setData(response)
-      )
-    })
+  mounted () {
+    this.loadCart(this.cart)
+  },
+  computed: {
+    ...mapState([
+      'cart'
+    ])
   },
   methods: {
-    setData (response) {
-      this.result = response.data
+    loadCart (cart) {
+      PartsService.getCart(cart.toString()).then(response => {
+        this.result = response.data
+      })
     }
   }
 }
