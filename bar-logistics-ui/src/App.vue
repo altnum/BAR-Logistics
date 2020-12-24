@@ -53,6 +53,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 
 export default {
   computed: {
@@ -68,9 +69,16 @@ export default {
     }
   },
   methods: {
+    ...mapMutations([
+      'CLEAR_CART'
+    ]),
     logOut () {
+      this.clearCart()
       this.$store.dispatch('auth/logout')
       this.$router.push('/login')
+    },
+    clearCart: function () {
+      this.CLEAR_CART()
     }
   }
 }

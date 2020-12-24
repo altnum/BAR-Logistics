@@ -16,6 +16,7 @@ const routes = [
   },
   {
     path: '/home',
+    name: 'home',
     component: Home
   },
   {
@@ -81,7 +82,7 @@ const router = new VueRouter({
 export default router
 
 router.beforeEach((to, from, next) => {
-  const publicPages = ['/login', '/register', '/home', '/about']
+  const publicPages = ['/login', '/register', '/home', '/about', '/']
   const authRequired = !publicPages.includes(to.path)
   const loggedIn = localStorage.getItem('user')
 
