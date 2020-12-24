@@ -103,7 +103,7 @@ public class PartsController {
     public List<Parts> getCart
             (@RequestParam String shopList){
         String[] list = shopList.split(",");
-        List<BigInteger> ids = Arrays.stream(list).map(l -> BigInteger.valueOf(Long.parseLong(l))).collect(Collectors.toList());
+        List<BigInteger> ids = Arrays.stream(list).map(l -> BigInteger.valueOf(Long.parseLong(l))).sorted(Comparator.comparingInt(l -> Integer.parseInt(String.valueOf(l)))).collect(Collectors.toList());
         List<Parts> partsList = new ArrayList<>();
         for (BigInteger i: ids) {
             Parts part = partsRepository.findPartsByPart_num(i);
