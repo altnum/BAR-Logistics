@@ -24,7 +24,7 @@
         <router-link :to="{ name: 'partsDetails', params: {part_num: row.item.part_num} }" class="btn-group">Отвори</router-link>
       </template>
       <template v-slot:cell(quantity)="row">
-        <input v-model="row.item.quantity" type="number" min="1">
+        <input v-model="row.item.quantity" type="number" min="1" placeholder="0">
       </template>
       <template v-slot:cell(checkVal)="row">
         <b-checkbox v-on:input="addPartToCart(row.item.part_num, row.item.checkVal, row.item.quantity)" v-model="row.item.checkVal"></b-checkbox>

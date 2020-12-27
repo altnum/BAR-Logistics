@@ -5,6 +5,7 @@ import PartDetails from '../views/PartDetails.vue'
 import Cart from '../views/Cart.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
+import OrdersDetails from '@/views/OrdersDetails'
 
 Vue.use(VueRouter)
 
@@ -41,6 +42,11 @@ const routes = [
     path: '/parts_details',
     name: 'partsDetails',
     component: PartDetails
+  },
+  {
+    path: '/orders_details',
+    name: 'ordersDetails',
+    component: OrdersDetails
   },
   {
     path: '/cart',
