@@ -5,13 +5,13 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "orders_parts")
+@IdClass(OrderPartsId.class)
 public class Orders_parts implements Serializable {
     @Id
-    @Column(name = "part_id")
-    private Integer part_id;
-
-    @Column(name = "order_id")
     private Integer order_id;
+
+    @Id
+    private Integer part_id;
 
     @Column(name = "quantity")
     private Integer quantity;

@@ -1,8 +1,15 @@
 <template>
   <div>
-    <div>
-      <button class="btn" v-on:click="emptyCart">Изпразни количката</button>
+    <div v-if="this.cart.length === 0 && submittedOrder === false">
+      <h3>Количката е празна!</h3>
     </div>
+    <div v-else-if="submittedOrder === true">
+      <h3>Вашата поръчка е приета!</h3>
+    </div>
+    <router-link to="/parts" tag="button">Към продуктите</router-link>
+    <div v-if="this.cart.length > 0 && submittedOrder === false">
+      <button class="btn" v-on:click="emptyCart">Изпразни количката</button>
+      <button class="btn" v-on:click="submitOrders">Потвърди поръчката</button>
     <b-table striped hover
              :dark="true"
              :items="result"
@@ -12,11 +19,13 @@
         <button class="btn" v-on:click="removeParts(row.item.part_num)">Премахни</button>
       </template>
     </b-table>
+    </div>
   </div>
 </template>
 
 <script>
 import PartsService from '../services/parts-service'
+import OrdersService from '../services/orders-service'
 import { mapState, mapMutations, mapActions, mapGetters } from 'vuex'
 
 export default {
@@ -30,12 +39,15 @@ export default {
         { key: 'price', label: 'Цена' },
         { key: 'location.name', label: 'На склад в:' },
         { key: 'remove_element', label: 'Премахни елемент' }
-      ]
+      ],
+      submittedOrder: false
     }
   },
   mounted () {
     this.TRANSFORM_CART(JSON.parse(localStorage.getItem('cart')))
-    this.loadCart(this.cart)
+    if (this.cart.length > 0) {
+      this.loadCart(this.cart)
+    }
   },
   computed: {
     ...mapState([
@@ -75,6 +87,13 @@ export default {
       PartsService.getCart(cart.toString()).then(response => {
         this.result = response.data
       })
+    },
+    submitOrders () {
+      OrdersService.submitOrder(JSON.parse(localStorage.getItem('user')).username.toString(), this.cart.toString()).then(response => {
+      })
+      localStorage.removeItem('cart')
+      this.result = []
+      this.submittedOrder = true
     }
   }
 }
