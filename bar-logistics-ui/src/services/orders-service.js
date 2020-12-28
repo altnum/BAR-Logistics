@@ -9,9 +9,9 @@ class OrdersService {
 
   // eslint-disable-next-line camelcase
   getOrderIdDetails (order_id) {
-    return axios.get(API_URL + '/admin/orders/all/detailed', null, {
+    return axios.get(API_URL + '/admin/orders/all/detailed', {
       params: {
-        order_id: order_id
+        order_id
       }
     })
   }
