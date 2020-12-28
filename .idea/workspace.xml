@@ -29,7 +29,7 @@
   <component name="ChangeListManager">
     <list default="true" id="34c38314-6388-434e-bdd2-1e3ec6ae334b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/services/orders-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/orders-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Cart.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,6 +131,8 @@
       <workItem from="1609096101172" duration="376000" />
       <workItem from="1609098802158" duration="1420000" />
       <workItem from="1609100370920" duration="974000" />
+      <workItem from="1609154838737" duration="5353000" />
+      <workItem from="1609160634409" duration="302000" />
     </task>
     <servers />
   </component>

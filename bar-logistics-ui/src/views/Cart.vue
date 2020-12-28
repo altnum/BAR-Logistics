@@ -19,6 +19,9 @@
         <button class="btn" v-on:click="removeParts(row.item.part_num)">Премахни</button>
       </template>
     </b-table>
+      <div v-if="this.cart.length !== 0 && !submittedOrder">
+        Цена на частите: {{ this.partsPrice.toPrecision(3) }}
+      </div>
     </div>
   </div>
 </template>
@@ -40,10 +43,12 @@ export default {
         { key: 'location.name', label: 'На склад в:' },
         { key: 'remove_element', label: 'Премахни елемент' }
       ],
-      submittedOrder: false
+      submittedOrder: false,
+      partsPrice: ''
     }
   },
   mounted () {
+    this.partsPrice = 0.0
     this.TRANSFORM_CART(JSON.parse(localStorage.getItem('cart')))
     if (this.cart.length > 0) {
       this.loadCart(this.cart)
@@ -65,6 +70,15 @@ export default {
     ...mapActions([
       'removePart'
     ]),
+    addPrice: function () {
+      PartsService.getCart(this.cart.toString()).then(response => {
+        this.result = response.data
+        this.partsPrice = 0.0
+        for (let i = 0; i < this.result.length; i++) {
+          this.partsPrice = this.partsPrice + parseFloat(this.result[i].price)
+        }
+      })
+    },
     removeParts: function (part) {
       if (this.countParts >= 1) {
         const initialSize = this.countParts
@@ -87,6 +101,7 @@ export default {
       PartsService.getCart(cart.toString()).then(response => {
         this.result = response.data
       })
+      this.addPrice()
     },
     submitOrders () {
       OrdersService.submitOrder(JSON.parse(localStorage.getItem('user')).username.toString(), this.cart.toString()).then(response => {
