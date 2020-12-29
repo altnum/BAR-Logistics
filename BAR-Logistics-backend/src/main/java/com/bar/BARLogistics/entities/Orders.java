@@ -24,6 +24,9 @@ public class Orders {
     @Column(name = "status")
     private String status;
 
+    @Column(name = "price")
+    private Double price;
+
     @ManyToMany
     @JoinTable(name = "orders_parts", joinColumns = @JoinColumn(name = "order_id"), inverseJoinColumns = @JoinColumn(name = "part_id"))
     private List<Parts> parts = new LinkedList<>();
@@ -31,11 +34,20 @@ public class Orders {
     public Orders() {
     }
 
-    public Orders(Users user, Date order_date, Date ship_date, String status) {
+    public Orders(Users user, Date order_date, Date ship_date, String status, Double price) {
         this.user_id = user;
         this.order_date = order_date;
         this.ship_date = ship_date;
         this.status = status;
+        this.price = price;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
     public Integer getOrder_id() {

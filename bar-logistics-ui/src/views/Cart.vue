@@ -21,6 +21,10 @@
     </b-table>
       <div v-if="this.cart.length !== 0 && !submittedOrder">
         Цена на частите: {{ this.partsPrice.toPrecision(3) }}
+        +
+        Цена на доставка: {{ this.deliveryPrice.toFixed(2) }}
+        =
+        Крайна цена: {{ this.overallPrice.toFixed(2) }}
       </div>
     </div>
   </div>
@@ -30,21 +34,28 @@
 import PartsService from '../services/parts-service'
 import OrdersService from '../services/orders-service'
 import { mapState, mapMutations, mapActions, mapGetters } from 'vuex'
+import VehicleService from '../services/vehicle-service'
+import CapitalsService from '../services/capitals-service'
 
 export default {
   name: 'Cart',
   data () {
     return {
-      result: [{ part_num: '', part_name: '', price: '', location: '', remove_element: '' }],
+      result: [{ part_num: '', part_name: '', price: 0.0, location: { name: '', distances_from_bar: '' }, remove_element: '', volume: 0.0 }],
       fields: [
         { key: 'part_num', label: 'Част №' },
         { key: 'part_name', label: 'Част' },
         { key: 'price', label: 'Цена' },
-        { key: 'location.name', label: 'На склад в:' },
+        { key: 'location.name', label: 'На склад в' },
         { key: 'remove_element', label: 'Премахни елемент' }
       ],
       submittedOrder: false,
-      partsPrice: ''
+      partsPrice: 0.0,
+      deliveryPrice: 0.0,
+      volume: 0.0,
+      vehicle: [{ type: { type: '', fuel_consumption: 0.0 } }],
+      userDistance: [{ import_tax: '', distance_from_bar: 0.0 }],
+      overallPrice: 0.0
     }
   },
   mounted () {
@@ -74,9 +85,28 @@ export default {
       PartsService.getCart(this.cart.toString()).then(response => {
         this.result = response.data
         this.partsPrice = 0.0
+        this.volume = 0.0
+        this.deliveryPrice = 0.0
+        const setOfWarehouses = new Set()
         for (let i = 0; i < this.result.length; i++) {
-          this.partsPrice = this.partsPrice + parseFloat(this.result[i].price)
+          this.partsPrice = this.partsPrice + this.result[i].price
+          this.volume = this.volume + this.result[i].volume
+          setOfWarehouses.add(this.result[i].location.name)
         }
+        VehicleService.getExample(this.volume).then(response => {
+          this.vehicle = response.data
+          CapitalsService.getCapitalByName(JSON.parse(localStorage.getItem('user')).address.name.toString()).then(response => {
+            this.userDistance = response.data
+            this.deliveryPrice = this.userDistance.distance_from_bar / this.vehicle.type.fuel_consumption * 2 + this.userDistance.import_tax + 50
+            for (let i = 0; i < this.result.length; i++) {
+              if (setOfWarehouses.has(this.result[i].location.name)) {
+                this.deliveryPrice = this.deliveryPrice + this.result[i].location.distances_from_bar / this.vehicle.type.fuel_consumption * 2
+                setOfWarehouses.delete(this.result[i].location.name)
+              }
+            }
+            this.overallPrice = this.partsPrice + this.deliveryPrice
+          })
+        })
       })
     },
     removeParts: function (part) {
@@ -104,7 +134,7 @@ export default {
       this.addPrice()
     },
     submitOrders () {
-      OrdersService.submitOrder(JSON.parse(localStorage.getItem('user')).username.toString(), this.cart.toString()).then(response => {
+      OrdersService.submitOrder(JSON.parse(localStorage.getItem('user')).username.toString(), this.cart.toString(), this.overallPrice.toFixed(2)).then(response => {
       })
       localStorage.removeItem('cart')
       this.result = []

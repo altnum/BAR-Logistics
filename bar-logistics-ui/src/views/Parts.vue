@@ -20,6 +20,9 @@
           </div>
         </td>
       </template>
+      <template v-slot:cell(price)="row">
+        {{ row.item.price }} лв.
+      </template>
       <template v-slot:cell(preview)="row">
         <router-link :to="{ name: 'partsDetails', params: {part_num: row.item.part_num} }" class="btn-group">Отвори</router-link>
       </template>

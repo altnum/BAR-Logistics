@@ -10,6 +10,13 @@
       <template v-slot:cell(preview)="row">
         <router-link :to="{ name: 'ordersDetails', params: {order_id: row.item.order_id} }" class="btn-group">Отвори</router-link>
       </template>
+      <template v-slot:cell(user_id)="row">
+        {{ row.item.user_id.first_name }}
+        {{ row.item.user_id.last_name }}
+      </template>
+      <template v-slot:cell(price)="row">
+        {{ row.item.price }} лв.
+      </template>
     </b-table>
   </div>
 </template>
@@ -21,14 +28,15 @@ export default {
   name: 'Orders',
   data () {
     return {
-      result: [{ order_id: '', user_id: '', order_date: '', ship_date: '', status: '', preview: '' }],
+      result: [{ order_id: '', user_id: '', order_date: '', ship_date: '', status: '', preview: '', price: '' }],
       fields: [
         { key: 'order_id', label: 'Id' },
         { key: 'user_id', label: 'User' },
         { key: 'order_date', label: 'Order date' },
         { key: 'ship_date', label: 'Ship date' },
         { key: 'status', sortable: true, label: 'Status' },
-        { key: 'preview', label: 'Детайли' }
+        { key: 'preview', label: 'Детайли' },
+        { key: 'price', label: 'Събери' }
 
       ]
     }
