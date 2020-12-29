@@ -16,11 +16,12 @@ class OrdersService {
     })
   }
 
-  submitOrder (username, parts) {
+  submitOrder (username, parts, price) {
     return axios.post(API_URL + '/user/orders/save', null, {
       params: {
         username,
-        parts
+        parts,
+        price
       }
     })
   }

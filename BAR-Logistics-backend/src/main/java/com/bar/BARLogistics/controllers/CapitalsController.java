@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/test/all/capitals")
+@RequestMapping("/api/test")
 public class CapitalsController {
 
     private CapitalsRepository capitalsRepository;
@@ -22,12 +22,17 @@ public class CapitalsController {
         this.capitalsRepository = capitalsRepository;
     }
 
-    @GetMapping("/all")
+    @GetMapping("/all/capitals/all")
     public List<Capitals> getAllCapitals() {
         List<Capitals> capitals = capitalsRepository.findAll();
 
         capitals = capitals.stream().sorted(Comparator.comparing(Capitals::getName)).collect(Collectors.toList());
 
         return capitals;
+    }
+
+    @GetMapping("user/capitals/search")
+    public Capitals getCapitalByName(String name) {
+        return capitalsRepository.findCapitalsByName(name);
     }
 }

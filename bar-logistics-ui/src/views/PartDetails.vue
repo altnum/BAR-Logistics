@@ -11,13 +11,7 @@ export default {
   name: 'PartDetails',
   data () {
     return {
-      result:
-        {
-          part_num: '',
-          part_name: '',
-          price: '',
-          volume: ''
-        }
+      result: ''
     }
   },
   beforeRouteEnter (to, from, next) {

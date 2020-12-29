@@ -11,8 +11,16 @@ public class PartsLocations {
     @Column (name = "name")
     private String name;
 
-    @Column (name = "distance_from_bar")
-    private Integer distance_from_bar;
+    @Column (name = "distances_from_bar")
+    private Integer distances_from_bar;
+
+    public PartsLocations() {
+    }
+
+    public PartsLocations(String name, Integer distances_from_bar) {
+        this.name = name;
+        this.distances_from_bar = distances_from_bar;
+    }
 
     public String getName() {
         return name;
@@ -22,11 +30,11 @@ public class PartsLocations {
         this.name = name;
     }
 
-    public Integer getDistance_from_bar() {
-        return distance_from_bar;
+    public Integer getDistances_from_bar() {
+        return distances_from_bar;
     }
 
-    public void setDistance_from_bar(Integer distance_from_bar) {
-        this.distance_from_bar = distance_from_bar;
+    public void setDistances_from_bar(Integer distances_from_bar) {
+        this.distances_from_bar = distances_from_bar;
     }
 }

@@ -41,7 +41,7 @@ public class OrdersController {
     }
 
     @PostMapping("/user/orders/save")
-    public ResponseEntity<?> placeOrder(@RequestParam String username, @RequestParam String parts) {
+    public ResponseEntity<?> placeOrder(@RequestParam String username, @RequestParam String parts, @RequestParam String price) {
         String[] orderedParts = parts.split(",");
         Set<Parts> setToSave = new LinkedHashSet<>();
 
@@ -70,7 +70,7 @@ public class OrdersController {
 
         String status = "pending";
 
-        Orders orders = new Orders(users, date1, date2, status);
+        Orders orders = new Orders(users, date1, date2, status, Double.parseDouble(price));
 
         orders.setParts(listToAdd);
 
