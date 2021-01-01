@@ -6,7 +6,6 @@
     </div>
     <button class="btn" v-on:click="searchParts">Търси</button>
     <b-table class="table" id="partsTable" striped hover bordered
-             :dark="true"
              :items="result"
              :fields="fields"
              :current-page="currentPage">
