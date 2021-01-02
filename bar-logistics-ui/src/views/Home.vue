@@ -139,10 +139,11 @@
 }
 
 .t {
-  padding-top: 50px;
+
   padding-left: 40px;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
+  margin-top: 40px;
 }
 </style>
 <script>

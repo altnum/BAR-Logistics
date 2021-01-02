@@ -1,8 +1,9 @@
 <template>
   <div>
-    <h2>Cart: {{ countParts }}</h2>
+    <br/>
+    <h3>Cart: {{ countParts }} products added to cart</h3>
     <div v-if="countParts !== 0">
-      <router-link :to="{ name: 'cart' }" class="btn-group">Към количка</router-link>
+      <router-link :to="{ name: 'cart' }" class="buttonCart" type="button">Go to cart</router-link>
     </div>
     <button class="btn" v-on:click="searchParts">Търси</button>
     <b-table class="table" id="partsTable" striped hover bordered
@@ -108,5 +109,15 @@ export default {
 </script>
 
 <style scoped>
-
+.buttonCart {
+  background-color: mediumseagreen;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  width: 30%;
+}
 </style>

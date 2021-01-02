@@ -1,30 +1,32 @@
 <template>
   <div>
     <div v-if="this.cart.length === 0 && submittedOrder === false">
-      <h3>Количката е празна!</h3>
+      <h3>Your cart is empty!</h3>
     </div>
     <div v-else-if="submittedOrder === true">
-      <h3>Вашата поръчка е приета!</h3>
+      <h3>Your order is confirmed</h3>
     </div>
-    <router-link to="/parts" tag="button">Към продуктите</router-link>
+    <router-link to="/parts" tag="button" class="buttonCart" >Back to parts inventory</router-link>
     <div v-if="this.cart.length > 0 && submittedOrder === false">
-      <button class="btn" v-on:click="emptyCart">Изпразни количката</button>
-      <button class="btn" v-on:click="submitOrders">Потвърди поръчката</button>
+      <br/>
+      <button class="btn" v-on:click="emptyCart" type="button">Empty your cart</button>
+      <button class="btn" v-on:click="submitOrders">Confirm order</button>
     <b-table striped hover
-             :dark="true"
              :items="result"
              :fields="fields"
     >
       <template v-slot:cell(remove_element)="row">
-        <button class="btn" v-on:click="removeParts(row.item.part_num)">Премахни</button>
+        <button class="btn" v-on:click="removeParts(row.item.part_num)">Remove</button>
       </template>
     </b-table>
+      <div class="totalPrice">
       <div v-if="this.cart.length !== 0 && !submittedOrder">
-        Цена на частите: {{ this.partsPrice.toPrecision(3) }}
-        +
-        Цена на доставка: {{ this.deliveryPrice.toFixed(2) }}
-        =
-        Крайна цена: {{ this.overallPrice.toFixed(2) }}
+        Total price of the parts: <b>{{ this.partsPrice.toPrecision(3) }}</b> <br/>
+        + <br/>
+        Price for delivery: <b>{{ this.deliveryPrice.toFixed(2) }}</b> <br/>
+        = <br/>
+        Total price: <b>{{ this.overallPrice.toFixed(2) }}</b>
+      </div>
       </div>
     </div>
   </div>
@@ -145,5 +147,30 @@ export default {
 </script>
 
 <style scoped>
+.totalPrice {
+  font-size: 18px;
+}
+.buttonCart {
+  background-color: slategrey;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  width: 30%;
+  margin-top: 20px;
+}
 
+.btn {
+  background-color: slategrey;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+
+}
 </style>

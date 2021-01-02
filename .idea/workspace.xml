@@ -28,22 +28,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34c38314-6388-434e-bdd2-1e3ec6ae334b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/assets/autoParts.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/assets/cars.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/assets/cars1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/assets/cars2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/assets/download.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/assets/home-banner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/assets/logistics.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/assets/part-banner.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/assets/parts.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/assets/spareparts.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/assets/ttl_sp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/assets/accelerator.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/assets/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/assets/basketParts.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/BoardAdmin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/BoardAdmin.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Cart.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/PartDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/PartDetails.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Parts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Parts.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Profile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Profile.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +162,7 @@
       <workItem from="1609267116542" duration="11995000" />
       <workItem from="1609279262904" duration="4328000" />
       <workItem from="1609322890108" duration="16350000" />
-      <workItem from="1609517505838" duration="16498000" />
+      <workItem from="1609517505838" duration="27441000" />
     </task>
     <servers />
   </component>
