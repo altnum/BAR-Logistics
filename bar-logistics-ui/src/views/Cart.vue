@@ -6,10 +6,10 @@
     <div v-else-if="submittedOrder === true">
       <h3>Your order is confirmed</h3>
     </div>
-    <router-link to="/parts" tag="button" class="buttonCart" >Back to parts inventory</router-link>
+    <router-link to="/parts" tag="button" class="buttonCart" style="background-color: #4CAF50">Back to parts inventory</router-link>
     <div v-if="this.cart.length > 0 && submittedOrder === false">
       <br/>
-      <button class="btn" v-on:click="emptyCart" type="button">Empty your cart</button>
+      <button class="btn" v-on:click="emptyCart" type="button">Empty cart</button>
       <button class="btn" v-on:click="submitOrders">Confirm order</button>
     <b-table striped hover
              :items="result"
@@ -45,11 +45,11 @@ export default {
     return {
       result: [{ part_num: '', part_name: '', price: 0.0, location: { name: '', distances_from_bar: '' }, remove_element: '', volume: 0.0 }],
       fields: [
-        { key: 'part_num', label: 'Част №' },
-        { key: 'part_name', label: 'Част' },
-        { key: 'price', label: 'Цена' },
-        { key: 'location.name', label: 'На склад в' },
-        { key: 'remove_element', label: 'Премахни елемент' }
+        { key: 'part_num', label: 'Product №' },
+        { key: 'part_name', label: 'Product' },
+        { key: 'price', label: 'Price' },
+        { key: 'location.name', label: 'In stock in' },
+        { key: 'remove_element', label: 'Remove product' }
       ],
       submittedOrder: false,
       partsPrice: 0.0,
@@ -171,6 +171,13 @@ export default {
   padding: 5px 10px;
   margin-right: 5px;
   margin-bottom: 5px;
+}
 
+.totalPrice {
+  margin-left: 500px;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  font-size: 20px;
 }
 </style>

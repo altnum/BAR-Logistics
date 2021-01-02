@@ -1,33 +1,54 @@
 <template>
   <div class="container">
     <header class="jumbotron">
-      <h3>{{content}}</h3>
+      <h3>
+        <strong>Welcome, {{currentUser.first_name}} {{currentUser.last_name }}!</strong>
+      </h3>
     </header>
+    <img :src="user" width="500" alt="image" align="center"/>
+    <h3 class="profileInfo">Your profile info:</h3>
+    <div class="info">
+      <p>
+        <strong>Username:</strong>
+        <br/>
+        {{currentUser.username }}
+      </p>
+      <p>
+        <strong>Email:</strong>
+        <br/>
+        {{currentUser.email}}
+      </p>
+      <p>
+        <strong>Address:</strong>
+        <br/>
+        {{currentUser.address.name}}
+      </p>
+      <strong>User role:</strong>
+      <ul>
+        <li v-for="(role,index) in currentUser.roles" :key="index">{{role}}</li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
-import UserService from '../services/user.service'
-
+import user from '../assets/avatar.jpg'
 export default {
-  name: 'User',
   data () {
     return {
-      content: ''
+      user: user
+    }
+  },
+  name: 'Profile',
+  computed: {
+    currentUser () {
+      return this.$store.state.auth.user
     }
   },
   mounted () {
-    UserService.getUserBoard().then(
-      response => {
-        this.content = response.data
-      },
-      error => {
-        this.content =
-          (error.response && error.response.data) ||
-          error.message ||
-          error.toString()
-      }
-    )
+    if (!this.currentUser) {
+      this.$router.push('/login')
+    }
   }
 }
 </script>

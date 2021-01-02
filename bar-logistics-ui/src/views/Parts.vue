@@ -2,10 +2,12 @@
   <div>
     <br/>
     <h3>Cart: {{ countParts }} products added to cart</h3>
+    <div class="goToCart">
     <div v-if="countParts !== 0">
       <router-link :to="{ name: 'cart' }" class="buttonCart" type="button">Go to cart</router-link>
     </div>
-    <button class="btn" v-on:click="searchParts">Търси</button>
+    </div>
+    <button class="btn" v-on:click="searchParts">Search by filter</button>
     <b-table class="table" id="partsTable" striped hover bordered
              :items="result"
              :fields="fields"
@@ -119,5 +121,20 @@ export default {
   display: inline-block;
   font-size: 20px;
   width: 30%;
+}
+
+.btn {
+  background-color: slategrey;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+.goToCart{
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 </style>

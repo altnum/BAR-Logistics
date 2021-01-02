@@ -60,7 +60,7 @@
     <br />
 
     <br/>
-    <button class="button" @click="$router.push({name: 'parts', params: { id: 'abc123' },})">Click here to make your order now!</button>
+    <router-link to="/parts" tag="button" class="button">Click here to make your order now!</router-link>
     <br /><br />
   </div>
 </template>

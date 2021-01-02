@@ -4,7 +4,6 @@
       <h1>Orders</h1>
     </header>
     <b-table class="table" id="ordersTable" striped hover bordered
-             :dark="true"
              :items="result"
              :fields="fields">
       <template v-slot:cell(preview)="row">
