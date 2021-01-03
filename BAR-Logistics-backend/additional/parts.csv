@@ -1,171 +1,125 @@
-1111,accelerator,Plovdiv,1.1,20
-1112,air conditioner,Varna,1.1,20
-1115,air vent,Ruse,1.1,20
-1116,airbag,Burgas,1.1,20
-1117,alarm,Plovdiv,1.1,20
-1118,all-wheel drive,Varna,1.1,20
-1121,anti-lock brakes,Ruse,1.1,20
-1122,armrest,Burgas,1.1,20
-1123,auto,Plovdiv,1.1,20
-1124,automatic transmission,Varna,1.1,20
-1127,back-up lights,Ruse,1.1,20
-1128,battery,Burgas,1.1,20
-1129,bench seat,Plovdiv,1.1,20
-1130,bonnet,Varna,1.1,20
-1133,brakes,Ruse,1.1,20
-1134,bucket seat,Burgas,1.1,20
-1135,bumper,Plovdiv,1.1,20
-1136,camshaft,Varna,1.1,20
-1139,catalytic converter,Ruse,1.1,20
-1140,chassis,Burgas,1.1,20
-1141,chrome trim,Plovdiv,1.1,20
-1142,clutch,Varna,1.1,20
-1145,cooling system,Ruse,1.1,20
-1146,crankshaft,Burgas,1.1,20
-1147,cruise control,Plovdiv,1.1,20
-1148,cylinder,Varna,1.1,20
-1151,diesel engine,Ruse,1.1,20
-1152,differential,Burgas,1.1,20
-1153,dip stick,Plovdiv,1.1,20
-1154,door,Varna,1.1,20
-1157,drive shaft,Ruse,1.1,20
-1158,driver's seat,Burgas,1.1,20
-1159,emergency brake,Plovdiv,1.1,20
-1160,emergency lights,Varna,1.1,20
-1163,engine block,Ruse,1.1,20
-1164,exhaust pipe,Burgas,1.1,20
-1165,exhaust system,Plovdiv,1.1,20
-1166,fan belt,Varna,1.1,20
-1169,floor mat,Ruse,1.1,20
-1170,fog light,Burgas,1.1,20
-1171,four-wheel drive,Plovdiv,1.1,20
-1172,frame,Varna,1.1,20
-1175,fuse,Ruse,1.1,20
-1177,gas gauge,Plovdiv,1.1,20
-1178,gas pedal,Varna,1.1,20
-1181,gasoline,Ruse,1.1,20
-1182,gauge,Burgas,1.1,20
-1183,gear shift,Plovdiv,1.1,20
-1184,gear stick,Varna,1.1,20
-1187,GPS,Ruse,1.1,20
-1188,grille,Burgas,1.1,20
-1189,hand brake,Plovdiv,1.1,20
-1190,headlamp,Varna,1.1,20
-1193,heater,Ruse,1.1,20
-1194,high-beam headlights,Burgas,1.1,20
-1195,hood,Plovdiv,1.1,20
-1196,horn,Varna,1.1,20
-1199,ignition,Ruse,1.1,20
-1200,instrument panel,Burgas,1.1,20
-1201,interior light,Plovdiv,1.1,20
-1202,internal combustion engine,Varna,1.1,20
-1205,license plate,Ruse,1.1,20
-1206,lights,Burgas,1.1,20
-1207,lock,Plovdiv,1.1,20
-1208,low-beam headlights,Varna,1.1,20
-1211,manifold,Ruse,1.1,20
-1212,manual transmission,Burgas,1.1,20
-1213,mat,Plovdiv,1.1,20
-1214,mirror,Varna,1.1,20
-1217,mud flap,Ruse,1.1,20
-1218,muffler,Burgas,1.1,20
-1219,navigation system,Plovdiv,1.1,20
-1220,odometer,Varna,1.1,20
-1223,oil tank,Ruse,1.1,20
-1224,parking brake,Burgas,1.1,20
-1225,parking lights,Plovdiv,1.1,20
-1226,passenger seat,Varna,1.1,20
-1229,power brakes,Ruse,1.1,20
-1230,power steering,Burgas,1.1,20
-1231,power window switch,Plovdiv,1.1,20
-1232,radiator,Varna,1.1,20
-1235,rear window defroster,Ruse,1.1,20
-1236,rear-view mirror,Burgas,1.1,20
-1237,reverse light,Plovdiv,1.1,20
-1238,rims,Varna,1.1,20
-1241,rotary engine,Ruse,1.1,20
-1242,seat,Burgas,1.1,20
-1243,seat belt,Plovdiv,1.1,20
-1244,shift,Varna,1.1,20
-1247,side mirror,Ruse,1.1,20
-1248,spare tire,Burgas,1.1,20
-1249,spark plug,Plovdiv,1.1,20
-1250,speaker,Varna,1.1,20
-1253,starter,Ruse,1.1,20
-1254,steering column,Burgas,1.1,20
-1255,steering wheel,Plovdiv,1.1,20
-1256,sun visor,Varna,1.1,20
-1259,tachometer,Ruse,1.1,20
-1260,tailgate,Burgas,1.1,20
-1261,temperature gauge,Plovdiv,1.1,20
-1262,thermometer,Varna,1.1,20
-1265,transmission,Ruse,1.1,20
-1266,trim,Burgas,1.1,20
-1267,trip computer,Plovdiv,1.1,20
-1268,trunk,Varna,1.1,20
-1271,undercarriage,Ruse,1.1,20
-1272,unleaded gas,Burgas,1.1,20
-1273,valve,Plovdiv,1.1,20
-1274,vents,Varna,1.1,20
-1277,wheel,Ruse,1.1,20
-1278,wheel well,Burgas,1.1,20
-1279,window,Plovdiv,1.1,20
-1280,windshield,Varna,1.1,20
-1113,air conditioning,Sofia,1.1,20
-1114,air filter,Sofia,1.1,20
-1119,alternator,Sofia,1.1,20
-1120,antenna,Sofia,1.1,20
-1125,automobile,Sofia,1.1,20
-1126,axle,Sofia,1.1,20
-1131,brake light,Sofia,1.1,20
-1132,brake pedal,Sofia,1.1,20
-1137,car,Sofia,1.1,20
-1138,carburetor,Sofia,1.1,20
-1143,computer,Sofia,1.1,20
-1144,console,Sofia,1.1,20
-1149,dashboard,Sofia,1.1,20
-1150,defroster,Sofia,1.1,20
-1155,door handle,Sofia,1.1,20
-1156,drive belt,Sofia,1.1,20
-1161,emissions,Sofia,1.1,20
-1162,engine,Sofia,1.1,20
-1167,fender,Sofia,1.1,20
-1168,filter,Sofia,1.1,20
-1173,fuel cap,Sofia,1.1,20
-1174,fuel gauge,Sofia,1.1,20
-1176,gas,Sofia,1.1,20
-1179,gas tank,Sofia,1.1,20
-1180,gasket,Sofia,1.1,20
-1185,gearbox,Sofia,1.1,20
-1186,glove compartment,Sofia,1.1,20
-1191,headlight,Sofia,1.1,20
-1192,headrest,Sofia,1.1,20
-1197,hubcap,Sofia,1.1,20
-1198,hybrid,Sofia,1.1,20
-1203,jack,Sofia,1.1,20
-1204,key,Sofia,1.1,20
-1209,lug bolt,Sofia,1.1,20
-1210,lug nut,Sofia,1.1,20
-1215,moon roof,Sofia,1.1,20
-1216,motor,Sofia,1.1,20
-1221,oil,Sofia,1.1,20
-1222,oil filter,Sofia,1.1,20
-1227,pedal,Sofia,1.1,20
-1228,piston,Sofia,1.1,20
-1233,radio,Sofia,1.1,20
-1234,rag top,Sofia,1.1,20
-1239,roof,Sofia,1.1,20
-1240,roof rack,Sofia,1.1,20
-1245,shock absorber,Sofia,1.1,20
-1246,side airbags,Sofia,1.1,20
-1251,speedometer,Sofia,1.1,20
-1252,spoiler,Sofia,1.1,20
-1257,sunroof,Sofia,1.1,20
-1258,suspension,Sofia,1.1,20
-1263,tire,Sofia,1.1,20
-1264,trailer hitch,Sofia,1.1,20
-1269,turbo charger,Sofia,1.1,20
-1270,turn signal,Sofia,1.1,20
-1275,visor,Sofia,1.1,20
-1276,warning light,Sofia,1.1,20
-1281,windshield wiper,Sofia,1.1,20
+1111,Accelerator cable,Plovdiv,25,5
+1112,Air conditioner,Varna,360,30
+1115,Air vent,Ruse,35.5,15
+1116,Airbag,Burgas,60,12
+1117,Alarm,Plovdiv,125,18
+1118,All-wheel drive conversion kit,Varna,2250,125
+1121,Anti-lock brake kit,Ruse,1200,100
+1122,Armrest,Burgas,30,10
+1123,Shifter knob - Automatic,Plovdiv,30,5
+1124,Automatic transmission,Varna,4000,55
+1127,Back-up lights,Ruse,420,20
+1128,Battery,Burgas,198.8,15
+1129,Seats,Plovdiv,1200,200
+1130,Bonnet,Varna,200,60
+1133,Disc brakes,Ruse,600,20
+1134,Bucket seat,Burgas,400,35
+1135,Bumpers,Plovdiv,160,25
+1136,Camshaft,Varna,455,10
+1139,Catalytic converter,Ruse,2500,20
+1140,Chassis reinforcement kit,Burgas,1050.5,75
+1141,Chrome trim kit,Plovdiv,340.2,35
+1142,Clutch,Varna,400,25
+1145,Cooling system pipe kit,Ruse,780.33,80
+1146,Crankshaft,Burgas,800.99,35
+1147,Cruise control computer,Plovdiv,555,25
+1148,Cylinder Titanium sleeve,Varna,600,10
+1151,Diesel V8 Engine 666(ps),Ruse,20000,320
+1152,Differential,Burgas,4100,160
+1153,Dip stick,Plovdiv,15,5
+1154,Door,Varna,240,65
+1157,Drive shaft,Ruse,430,40
+1158,Driver seat,Burgas,350,50
+1159,Emergency brake Hydraulic,Plovdiv,240,10
+1160,Emergency lights,Varna,60,25
+1163,Engine block,Ruse,760,70
+1164,Exhaust pipe - Titanium,Burgas,400,35
+1165,Exhaust system - Titanium,Plovdiv,5000,200
+1166,Belts and Pulleys,Varna,350,45
+1169,Floor mats,Ruse,25,10
+1170,Fog light,Burgas,180,25
+1171,Off-road suspension kit,Plovdiv,3600,150
+1172,Off-road frame bars,Varna,2400,130
+1175,Fuses,Ruse,40,5
+1177,Fuel gauge,Plovdiv,60,5
+1178,Accelerator pedal,Varna,25,5
+1181,Race Fuel 5litre,Ruse,20,5
+1182,Gauge custom,Burgas,78.5,5
+1183,Gears Straight Cut,Plovdiv,1650,10
+1184,Gear stick mechanism,Varna,120,20
+1187,GPS,Ruse,450,15
+1188,Grille,Burgas,50,10
+1189,Hand brake,Plovdiv,40,10
+1190,Headlight Xenon,Varna,600,25
+1193,Heater core,Ruse,120,10
+1194,Headlight LED,Burgas,600,25
+1195,Hood vent kit,Plovdiv,250,15
+1196,Horn kit,Varna,150,25
+1199,Ignition keyless mod,Ruse,100,10
+1200,Dashboard ,Burgas,225,20
+1201,Interior lights,Plovdiv,20,5
+1202,Gasoline V6 Engine 700(ps),Varna,21000,300
+1205,License plate mount,Ruse,15,5
+1206,Light bulmbs,Burgas,40,5
+1207,Central locking mechanism,Plovdiv,150,10
+1208,Neon kit,Varna,1500,60
+1211,Manifold,Ruse,460,40
+1212,Manual transmission,Burgas,3500,55
+1213,Lugnuts,Plovdiv,50,10
+1214,Mirrors,Varna,320,20
+1217,Muffler Titanium,Ruse,480,20
+1218,Muffler Stainless,Burgas,320,20
+1219,Navigation ,Plovdiv,600,10
+1220,Fenders,Varna,360,50
+1223,Fuel Tank,Ruse,250,100
+1224,Brake Pads,Burgas,60,10
+1225,Brake Caliper,Plovdiv,420,20
+1226,Passenger seat,Varna,320,50
+1229,Master Cylinder,Ruse,420,10
+1230,Power steering kit,Burgas,2400,20
+1231,Power window motor,Plovdiv,50,5
+1232,Radiator,Varna,315,25
+1235,Rear window defroster relay,Ruse,20,5
+1236,Rear-view mirror,Burgas,45,5
+1237,Reverse light bulbs,Plovdiv,5,5
+1238,Wheels Custom x4,Varna,1555,55
+1241,Rotary Engine 2.6 240(ps),Ruse,6000,150
+1242,Seat,Burgas,200,35
+1243,Seat belt,Plovdiv,70,10
+1248,Spare tire,Burgas,100,10
+1249,Spark plug,Plovdiv,45,5
+1250,Speaker,Varna,180,10
+1253,Starter,Ruse,350,25
+1255,Steering wheel,Plovdiv,650,20
+1256,Sun visor,Varna,25,5
+1261,Temperature gauge,Plovdiv,25,5
+1267,Trip computer,Plovdiv,240,10
+1268,Trunk,Varna,260,10
+1273,Heater valve,Plovdiv,35,5
+1279,Window,Plovdiv,60,15
+1280,Windshield,Varna,200,50
+1113,Air conditionner,Sofia,670,30
+1114,Air filter,Sofia,20,5
+1119,?lternator,Sofia,400,10
+1120,?ntenna,Sofia,35,5
+1126,?xle,Sofia,455,15
+1132,Brake pedal,Sofia,25,5
+1138,Carburetor,Sofia,259,30
+1143,Computer,Sofia,550,10
+1155,Door handle,Sofia,25,5
+1168,Oil filter,Sofia,25,5
+1173,Fuel cap,Sofia,15,5
+1180,Gaskets,Sofia,125,5
+1192,Headrest,Sofia,40,10
+1221,Oil 5L,Sofia,45,5
+1228,Piston,Sofia,250,5
+1233,Radio,Sofia,260,10
+1240,Roof rack,Sofia,300,10
+1245,Shock absorber,Sofia,50,5
+1246,Side airbags,Sofia,25,5
+1252,Spoiler,Sofia,300,10
+1263,Tire,Sofia,180,10
+1264,Trailer hitch,Sofia,280,10
+1265,Super Charger,Sofia,650,10
+1269,Turbo charger,Sofia,600,5
+1281,Windshield wiper,Sofia,10,5
