@@ -18,11 +18,13 @@ import {
   faSignInAlt,
   faSignOutAlt
 } from '@fortawesome/free-solid-svg-icons'
+import ProgressBar from 'vuejs-progress-bar'
 
 library.add(faHome, faUser, faUserPlus, faSignInAlt, faSignOutAlt)
 
 Vue.config.productionTip = false
 
+Vue.use(ProgressBar)
 Vue.use(VeeValidate)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.component('b-pagination', BPagination)

@@ -7,6 +7,10 @@ import org.springframework.data.jpa.repository.Query;
 
 import javax.transaction.Transactional;
 
+import java.util.List;
+
+import static org.hibernate.loader.Loader.SELECT;
+
 
 public interface OrdersRepository extends JpaRepository<Orders, Integer> {
     @Transactional
@@ -18,4 +22,7 @@ public interface OrdersRepository extends JpaRepository<Orders, Integer> {
     @Modifying
     @Query("UPDATE Orders SET ship_date = :ship_date WHERE order_id = :orderId")
     void changeShipDate (Integer orderId, String ship_date);
+
+    @Query("SELECT o FROM Orders o WHERE o.user_id.id = :userId")
+    List<Orders> findCurrUserOrders (Long userId);
 }

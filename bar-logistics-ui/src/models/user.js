@@ -1,6 +1,7 @@
 export default class User {
   // eslint-disable-next-line camelcase
-  constructor (username, email, password, first_name, last_name, capitals) {
+  constructor (id, username, email, password, first_name, last_name, capitals) {
+    this.id = id
     this.username = username
     this.email = email
     this.password = password

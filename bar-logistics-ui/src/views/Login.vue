@@ -58,7 +58,7 @@ export default {
   name: 'Login',
   data () {
     return {
-      user: new User('', '', '', '', '', ''),
+      user: new User('', '', '', '', '', '', ''),
       loading: false,
       message: ''
     }

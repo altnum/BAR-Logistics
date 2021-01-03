@@ -16,6 +16,15 @@ class OrdersService {
     })
   }
 
+  // eslint-disable-next-line camelcase
+  getCurrUserOrders (userId) {
+    return axios.get(API_URL + '/user/orders/myorders', {
+      params: {
+        userId
+      }
+    })
+  }
+
   submitOrder (username, parts, price) {
     return axios.post(API_URL + '/user/orders/save', null, {
       params: {
@@ -28,6 +37,10 @@ class OrdersService {
 
   orderInProcess (orderId, vehicleId) {
     return axios.post(API_URL + '/admin/orders/adminSend', null, { params: { orderId, vehicleId } })
+  }
+
+  orderDelivered (orderId) {
+    return axios.post(API_URL + '/admin/orders/delivered', null, { params: { orderId } })
   }
 }
 
