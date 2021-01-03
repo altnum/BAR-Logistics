@@ -6,6 +6,10 @@ class VehicleService {
   getExample (volume) {
     return axios.get(API_URL + '/example', { params: { volume: volume } })
   }
+
+  getAvailableVehicles () {
+    return axios.get(API_URL + '/free')
+  }
 }
 
 export default new VehicleService()

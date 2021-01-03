@@ -36,4 +36,9 @@ public class VehicleController {
         return vehicle.get(0);
     }
 
+    @GetMapping("/free")
+    public List<VehicleInventory> getAvailableVehicles() {
+        return vehicleInventoryRepository.findVehicleInventoriesByAvailability();
+    }
+
 }

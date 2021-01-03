@@ -17,11 +17,22 @@
         {{ row.item.price }} лв.
       </template>
     </b-table>
+    <b-table class="table" id="vehiclesTable" striped hover bordered
+             :items="vehicleTable"
+             :fields="vehicleTableFields">
+      <template v-slot:cell(order_id1)="row">
+        <input v-model="row.item.order_id1" :placeholder="inputHolder">
+      </template>
+      <template v-slot:cell(confirm)="row">
+        <button class="btn" v-on:click="sendCurrOrder(row.item.order_id1, row.item.id)">Send</button>
+      </template>
+    </b-table>
   </div>
 </template>
 
 <script>
 import OrdersService from '../services/orders-service.js'
+import VehicleService from '../services/vehicle-service.js'
 
 export default {
   name: 'Orders',
@@ -37,21 +48,54 @@ export default {
         { key: 'preview', label: 'Детайли' },
         { key: 'price', label: 'Събери' }
 
-      ]
+      ],
+      vehicleTable: [{ id: '', type: '', order_id1: '', confirm: '' }],
+      vehicleTableFields: [
+        { key: 'type.type', label: 'Вид:' },
+        { key: 'order_id1', label: 'Поръчка ID:' },
+        { key: 'confirm', label: 'Потвърди' }
+      ],
+      inputHolder: 'Въведи ID'
     }
   },
   mounted () {
-    OrdersService.getAllOrders().then(
-      response => {
-        this.result = response.data
-      },
-      error => {
-        this.result =
-          (error.response && error.response.data) ||
-          error.message ||
-          error.toString()
+    this.loadOrders()
+    this.loadAvailableVehicles()
+  },
+  methods: {
+    loadOrders () {
+      OrdersService.getAllOrders().then(
+        response => {
+          this.result = response.data
+        },
+        error => {
+          this.result =
+            (error.response && error.response.data) ||
+            error.message ||
+            error.toString()
+        }
+      )
+    },
+    loadAvailableVehicles () {
+      VehicleService.getAvailableVehicles().then(
+        response => {
+          this.vehicleTable = response.data
+        },
+        error => {
+          this.vehicleTable =
+            (error.response && error.response.data) ||
+            error.message ||
+            error.toString()
+        }
+      )
+    },
+    sendCurrOrder (orderId, vehicleId) {
+      OrdersService.orderInProcess(orderId, vehicleId).then(response => {
+        this.loadOrders()
+        this.loadAvailableVehicles()
       }
-    )
+      )
+    }
   }
 }
 </script>

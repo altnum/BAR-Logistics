@@ -187,8 +187,7 @@ export default {
       this.addPrice()
     },
     submitOrders () {
-      OrdersService.submitOrder(JSON.parse(localStorage.getItem('user')).username.toString(), this.cart.toString(), this.overallPrice.toFixed(2)).then(response => {
-      })
+      OrdersService.submitOrder(JSON.parse(localStorage.getItem('user')).username.toString(), this.cart.toString(), this.overallPrice.toFixed(2))
       localStorage.removeItem('cart')
       this.result = []
       this.submittedOrder = true
