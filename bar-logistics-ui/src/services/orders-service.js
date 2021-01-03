@@ -25,6 +25,10 @@ class OrdersService {
       }
     })
   }
+
+  orderInProcess (orderId, vehicleId) {
+    return axios.post(API_URL + '/admin/orders/adminSend', null, { params: { orderId, vehicleId } })
+  }
 }
 
 export default new OrdersService()

@@ -1,16 +1,15 @@
 package com.bar.BARLogistics.controllers;
 
 import com.bar.BARLogistics.entities.*;
-import com.bar.BARLogistics.repositories.OrdersRepository;
-import com.bar.BARLogistics.repositories.Orders_partsRepository;
-import com.bar.BARLogistics.repositories.PartsRepository;
-import com.bar.BARLogistics.repositories.UserRepository;
+import com.bar.BARLogistics.repositories.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigInteger;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.*;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -22,12 +21,14 @@ public class OrdersController {
     private  Orders_partsRepository orders_partsRepository;
     private UserRepository userRepository;
     private PartsRepository partsRepository;
+    private VehicleInventoryRepository vehicleInventoryRepository;
 
-    public OrdersController(OrdersRepository ordersRepository, Orders_partsRepository orders_partsRepository, UserRepository userRepository, PartsRepository partsRepository) {
+    public OrdersController(OrdersRepository ordersRepository, Orders_partsRepository orders_partsRepository, UserRepository userRepository, PartsRepository partsRepository, VehicleInventoryRepository vehicleInventoryRepository) {
         this.ordersRepository = ordersRepository;
         this.orders_partsRepository = orders_partsRepository;
         this.userRepository = userRepository;
         this.partsRepository = partsRepository;
+        this.vehicleInventoryRepository = vehicleInventoryRepository;
     }
 
     @GetMapping("/admin/orders/all")
@@ -59,14 +60,18 @@ public class OrdersController {
 
         Users users = userRepository.findUserByUsername(username);
 
-        SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd");
-        Date date1 = new Date(System.currentTimeMillis());
-        System.out.println(formatter.format(date1));
+        String date1 = String.valueOf(LocalDateTime.now());
+        date1 = date1.replace("T", " ");
+        int toCutTo1 = date1.indexOf(".");
+        date1 = date1.substring(0, toCutTo1);
 
         //Изчисляване на деня на очакваната доставка
         List<Parts> listToAdd = new ArrayList<>(setToSave);
-        Date date2 = new Date(System.currentTimeMillis());
-        System.out.println(formatter.format(date2));
+
+        String date2 = String.valueOf(LocalDateTime.now());
+        date2 = date2.replace("T", " ");
+        int toCutTo2 = date2.indexOf(".");
+        date2 = date2.substring(0, toCutTo2);
 
         String status = "pending";
 
@@ -85,6 +90,23 @@ public class OrdersController {
         response.put("message", "Успешно направена поръчка!");
 
         return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @PostMapping("/admin/orders/adminSend")
+    public void sendOrder(@RequestParam Integer orderId, @RequestParam Integer vehicleId) throws ParseException {
+        if ("pending".equals(ordersRepository.findById(orderId).get().getStatus())) {
+            ordersRepository.changeStatus(orderId, "processing");
+            vehicleInventoryRepository.changeStatus(false, vehicleId);
+            Integer distance = ordersRepository.findById(orderId).get().getUser_id().getAddress().getDistance_from_bar();
+            Optional<VehicleInventory> vehicle = vehicleInventoryRepository.findById(vehicleId);
+
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String date = ordersRepository.findById(orderId).get().getOrder_date();
+            Date date1 = formatter.parse(date);
+
+            Date shipDate = new Date(date1.getTime() + 3600 * (distance / vehicle.get().getType().getAvg_speed() * 1000));
+            ordersRepository.changeShipDate(orderId, shipDate.toString());
+        }
     }
 
 }
