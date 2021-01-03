@@ -6,6 +6,12 @@
     <b-table class="table" id="ordersTable" striped hover bordered
              :items="result"
              :fields="fields">
+      <template v-slot:cell(ship_date)="row">
+        <div v-if="row.item.status !==  'pending'">
+          {{ row.item.ship_date }}
+        </div>
+        <div v-else>-----</div>
+      </template>
       <template v-slot:cell(preview)="row">
         <router-link :to="{ name: 'ordersDetails', params: {order_id: row.item.order_id} }" class="btn-group">Отвори</router-link>
       </template>

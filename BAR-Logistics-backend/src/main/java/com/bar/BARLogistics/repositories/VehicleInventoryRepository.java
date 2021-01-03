@@ -19,4 +19,14 @@ public interface VehicleInventoryRepository extends JpaRepository<VehicleInvento
     @Modifying
     @Query("UPDATE VehicleInventory SET availability = :availability WHERE id = :vehicleId")
     void changeStatus ( boolean availability, Integer vehicleId);
+
+    @Transactional
+    @Modifying
+    @Query("UPDATE VehicleInventory SET order_id = :order_id WHERE id = :vehicleId")
+    void attachOrder (Integer order_id, Integer vehicleId);
+
+    @Transactional
+    @Modifying
+    @Query("UPDATE VehicleInventory SET order_id = 0, availability = true  WHERE order_id = :order_id")
+    void freeToGo (Integer order_id);
 }

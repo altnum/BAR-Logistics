@@ -97,6 +97,7 @@ public class OrdersController {
         if ("pending".equals(ordersRepository.findById(orderId).get().getStatus())) {
             ordersRepository.changeStatus(orderId, "processing");
             vehicleInventoryRepository.changeStatus(false, vehicleId);
+            vehicleInventoryRepository.attachOrder(orderId, vehicleId);
             Integer distance = ordersRepository.findById(orderId).get().getUser_id().getAddress().getDistance_from_bar();
             Optional<VehicleInventory> vehicle = vehicleInventoryRepository.findById(vehicleId);
 
@@ -105,7 +106,21 @@ public class OrdersController {
             Date date1 = formatter.parse(date);
 
             Date shipDate = new Date(date1.getTime() + 3600 * (distance / vehicle.get().getType().getAvg_speed() * 1000));
-            ordersRepository.changeShipDate(orderId, shipDate.toString());
+
+            ordersRepository.changeShipDate(orderId, formatter.format(shipDate));
+        }
+    }
+
+    @GetMapping("user/orders/myorders")
+    public List<Orders> findCurrUserOrders(@RequestParam Integer userId) {
+        return ordersRepository.findCurrUserOrders(Long.valueOf(userId));
+    }
+
+    @PostMapping("/admin/orders/delivered")
+    public void deliverOrder (@RequestParam Integer orderId) {
+        if ("processing".equals(ordersRepository.findById(orderId).get().getStatus())) {
+            ordersRepository.changeStatus(orderId, "delivered");
+            vehicleInventoryRepository.freeToGo(orderId);
         }
     }
 
