@@ -23,10 +23,10 @@
         </td>
       </template>
       <template v-slot:cell(price)="row">
-        {{ row.item.price }} лв.
+        {{ row.item.price }}
       </template>
       <template v-slot:cell(preview)="row">
-        <router-link :to="{ name: 'partsDetails', params: {part_num: row.item.part_num} }" class="btn-group">Отвори</router-link>
+        <router-link :to="{ name: 'partsDetails', params: {part_num: row.item.part_num} }" class="btn-group">Open</router-link>
       </template>
       <template v-slot:cell(quantity)="row">
         <input v-model="row.item.quantity" type="number" min="1" placeholder="0">
@@ -58,7 +58,7 @@ export default {
       rows: '',
       perPage: 10,
       result: [{ part_num: '', part_name: '', price: '', preview: '', checkVal: false, quantity: '' }],
-      fields: [{ key: 'part_num', sortable: true, label: 'Част №' }, { key: 'part_name', sortable: true, label: 'Част' }, { key: 'price', sortable: true, label: 'Цена за Брой' }, { key: 'preview', label: 'Детайли' }, { key: 'quantity', label: 'Количество' }, { key: 'checkVal', label: 'Добави в Количка' }],
+      fields: [{ key: 'part_num', sortable: true, label: 'Product №' }, { key: 'part_name', sortable: true, label: 'Product' }, { key: 'price', sortable: true, label: 'Price in BGN' }, { key: 'preview', label: 'Details' }, { key: 'quantity', label: 'Quantity' }, { key: 'checkVal', label: 'Add to cart' }],
       filters: {
         part_num: '',
         part_name: ''

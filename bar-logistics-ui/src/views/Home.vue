@@ -12,7 +12,7 @@
       <div class="mainText">
         <i style="font-size:22px">With countless companies to choose from when it comes to sourcing auto parts, a
           dependable and timely inventory of parts and supplies is critical to
-          preventing customers from seeking alternative options, especially when they are in desperate
+          prevent customers from seeking alternative options, especially when they are in desperate
           need of parts to keep their vehicles moving. <br /> <b>BAR Logistics</b> specializes in distribution in
           Bulgaria and all over the world for car part delivery companies and other businesses in
           the automotive industry.</i>

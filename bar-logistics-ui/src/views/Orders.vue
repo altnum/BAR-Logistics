@@ -7,7 +7,7 @@
              :items="result"
              :fields="fields">
       <template v-slot:cell(preview)="row">
-        <router-link :to="{ name: 'ordersDetails', params: {order_id: row.item.order_id} }" class="btn-group">Отвори</router-link>
+        <router-link :to="{ name: 'ordersDetails', params: {order_id: row.item.order_id} }" class="btn-group">Open</router-link>
       </template>
       <template v-slot:cell(user_id)="row">
         {{ row.item.user_id.first_name }}
@@ -34,8 +34,8 @@ export default {
         { key: 'order_date', label: 'Order date' },
         { key: 'ship_date', label: 'Ship date' },
         { key: 'status', sortable: true, label: 'Status' },
-        { key: 'preview', label: 'Детайли' },
-        { key: 'price', label: 'Събери' }
+        { key: 'preview', label: 'Details' },
+        { key: 'price', label: 'Collect' }
 
       ]
     }

@@ -70,7 +70,4 @@ export default {
   text-align: left;
 }
 
-.info {
-  margin-bottom: 20px;
-}
 </style>

@@ -41,7 +41,7 @@
     <div v-if="this.cart.length > 0 && submittedOrder === false">
       <br/>
       <button class="btn" v-on:click="emptyCart" type="button">Empty cart</button>
-      <button class="btn" v-on:click="submitOrders">Confirm order</button>
+      <button class="btn" v-on:click="submitOrders" onclick="myFunction()">Confirm order</button>
     <b-table striped hover
              :items="result"
              :fields="fields"
@@ -113,8 +113,8 @@ export default {
   methods: {
     sendEmail (e) {
       try {
-        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target,
-          'YOUR_USER_ID', {
+        emailjs.sendForm('service_bar', 'template_yt6rx0v', e.target,
+          'user_KCM8XuWUwpKj18QxPwDec', {
             name: this.name,
             email: this.email,
             message: this.message
@@ -193,8 +193,12 @@ export default {
       this.result = []
       this.submittedOrder = true
     }
+  },
+  myFunction () {
+    emailjs.send('service_bar', 'template_yt6rx0v')
   }
 }
+
 </script>
 
 <style scoped>

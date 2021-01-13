@@ -28,12 +28,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34c38314-6388-434e-bdd2-1e3ec6ae334b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BAR-Logistics-backend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/OrdersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Cart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Profile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Profile.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Orders.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Orders.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/PartDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/PartDetails.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Parts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Parts.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +86,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.idesettings.emmet.jsx" />
@@ -146,7 +149,12 @@
       <workItem from="1609279262904" duration="4328000" />
       <workItem from="1609322890108" duration="16350000" />
       <workItem from="1609517505838" duration="28439000" />
-      <workItem from="1609602006387" duration="8345000" />
+      <workItem from="1609602006387" duration="12299000" />
+      <workItem from="1609624001063" duration="4837000" />
+      <workItem from="1609672450504" duration="1269000" />
+      <workItem from="1609754699110" duration="4896000" />
+      <workItem from="1609962136527" duration="391000" />
+      <workItem from="1610464685158" duration="1593000" />
     </task>
     <servers />
   </component>
