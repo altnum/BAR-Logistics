@@ -28,18 +28,67 @@
         <li v-for="(role,index) in currentUser.roles" :key="index">{{role}}</li>
       </ul>
     </div>
+    <div>
+      <strong>My orders:</strong>
+      <b-table class="table" id="myOrdersTABLE" striped hover bordered :items="result" :fields="fields">
+        <template v-slot:cell(ship_date)="row">
+          <div v-if="row.item.status !==  'pending'">
+            {{ row.item.ship_date }}
+          </div>
+          <div v-else>-----</div>
+        </template>
+        <template v-slot:cell(preview)="row">
+          <router-link :to="{ name: 'ordersDetails', params: {order_id: row.item.order_id} }" class="btn-group">Детайли</router-link>
+        </template>
+        <template v-slot:cell(progress)="row">
+          <progress-bar
+            :options="options"
+            :value="row.item.value"
+          />
+        </template>
+      </b-table>
+    </div>
   </div>
 </template>
 
 <script>
 import user from '../assets/avatar.jpg'
+import OrdersService from '../services/orders-service.js'
+
 export default {
+  name: 'Profile',
   data () {
     return {
+      options: {
+        text: {
+          color: '#FFFFFF',
+          shadowEnable: true,
+          shadowColor: '#000000',
+          fontSize: 14,
+          fontFamily: 'Helvetica',
+          dynamicPosition: false,
+          hideText: false
+        },
+        progress: {
+          color: '#2dbd2d',
+          backgroundColor: '#C0C0C0'
+        },
+        layout: {
+          height: 35,
+          width: 140,
+          verticalTextAlign: 61,
+          horizontalTextAlign: 43,
+          zeroOffset: 0,
+          strokeWidth: 30,
+          progressPadding: 0,
+          type: 'line'
+        }
+      },
+      result: [{ order_id: '', status: '', order_date: '', ship_date: '', price: '', preview: '', progress: '', value: 0 }],
+      fields: [{ key: 'order_id', label: '№ на поръчката' }, { key: 'ship_date', label: 'Дата на получаване' }, { key: 'price', sortable: true, label: 'Цена в лв.' }, { key: 'status', label: 'Статус' }, { key: 'preview', label: '' }, { key: 'progress', label: 'Изпълнена на (%):' }],
       user: user
     }
   },
-  name: 'Profile',
   computed: {
     currentUser () {
       return this.$store.state.auth.user
@@ -48,6 +97,54 @@ export default {
   mounted () {
     if (!this.currentUser) {
       this.$router.push('/login')
+    }
+    this.loadOrders(JSON.parse(localStorage.getItem('user')).id)
+  },
+  methods: {
+    loadOrders (userId) {
+      OrdersService.getCurrUserOrders(userId).then(response => {
+        for (let i = 0; i < response.data.length; i++) {
+          response.data[i].value = this.getPercentageCompletion(response.data[i].order_date, response.data[i].ship_date, response.data[i].order_id, response.data[i].status)
+        }
+        this.result = response.data
+      })
+    },
+    getPercentageCompletion (orderDate, shipDate, orderId, status) {
+      const currentDate = new Date()
+      shipDate = shipDate.replace(' ', 'T')
+      const shipD = new Date(shipDate)
+
+      orderDate = orderDate.replace(' ', 'T')
+      const orderD = new Date(orderDate)
+
+      var subs = 0
+      var orderDateMs = orderD.getTime()
+      var currDateMs = currentDate.getTime()
+      var shipDateMs = shipD.getTime()
+
+      if ((shipDateMs - currDateMs) >= 0 || shipDateMs === orderDateMs) {
+        if (status === 'processing') {
+          if ((shipDateMs - orderDateMs) > 0) {
+            subs = ((currDateMs - orderDateMs) * 100) / (shipDateMs - orderDateMs)
+          } else if ((shipDateMs - orderDateMs) === 0) {
+            OrdersService.orderDelivered(orderId)
+            return 100
+          }
+        } else if (status === 'pending') {
+          if ((shipDateMs - orderDateMs) > 0) {
+            subs = ((currDateMs - orderDateMs) * 100) / (shipDateMs - orderDateMs)
+          } else if ((shipDateMs - orderDateMs) === 0) {
+            return 0
+          }
+        } else if (status === 'delivered') {
+          return 100
+        }
+      } else {
+        OrdersService.orderDelivered(orderId)
+        return 100
+      }
+
+      return Math.round(subs)
     }
   }
 }

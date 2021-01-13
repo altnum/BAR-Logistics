@@ -52,7 +52,7 @@
     </b-table>
       <div class="totalPrice">
       <div v-if="this.cart.length !== 0 && !submittedOrder">
-        Total price of the parts: <b>{{ this.partsPrice.toPrecision(3) }}</b> <br/>
+        Total price of the parts: <b>{{ this.partsPrice.toFixed(3) }}</b> <br/>
         + <br/>
         Price for delivery: <b>{{ this.deliveryPrice.toFixed(2) }}</b> <br/>
         = <br/>
@@ -187,8 +187,7 @@ export default {
       this.addPrice()
     },
     submitOrders () {
-      OrdersService.submitOrder(JSON.parse(localStorage.getItem('user')).username.toString(), this.cart.toString(), this.overallPrice.toFixed(2)).then(response => {
-      })
+      OrdersService.submitOrder(JSON.parse(localStorage.getItem('user')).username.toString(), this.cart.toString(), this.overallPrice.toFixed(2))
       localStorage.removeItem('cart')
       this.result = []
       this.submittedOrder = true

@@ -16,10 +16,10 @@ public class Orders {
     private Users user_id;
 
     @Column(name = "order_date")
-    private Date order_date;
+    private String order_date;
 
     @Column(name = "ship_date")
-    private Date ship_date;
+    private String ship_date;
 
     @Column(name = "status")
     private String status;
@@ -34,7 +34,7 @@ public class Orders {
     public Orders() {
     }
 
-    public Orders(Users user, Date order_date, Date ship_date, String status, Double price) {
+    public Orders(Users user, String order_date, String ship_date, String status, Double price) {
         this.user_id = user;
         this.order_date = order_date;
         this.ship_date = ship_date;
@@ -66,19 +66,19 @@ public class Orders {
         this.user_id = user_id;
     }
 
-    public Date getOrder_date() {
+    public String getOrder_date() {
         return order_date;
     }
 
-    public void setOrder_date(Date order_date) {
+    public void setOrder_date(String order_date) {
         this.order_date = order_date;
     }
 
-    public Date getShip_date() {
+    public String getShip_date() {
         return ship_date;
     }
 
-    public void setShip_date(Date ship_date) {
+    public void setShip_date(String ship_date) {
         this.ship_date = ship_date;
     }
 
