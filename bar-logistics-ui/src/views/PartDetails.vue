@@ -19,7 +19,7 @@
     </div>
     <div class="info">
       <p>Distance from BAR Logistics center: <br/>
-        <b>{{ result.distance_from_bar }}</b></p>
+        <b>{{ result.location.distances_from_bar }} km.</b></p>
     </div>
     <div class="info">
       <p>Price of the product: <br/>
@@ -55,6 +55,7 @@ export default {
   methods: {
     setData (response) {
       this.result = response.data
+      console.log(this.result)
     }
   }
 }
