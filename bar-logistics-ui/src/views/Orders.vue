@@ -74,15 +74,12 @@ export default {
         { key: 'order_id1', label: 'Order ID:' },
         { key: 'confirm', label: 'Confirm' }
       ],
-<<<<<<< HEAD
-      inputHolder: 'Въведи ID',
+
+      inputHolder: 'Input ID',
       perPage: 10,
       currentPage: 1,
       rows: '',
       totalItems: ''
-=======
-      inputHolder: 'Input ID'
->>>>>>> 38828369c16afa02854a3eca6d556cbdd1625153
     }
   },
   mounted () {
@@ -90,8 +87,6 @@ export default {
     this.loadAvailableVehicles()
   },
   methods: {
-<<<<<<< HEAD
-=======
     async loadOrders () {
       const ordersResponse = await OrdersService.getAllOrders()
       var result = ordersResponse.data
@@ -101,7 +96,6 @@ export default {
       }
       this.result = result
     },
->>>>>>> 38828369c16afa02854a3eca6d556cbdd1625153
     loadAvailableVehicles () {
       VehicleService.getAvailableVehicles().then(
         response => {
@@ -132,20 +126,20 @@ export default {
       }
       )
     },
-    searchOrders () {
-      OrdersService.getOrdersPage(this.currentPage, this.perPage).then(
-        response => {
-          this.result = response.data.result
-          this.result.checkVal = false
-          this.result.quantity = 1
-          this.totalItems = response.data.totalItems
-          this.rows = this.totalItems
-          console.log(this.result)
-        },
-        error => {
-          this.result = (error.response && error.response.data) || error.message || error.toString()
-        }
-      )
+    async searchOrders () {
+      const searchOrdersResponse = await OrdersService.getOrdersPage(this.currentPage, this.perPage)
+      var result = searchOrdersResponse.data.result
+      this.result.checkVal = false
+      this.result.quantity = 1
+      this.totalItems = searchOrdersResponse.data.totalItems
+      this.rows = this.totalItems
+      console.log(this.result)
+
+      for (let index = 0; index < result.length; index++) {
+        const volumeResponse = await OrdersService.getOrderVolume(result[index].order_id)
+        result[index].volume = volumeResponse.data
+      }
+      this.result = result
     }
   }
 }
