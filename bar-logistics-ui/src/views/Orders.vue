@@ -86,6 +86,15 @@ export default {
       VehicleService.getAvailableVehicles().then(
         response => {
           var vehicleTable = response.data
+          for (let index = 0; index < vehicleTable.length; index++) {
+            if (vehicleTable[index].type.type === 'Van') {
+              vehicleTable[index].type.type = 'Van (Volume: 200)'
+            } else if (vehicleTable[index].type.type === 'MicroBus') {
+              vehicleTable[index].type.type = 'MicroBus (Volume: 500)'
+            } else if (vehicleTable[index].type.type === 'TIR') {
+              vehicleTable[index].type.type = 'TIR (Volume: 2500)'
+            }
+          }
           this.vehicleTable = vehicleTable
         },
         error => {
