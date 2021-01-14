@@ -1,5 +1,6 @@
 package com.bar.BARLogistics.controllers;
 
+import com.bar.BARLogistics.entities.Capitals;
 import com.bar.BARLogistics.entities.Parts;
 import com.bar.BARLogistics.entities.PartsLocations;
 import com.bar.BARLogistics.repositories.PartsLocationsRepository;
@@ -18,7 +19,7 @@ import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/test/user/parts")
+@RequestMapping("/api/test")
 public class PartsController {
 
     private  PartsRepository partsRepository;
@@ -31,12 +32,12 @@ public class PartsController {
         this.partsLocationsRepository = partsLocationsRepository;
     }
 
-    @GetMapping("/all")
+    @GetMapping("/user/parts/all")
     public List<Parts> getAllParts() {
         return partsRepository.findAll();
     }
 
-    @GetMapping("/search/part_name")
+    @GetMapping("/user/parts/search/part_name")
     public ResponseEntity<?> getPartByPart_name(@RequestParam(required = false) String part_name) {
         if (part_name == null || part_name.isBlank()) {
             return ResponseEntity.ok().body("Неправилни  критерии за намиране на частта!");
@@ -46,7 +47,7 @@ public class PartsController {
         return result.isPresent() ? ResponseEntity.ok(result.get()) : ResponseEntity.ok("Няма намерена част!");
     }
 
-    @GetMapping("/search/part_num")
+    @GetMapping("/user/parts/search/part_num")
     public ResponseEntity<?> getPartByPart_num(@RequestParam(required = false) BigInteger part_num) {
         if (part_num == null) {
             return ResponseEntity.ok().body("Неправилни  критерии за намиране на частта!");
@@ -56,13 +57,12 @@ public class PartsController {
         return result.isPresent() ? ResponseEntity.ok(result.get()) : ResponseEntity.ok("Няма намерена част!");
     }
 
-    @PostMapping("/save")
-    public ResponseEntity<?> savePart(@RequestParam(required = false) BigInteger part_num, String part_name, String location, Double price, Integer volume) {
-        boolean isNew = part_num == null;
+    @PostMapping("/admin/parts/save")
+    public ResponseEntity<?> savePart(String part_name, String location, Double price, Integer volume) {
 
         PartsLocations partsLocations = partsLocationsRepository.findPartsLocationsByName(location);
 
-        Parts part = new Parts(part_num, part_name, partsLocations, price, volume);
+        Parts part = new Parts(part_name, partsLocations, price, volume);
         part = partsRepository.save(part);
         Map<String, Object> response = new HashMap<>();
 
@@ -72,7 +72,7 @@ public class PartsController {
 
         response.put("Генериран номер на частта:", parts.get(0).getPart_num());
 
-        if (isNew) {
+        if (true) {
             response.put("message", "Частта е успешно записана!");
         } else {
             response.put("message", "Частта е успешно редактирана!");
@@ -80,7 +80,7 @@ public class PartsController {
 
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-    @GetMapping("/search/pages")
+    @GetMapping("/user/parts/search/pages")
     public ResponseEntity<?> paginateParts
             (@RequestParam(value = "currentPage", defaultValue = "1") int currentPage,
              @RequestParam(value = "perPage", defaultValue = "10") int perPage,
@@ -99,7 +99,7 @@ public class PartsController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @GetMapping("/cart")
+    @GetMapping("/user/parts/cart")
     public List<Parts> getCart
             (@RequestParam String shopList){
         String[] list = shopList.split(",");
@@ -112,6 +112,20 @@ public class PartsController {
 
 
         return partsList;
+    }
+
+    @PostMapping("/admin/parts/remove")
+    public void removePart (@RequestParam BigInteger part_num){
+        partsRepository.deleteById(part_num);
+    }
+
+    @GetMapping("/partslocation/all")
+    public List<PartsLocations> getAllCapitals() {
+        List<PartsLocations> locations = partsLocationsRepository.findAll();
+
+        locations = locations.stream().sorted(Comparator.comparing(PartsLocations::getName)).collect(Collectors.toList());
+
+        return locations;
     }
 
 }

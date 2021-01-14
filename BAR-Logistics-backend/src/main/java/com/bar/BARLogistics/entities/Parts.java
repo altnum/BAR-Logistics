@@ -32,8 +32,7 @@ public class Parts {
         this.part_num = part_num;
     }
 
-    public Parts(BigInteger part_num, String part_name, PartsLocations location, double price, Integer volume) {
-        this.part_num = part_num;
+    public Parts(String part_name, PartsLocations location, double price, Integer volume) {
         this.part_name = part_name;
         this.location = location;
         this.price = price;

@@ -5,7 +5,8 @@ import PartDetails from '../views/PartDetails.vue'
 import Cart from '../views/Cart.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
-import OrdersDetails from '@/views/OrdersDetails'
+import OrdersDetails from '../views/OrdersDetails'
+import EditParts from '../views/EditParts'
 
 Vue.use(VueRouter)
 
@@ -78,6 +79,11 @@ const routes = [
     name: 'user',
     // lazy-loaded
     component: () => import('../views/BoardUser.vue')
+  },
+  {
+    path: '/editparts',
+    name: 'editparts',
+    component: EditParts
   }
 ]
 

@@ -13,8 +13,12 @@
 
       </header>
         <span class="title1">View current orders:   </span><br/>
-        <router-link to="/orders" tag="button" class="button1">Orders</router-link>
+        <router-link to="/orders" tag="button" class="button1">Confirm Orders</router-link>
     </header>
+      <header>
+        <span class="title1">Add or Remove parts:   </span><br/>
+        <router-link to="/editparts" tag="button" class="button1">Edit Parts</router-link>
+      </header>
   </div>
 </template>
 
