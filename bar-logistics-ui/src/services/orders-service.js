@@ -17,6 +17,16 @@ class OrdersService {
   }
 
   // eslint-disable-next-line camelcase
+  getOrderVolume (order_id) {
+    return axios.get(API_URL + '/admin/orders/getordervolume', {
+      params: {
+        order_id
+      },
+      headers: { 'Access-Control-Allow-Origin': '*' }
+    })
+  }
+
+  // eslint-disable-next-line camelcase
   getCurrUserOrders (userId) {
     return axios.get(API_URL + '/user/orders/myorders', {
       params: {

@@ -23,6 +23,9 @@
       <template v-slot:cell(price)="row">
         {{ row.item.price }} лв.
       </template>
+      <template v-slot:cell(volume)="row">
+        {{ row.item.volume }}
+      </template>
     </b-table>
     <b-pagination
       v-model="currentPage"
@@ -53,7 +56,7 @@ export default {
   name: 'Orders',
   data () {
     return {
-      result: [{ order_id: '', user_id: '', order_date: '', ship_date: '', status: '', preview: '', price: '' }],
+      result: [{ order_id: '', user_id: '', order_date: '', ship_date: '', status: '', preview: '', price: '', volume: '' }],
       fields: [
         { key: 'order_id', label: 'Id' },
         { key: 'user_id', label: 'User' },
@@ -61,20 +64,25 @@ export default {
         { key: 'ship_date', label: 'Ship date' },
         { key: 'status', sortable: true, label: 'Status' },
         { key: 'preview', label: 'Details' },
-        { key: 'price', label: 'Collect' }
+        { key: 'price', label: 'Collect' },
+        { key: 'volume', label: 'Volume' }
 
       ],
       vehicleTable: [{ id: '', type: '', order_id1: '', confirm: '' }],
       vehicleTableFields: [
-        { key: 'type.type', label: 'Вид:' },
-        { key: 'order_id1', label: 'Поръчка ID:' },
-        { key: 'confirm', label: 'Потвърди' }
+        { key: 'type.type', sortable: true, label: 'Vehicle:' },
+        { key: 'order_id1', label: 'Order ID:' },
+        { key: 'confirm', label: 'Confirm' }
       ],
+<<<<<<< HEAD
       inputHolder: 'Въведи ID',
       perPage: 10,
       currentPage: 1,
       rows: '',
       totalItems: ''
+=======
+      inputHolder: 'Input ID'
+>>>>>>> 38828369c16afa02854a3eca6d556cbdd1625153
     }
   },
   mounted () {
@@ -82,10 +90,32 @@ export default {
     this.loadAvailableVehicles()
   },
   methods: {
+<<<<<<< HEAD
+=======
+    async loadOrders () {
+      const ordersResponse = await OrdersService.getAllOrders()
+      var result = ordersResponse.data
+      for (let index = 0; index < result.length; index++) {
+        const volumeResponse = await OrdersService.getOrderVolume(result[index].order_id)
+        result[index].volume = volumeResponse.data
+      }
+      this.result = result
+    },
+>>>>>>> 38828369c16afa02854a3eca6d556cbdd1625153
     loadAvailableVehicles () {
       VehicleService.getAvailableVehicles().then(
         response => {
-          this.vehicleTable = response.data
+          var vehicleTable = response.data
+          for (let index = 0; index < vehicleTable.length; index++) {
+            if (vehicleTable[index].type.type === 'Van') {
+              vehicleTable[index].type.type = 'Van (Volume: 200)'
+            } else if (vehicleTable[index].type.type === 'MicroBus') {
+              vehicleTable[index].type.type = 'MicroBus (Volume: 500)'
+            } else if (vehicleTable[index].type.type === 'TIR') {
+              vehicleTable[index].type.type = 'TIR (Volume: 2500)'
+            }
+          }
+          this.vehicleTable = vehicleTable
         },
         error => {
           this.vehicleTable =
