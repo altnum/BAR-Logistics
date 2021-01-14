@@ -4,7 +4,7 @@
       <h1 class="title">Product details</h1>
     </header>
     <img :src="basketParts" width="450" alt="image"/>
-    <div class="information">
+    <div class="information1">
    <div class="info">
      <p>Part number: <br/>
        <b>{{ result.part_num }}</b></p>
@@ -60,7 +60,7 @@ export default {
 }
 </script>
 <style>
-.information {
+.information1 {
   position: absolute;
   top: 50%;
   left: 55%;

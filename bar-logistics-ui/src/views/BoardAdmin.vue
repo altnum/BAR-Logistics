@@ -1,5 +1,6 @@
 <template>
   <div>
+  <div>
     <header>
       <br>
 
@@ -15,6 +16,38 @@
         <span class="title1">View current orders:   </span><br/>
         <router-link to="/orders" tag="button" class="button1">Orders</router-link>
     </header>
+  </div>
+  <div>
+    <template>
+      <div class="container">
+        <form>
+          <label>Name</label>
+          <input
+            type="text"
+            v-model="name"
+            name="name"
+            placeholder="Your Name"
+          >
+          <label>Email</label>
+          <input
+            type="email"
+            v-model="email"
+            name="email"
+            placeholder="Your Email"
+          >
+          <label>Message</label>
+          <textarea
+            name="message"
+            v-model="message"
+            cols="30" rows="5"
+            placeholder="Message">
+          </textarea>
+
+          <input type="submit" value="Send">
+        </form>
+      </div>
+    </template>
+  </div>
   </div>
 </template>
 
@@ -44,6 +77,40 @@ export default {
 }
 </script>
 
+<script>
+import emailjs from 'emailjs-com';
+
+export default {
+  name: 'ContactUs',
+  data() {
+    return {
+      name: '',
+      email: '',
+      message: ''
+    }
+  },
+  methods: {
+    sendEmail(e) {
+      try {
+        emailjs.sendForm('service_bar', 'template_yt6rx0v',
+          'user_KCM8XuWUwpKj18QxPwDec', {
+            name: this.name,
+            email: this.email,
+            message: this.message
+          })
+
+      } catch(error) {
+        console.log({error})
+      }
+      // Reset form field
+      this.name = ''
+      this.email = ''
+      this.message = ''
+    },
+  }
+}
+</script>
+
 <style>
 .title1 {
   font-size: 30px;
@@ -63,4 +130,5 @@ export default {
 .s {
   font-size: 20px;
 }
+
 </style>
