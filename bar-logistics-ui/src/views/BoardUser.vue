@@ -38,7 +38,7 @@
           <div v-else>-----</div>
         </template>
         <template v-slot:cell(preview)="row">
-          <router-link :to="{ name: 'ordersDetails', params: {order_id: row.item.order_id} }" class="btn-group">Детайли</router-link>
+          <router-link :to="{ name: 'ordersDetails', params: {order_id: row.item.order_id} }" class="btn-group">Details</router-link>
         </template>
         <template v-slot:cell(progress)="row">
           <progress-bar
@@ -85,7 +85,7 @@ export default {
         }
       },
       result: [{ order_id: '', status: '', order_date: '', ship_date: '', price: '', preview: '', progress: '', value: 0 }],
-      fields: [{ key: 'order_id', label: '№ на поръчката' }, { key: 'ship_date', label: 'Дата на получаване' }, { key: 'price', sortable: true, label: 'Цена в лв.' }, { key: 'status', label: 'Статус' }, { key: 'preview', label: '' }, { key: 'progress', label: 'Изпълнена на (%):' }],
+      fields: [{ key: 'order_id', label: 'Order №' }, { key: 'ship_date', label: 'Delivery Date' }, { key: 'price', sortable: true, label: 'Price in BGN' }, { key: 'status', label: 'Status' }, { key: 'preview', label: '' }, { key: 'progress', label: 'Progress (%):' }],
       user: user
     }
   },

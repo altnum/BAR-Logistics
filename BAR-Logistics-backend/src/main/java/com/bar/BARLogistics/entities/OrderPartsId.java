@@ -6,7 +6,8 @@ import javax.persistence.Embedded;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class OrderPartsId implements Serializable {
+public class
+OrderPartsId implements Serializable {
     private Integer order_id;
 
     private Integer part_id;

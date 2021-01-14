@@ -116,6 +116,20 @@ public class OrdersController {
         return ordersRepository.findCurrUserOrders(Long.valueOf(userId));
     }
 
+    @GetMapping("admin/orders/getordervolume")
+    public Integer returnOrdersWithVolume(@RequestParam Integer order_id) {
+        List<Orders_parts> calculateVolume;
+        calculateVolume = ordersRepository.getOrdersWithVolume(order_id);
+
+        int currentVolume = 0;
+
+        for (Orders_parts orders_parts : calculateVolume) {
+            Parts currentPart = partsRepository.findPartsByPart_num(BigInteger.valueOf(orders_parts.getPart_id()));
+            currentVolume += currentPart.getVolume() * orders_parts.getQuantity();
+        }
+        return  currentVolume;
+    }
+
     @PostMapping("/admin/orders/delivered")
     public void deliverOrder (@RequestParam Integer orderId) {
         if ("processing".equals(ordersRepository.findById(orderId).get().getStatus())) {

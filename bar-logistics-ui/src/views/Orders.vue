@@ -22,6 +22,9 @@
       <template v-slot:cell(price)="row">
         {{ row.item.price }} лв.
       </template>
+      <template v-slot:cell(volume)="row">
+        {{ row.item.volume }}
+      </template>
     </b-table>
     <b-table class="table" id="vehiclesTable" striped hover bordered
              :items="vehicleTable"
@@ -44,7 +47,7 @@ export default {
   name: 'Orders',
   data () {
     return {
-      result: [{ order_id: '', user_id: '', order_date: '', ship_date: '', status: '', preview: '', price: '' }],
+      result: [{ order_id: '', user_id: '', order_date: '', ship_date: '', status: '', preview: '', price: '', volume: '' }],
       fields: [
         { key: 'order_id', label: 'Id' },
         { key: 'user_id', label: 'User' },
@@ -52,16 +55,17 @@ export default {
         { key: 'ship_date', label: 'Ship date' },
         { key: 'status', sortable: true, label: 'Status' },
         { key: 'preview', label: 'Details' },
-        { key: 'price', label: 'Collect' }
+        { key: 'price', label: 'Collect' },
+        { key: 'volume', label: 'Volume' }
 
       ],
       vehicleTable: [{ id: '', type: '', order_id1: '', confirm: '' }],
       vehicleTableFields: [
-        { key: 'type.type', label: 'Вид:' },
-        { key: 'order_id1', label: 'Поръчка ID:' },
-        { key: 'confirm', label: 'Потвърди' }
+        { key: 'type.type', label: 'Vehicle:' },
+        { key: 'order_id1', label: 'Order ID:' },
+        { key: 'confirm', label: 'Confirm' }
       ],
-      inputHolder: 'Въведи ID'
+      inputHolder: 'Input ID'
     }
   },
   mounted () {
@@ -69,23 +73,20 @@ export default {
     this.loadAvailableVehicles()
   },
   methods: {
-    loadOrders () {
-      OrdersService.getAllOrders().then(
-        response => {
-          this.result = response.data
-        },
-        error => {
-          this.result =
-            (error.response && error.response.data) ||
-            error.message ||
-            error.toString()
-        }
-      )
+    async loadOrders () {
+      const ordersResponse = await OrdersService.getAllOrders()
+      var result = ordersResponse.data
+      for (let index = 0; index < result.length; index++) {
+        const volumeResponse = await OrdersService.getOrderVolume(result[index].order_id)
+        result[index].volume = volumeResponse.data
+      }
+      this.result = result
     },
     loadAvailableVehicles () {
       VehicleService.getAvailableVehicles().then(
         response => {
-          this.vehicleTable = response.data
+          var vehicleTable = response.data
+          this.vehicleTable = vehicleTable
         },
         error => {
           this.vehicleTable =
