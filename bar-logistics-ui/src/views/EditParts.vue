@@ -109,8 +109,9 @@ export default {
     },
     // eslint-disable-next-line camelcase
     addParts () {
-      console.log(this.newpart_volume)
-      PartsService.addPart(this.newpart_name, this.parts_locations.selectedOption, this.newpart_price, this.newpart_volume)
+      if (this.newpart_name !== '' && this.newpart_price !== '' && this.newpart_volume !== '') {
+        PartsService.addPart(this.newpart_name, this.parts_locations.selectedOption, this.newpart_price, this.newpart_volume)
+      }
       this.newpart_name = ''
       this.parts_locations.selectedOption = this.parts_locations.options[0]
       this.newpart_price = ''

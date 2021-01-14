@@ -58,7 +58,8 @@ public class PartsController {
     }
 
     @PostMapping("/admin/parts/save")
-    public ResponseEntity<?> savePart(String part_name, String location, Double price, Integer volume) {
+    public ResponseEntity<?> savePart(@RequestParam() String part_name, @RequestParam() String location,
+                                      @RequestParam() Double price, @RequestParam() Integer volume) {
 
         PartsLocations partsLocations = partsLocationsRepository.findPartsLocationsByName(location);
 
@@ -120,7 +121,7 @@ public class PartsController {
     }
 
     @GetMapping("/partslocation/all")
-    public List<PartsLocations> getAllCapitals() {
+    public List<PartsLocations> getAllCities() {
         List<PartsLocations> locations = partsLocationsRepository.findAll();
 
         locations = locations.stream().sorted(Comparator.comparing(PartsLocations::getName)).collect(Collectors.toList());
