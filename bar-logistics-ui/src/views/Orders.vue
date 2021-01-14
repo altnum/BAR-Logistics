@@ -61,7 +61,7 @@ export default {
       ],
       vehicleTable: [{ id: '', type: '', order_id1: '', confirm: '' }],
       vehicleTableFields: [
-        { key: 'type.type', label: 'Vehicle:' },
+        { key: 'type.type', sortable: true, label: 'Vehicle:' },
         { key: 'order_id1', label: 'Order ID:' },
         { key: 'confirm', label: 'Confirm' }
       ],
