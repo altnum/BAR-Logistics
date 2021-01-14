@@ -5,7 +5,8 @@
     </header>
     <b-table class="table" id="ordersTable" striped hover bordered
              :items="result"
-             :fields="fields">
+             :fields="fields"
+             :current-page="currentPage">
       <template v-slot:cell(ship_date)="row">
         <div v-if="row.item.status !==  'pending'">
           {{ row.item.ship_date }}
@@ -26,6 +27,14 @@
         {{ row.item.volume }}
       </template>
     </b-table>
+    <b-pagination
+      v-model="currentPage"
+      pills
+      :total-rows="rows"
+      :per-page="perPage"
+      @input="searchOrders"
+      aria-controls="ordersTable">
+    </b-pagination>
     <b-table class="table" id="vehiclesTable" striped hover bordered
              :items="vehicleTable"
              :fields="vehicleTableFields">
@@ -65,11 +74,15 @@ export default {
         { key: 'order_id1', label: 'Order ID:' },
         { key: 'confirm', label: 'Confirm' }
       ],
+      perPage: 10,
+      currentPage: 1,
+      rows: '',
+      totalItems: '',
       inputHolder: 'Input ID'
     }
   },
   mounted () {
-    this.loadOrders()
+    this.searchOrders()
     this.loadAvailableVehicles()
   },
   methods: {
@@ -107,9 +120,24 @@ export default {
     },
     sendCurrOrder (orderId, vehicleId) {
       OrdersService.orderInProcess(orderId, vehicleId).then(response => {
-        this.loadOrders()
+        this.searchOrders()
         this.loadAvailableVehicles()
       }
+      )
+    },
+    searchOrders () {
+      OrdersService.getOrdersPage(this.currentPage, this.perPage).then(
+        response => {
+          this.result = response.data.result
+          this.result.checkVal = false
+          this.result.quantity = 1
+          this.totalItems = response.data.totalItems
+          this.rows = this.totalItems
+          console.log(this.result)
+        },
+        error => {
+          this.result = (error.response && error.response.data) || error.message || error.toString()
+        }
       )
     }
   }

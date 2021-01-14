@@ -2,6 +2,9 @@ package com.bar.BARLogistics.controllers;
 
 import com.bar.BARLogistics.entities.*;
 import com.bar.BARLogistics.repositories.*;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -136,6 +139,23 @@ public class OrdersController {
             ordersRepository.changeStatus(orderId, "delivered");
             vehicleInventoryRepository.freeToGo(orderId);
         }
+    }
+
+    @GetMapping("/admin/orders/search/pages")
+    public ResponseEntity<?> paginateOrders
+            (@RequestParam(value = "currentPage", defaultValue = "1") int currentPage,
+             @RequestParam(value = "perPage", defaultValue = "10") int perPage){
+
+        Pageable pageable = PageRequest.of(currentPage -1, perPage);
+        Page<Orders> orders = ordersRepository.findPageOrders(pageable);
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("result", orders.getContent());
+        response.put("currentPage", orders.getNumber());
+        response.put("totalItems", orders.getTotalElements());
+        response.put("totalPages", orders.getTotalPages());
+
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
 }

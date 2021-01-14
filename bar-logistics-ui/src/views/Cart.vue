@@ -6,7 +6,7 @@
     <div v-else-if="submittedOrder === true">
       <h2 class="text">The order is confirmed!</h2>
       <router-link to="/parts" tag="button" class="buttonCart" style="background-color: #4CAF50" margin="20px">Back to parts inventory</router-link>
-      <template>
+<!--      <template>
         <div class="container">
           <h3>Send email to the customer:</h3>
           <form>
@@ -35,29 +35,29 @@
             <input type="submit" value="Send">
           </form>
         </div>
-      </template>
+      </template>-->
     </div>
 
     <div v-if="this.cart.length > 0 && submittedOrder === false">
       <br/>
       <button class="btn" v-on:click="emptyCart" type="button">Empty cart</button>
-      <button class="btn" v-on:click="submitOrders" onclick="myFunction()">Confirm order</button>
-    <b-table striped hover
-             :items="result"
-             :fields="fields"
-    >
-      <template v-slot:cell(remove_element)="row">
-        <button class="btn" v-on:click="removeParts(row.item.part_num)">Remove</button>
-      </template>
-    </b-table>
+      <button class="btn" v-on:click="submitOrders">Confirm order</button>
+      <b-table striped hover
+               :items="result"
+               :fields="fields"
+      >
+        <template v-slot:cell(remove_element)="row">
+          <button class="btn" v-on:click="removeParts(row.item.part_num)">Remove</button>
+        </template>
+      </b-table>
       <div class="totalPrice">
-      <div v-if="this.cart.length !== 0 && !submittedOrder">
-        Total price of the parts: <b>{{ this.partsPrice.toFixed(3) }}</b> <br/>
-        + <br/>
-        Price for delivery: <b>{{ this.deliveryPrice.toFixed(2) }}</b> <br/>
-        = <br/>
-        Total price: <b>{{ this.overallPrice.toFixed(2) }}</b>
-      </div>
+        <div v-if="this.cart.length !== 0 && !submittedOrder">
+          Total price of the parts: <b>{{ this.partsPrice.toFixed(2) }}</b> <br/>
+          + <br/>
+          Price for delivery: <b>{{ this.deliveryPrice.toFixed(2) }}</b> <br/>
+          = <br/>
+          Total price: <b>{{ this.overallPrice.toFixed(2) }}</b>
+        </div>
       </div>
     </div>
   </div>
