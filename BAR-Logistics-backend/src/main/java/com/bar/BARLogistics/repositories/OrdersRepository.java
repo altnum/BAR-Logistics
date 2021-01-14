@@ -34,4 +34,9 @@ public interface OrdersRepository extends JpaRepository<Orders, Integer> {
     @Query("SELECT o FROM Orders_parts o where o.order_id = :orderId")
     List<Orders_parts> getOrdersWithVolume (Integer orderId);
 
+    @Transactional
+    @Modifying
+    @Query("UPDATE Orders SET order_date = :order_date WHERE order_id = :orderId")
+    void changeOrderDate (Integer orderId, String order_date);
+
 }
