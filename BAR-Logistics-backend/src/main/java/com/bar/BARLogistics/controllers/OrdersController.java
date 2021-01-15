@@ -17,7 +17,7 @@ import java.util.*;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/test")
+@RequestMapping("/api")
 public class OrdersController {
 
     private  OrdersRepository ordersRepository;
