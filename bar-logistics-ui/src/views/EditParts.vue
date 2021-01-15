@@ -4,8 +4,7 @@
     <div class="addPart">
       <h3 class="title1">Add new part:</h3>
       <input type="text"  v-model="newpart_name" v-validate="'required|min:2|max:30'" name="pName"  placeholder="Choose part name">
-      <select v-for="location in parts_locations" v-model="parts_locations.selectedOption" :key="location.options.name" class="form-control" name="locations">
-        <option value="" disabled selected hidden>Select your option</option>
+      <select v-for="location in parts_locations" v-model="parts_locations.selectedOption" :key="location.options.name" class="select" name="locations">
         <option v-for="option in parts_locations.options" :value="option.name" :key="option.name">
           {{ option.name }}
         </option>
@@ -115,7 +114,7 @@ export default {
         PartsService.addPart(this.newpart_name, this.parts_locations.selectedOption, this.newpart_price, this.newpart_volume).then(
           response => {
             this.newpart_name = ''
-            this.parts_locations.selectedOption = this.parts_locations.options[0]
+            this.parts_locations.selectedOption = this.parts_locations.options[0].name
             this.newpart_price = ''
             this.newpart_volume = ''
             var temppartmessage = response.data.message
@@ -142,7 +141,7 @@ export default {
 input[type=text], select {
   width: 40%;
   padding: 15px 15px;
-  margin: 8px 10px;
+  margin: 10px 15px;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
