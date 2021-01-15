@@ -11,7 +11,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/test/user/vehicle")
+@RequestMapping("/api/user/vehicle")
 public class VehicleController {
 
     private VehicleInventoryRepository vehicleInventoryRepository;

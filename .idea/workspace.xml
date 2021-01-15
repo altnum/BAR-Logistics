@@ -28,23 +28,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34c38314-6388-434e-bdd2-1e3ec6ae334b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/EditParts.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/CapitalsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/CapitalsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/OrdersController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/entities/Parts.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/entities/Parts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/repositories/OrdersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/repositories/OrdersRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/VehicleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/VehicleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/services/capitals-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/capitals-service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/services/orders-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/orders-service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/services/parts-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/parts-service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/BoardAdmin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/BoardAdmin.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/BoardUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/BoardUser.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Cart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Orders.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Orders.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/OrdersDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/OrdersDetails.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/PartDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/PartDetails.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/services/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/user.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/services/vehicle-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/vehicle-service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,6 +178,8 @@
       <workItem from="1610646916815" duration="198000" />
       <workItem from="1610647303107" duration="15318000" />
       <workItem from="1610647303107" duration="2000000" />
+      <workItem from="1610733787159" duration="210000" />
+      <workItem from="1610735649516" duration="816000" />
     </task>
     <servers />
   </component>
@@ -204,6 +201,12 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
+  <component name="WindowStateProjectService">
+    <state x="2267" y="226" width="585" height="534" key="find.popup" timestamp="1610735965595">
+      <screen x="1920" y="0" width="1280" height="984" />
+    </state>
+    <state x="2267" y="226" width="585" height="534" key="find.popup/0.0.1536.824/1920.0.1280.984@1920.0.1280.984" timestamp="1610735965595" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -214,7 +217,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/OrdersController.java</url>
-          <line>48</line>
+          <line>51</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
