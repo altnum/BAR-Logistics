@@ -27,6 +27,16 @@ class OrdersService {
   }
 
   // eslint-disable-next-line camelcase
+  getOrderPartsPrice (part_id, quantity) {
+    return axios.get(API_URL + '/user/orders/getorderprice', {
+      params: {
+        part_id: part_id, quantity: quantity
+      },
+      headers: { 'Access-Control-Allow-Origin': '*' }
+    })
+  }
+
+  // eslint-disable-next-line camelcase
   getCurrUserOrders (userId) {
     return axios.get(API_URL + '/user/orders/myorders', {
       params: {

@@ -133,6 +133,14 @@ public class OrdersController {
         return  currentVolume;
     }
 
+    @GetMapping("user/orders/getorderprice")
+    public Double returnOrdersPartsPrice(@RequestParam BigInteger part_id, @RequestParam Integer quantity) {
+        Double calculatePrice;
+        calculatePrice = partsRepository.findPartsByPart_num(part_id).getPrice() * quantity;
+
+        return  calculatePrice;
+    }
+
     @PostMapping("/admin/orders/delivered")
     public void deliverOrder (@RequestParam Integer orderId) {
         if ("processing".equals(ordersRepository.findById(orderId).get().getStatus())) {
