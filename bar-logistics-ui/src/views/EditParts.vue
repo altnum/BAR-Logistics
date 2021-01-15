@@ -5,7 +5,6 @@
       <h3 class="title1">Add new part:</h3>
       <input type="text"  v-model="newpart_name" v-validate="'required|min:2|max:30'" name="pName"  placeholder="Choose part name">
       <select v-for="location in parts_locations" v-model="parts_locations.selectedOption" :key="location.options.name" class="form-control" name="locations">
-        <option value="" disabled selected hidden>Select your option</option>
         <option v-for="option in parts_locations.options" :value="option.name" :key="option.name">
           {{ option.name }}
         </option>
@@ -135,14 +134,13 @@ export default {
   margin-bottom: 10px;
 }
 
-input[type=text], select {
+input[type=text] {
   width: 40%;
   padding: 15px 15px;
   margin: 8px 10px;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box;
 }
 
 input[type=submit] {

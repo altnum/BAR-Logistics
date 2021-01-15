@@ -62,7 +62,6 @@
 <script>
 import user from '../assets/avatar.jpg'
 import OrdersService from '../services/orders-service.js'
-import PartsService from '../services/parts-service'
 
 export default {
   name: 'Profile',

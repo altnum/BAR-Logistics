@@ -28,6 +28,7 @@
       <li v-for="(role,index) in currentUser.roles" :key="index">{{role}}</li>
     </ul>
   </div>
+    <button class="btn" type="button">Edit profile</button>
   </div>
 </template>
 
@@ -67,5 +68,9 @@ export default {
   margin-right: auto;
   width: 50%;
   margin-bottom: 30px;
+}
+
+.btn {
+  background-color: green;
 }
 </style>

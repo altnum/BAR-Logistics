@@ -134,5 +134,4 @@ export default {
 .s {
   font-size: 20px;
 }
-
 </style>
