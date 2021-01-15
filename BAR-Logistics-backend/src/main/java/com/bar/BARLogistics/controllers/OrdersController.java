@@ -114,9 +114,27 @@ public class OrdersController {
         }
     }
 
-    @GetMapping("user/orders/myorders")
+    @GetMapping("user/orders/myyorders")
     public List<Orders> findCurrUserOrders(@RequestParam Integer userId) {
         return ordersRepository.findCurrUserOrders(Long.valueOf(userId));
+    }
+
+    @GetMapping("user/orders/myorders")
+    public ResponseEntity<?> paginateMyOrders
+            (@RequestParam(value = "currentPage", defaultValue = "1") int currentPage,
+             @RequestParam(value = "perPage", defaultValue = "5") int perPage,
+             @RequestParam Long userId){
+
+        Pageable pageable = PageRequest.of(currentPage -1, perPage);
+        Page<Orders> myOrders = ordersRepository.findMyPageOrders(pageable, userId);
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("result", myOrders.getContent());
+        response.put("currentPage", myOrders.getNumber());
+        response.put("totalItems", myOrders.getTotalElements());
+        response.put("totalPages", myOrders.getTotalPages());
+
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @GetMapping("admin/orders/getordervolume")

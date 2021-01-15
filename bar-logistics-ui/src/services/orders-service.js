@@ -42,9 +42,20 @@ class OrdersService {
 
   // eslint-disable-next-line camelcase
   getCurrUserOrders (userId) {
-    return axios.get(API_URL + '/user/orders/myorders', {
+    return axios.get(API_URL + '/user/orders/myyorders', {
       params: {
         userId
+      },
+      headers: authHeader()
+    })
+  }
+
+  paginateCurrUserOrders (currentPage, perPage, userId) {
+    return axios.get(API_URL + '/user/orders/myorders', {
+      params: {
+        currentPage: currentPage,
+        perPage: perPage,
+        userId: userId
       },
       headers: authHeader()
     })

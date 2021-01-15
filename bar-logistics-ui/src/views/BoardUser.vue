@@ -52,7 +52,7 @@
         pills
         :total-rows="rows"
         :per-page="perPage"
-        @input="searchMyOrdersTable"
+        @input="loadOrders"
         aria-controls="myOrdersTable">
       </b-pagination>
     </div>
@@ -94,7 +94,11 @@ export default {
       },
       result: [{ order_id: '', status: '', order_date: '', ship_date: '', price: '', preview: '', progress: '', value: 0 }],
       fields: [{ key: 'order_id', label: 'Order №' }, { key: 'ship_date', label: 'Delivery Date' }, { key: 'price', sortable: true, label: 'Price in BGN' }, { key: 'status', label: 'Status' }, { key: 'preview', label: '' }, { key: 'progress', label: 'Progress (%):' }],
-      user: user
+      user: user,
+      currentPage: 1,
+      perPage: 5,
+      totalItems: '',
+      rows: ''
     }
   },
   computed: {
@@ -106,16 +110,18 @@ export default {
     if (!this.currentUser) {
       this.$router.push('/login')
     }
-    this.loadOrders(JSON.parse(localStorage.getItem('user')).id)
+    this.loadOrders()
   },
   methods: {
-    loadOrders (userId) {
-      OrdersService.getCurrUserOrders(userId).then(response => {
-        for (let i = 0; i < response.data.length; i++) {
-          response.data[i].value = this.getPercentageCompletion(response.data[i].order_date, response.data[i].ship_date, response.data[i].order_id, response.data[i].status)
-        }
-        this.result = response.data
-      })
+    async loadOrders () {
+      const searchOrdersResponse = await OrdersService.paginateCurrUserOrders(this.currentPage, this.perPage, JSON.parse(localStorage.getItem('user')).id)
+      var result = searchOrdersResponse.data.result
+      this.totalItems = searchOrdersResponse.data.totalItems
+      this.rows = this.totalItems
+      for (let i = 0; i < result.length; i++) {
+        result[i].value = this.getPercentageCompletion(result[i].order_date, result[i].ship_date, result[i].order_id, result[i].status)
+      }
+      this.result = result
     },
     getPercentageCompletion (orderDate, shipDate, orderId, status) {
       const currentDate = new Date()
@@ -153,20 +159,6 @@ export default {
       }
 
       return Math.round(subs)
-    },
-    async searchMyOrders () {
-      const searchMyOrdersResponse = await OrdersService.getCurrUserOrders(this.currentPage, this.perPage)
-      var response = searchMyOrdersResponse.data.result
-      this.result = response.data.result
-      this.result.checkVal = false
-      this.result.quantity = 1
-      this.totalItems = searchMyOrdersResponse.data.totalItems
-      this.rows = this.totalItems
-
-      for (let i = 0; i < response.data.length; i++) {
-        response.data[i].value = this.getPercentageCompletion(response.data[i].order_date, response.data[i].ship_date, response.data[i].order_id, response.data[i].status)
-      }
-      this.result = response
     }
   }
 }

@@ -88,15 +88,6 @@ export default {
     this.loadAvailableVehicles()
   },
   methods: {
-    async loadOrders () {
-      const ordersResponse = await OrdersService.getAllOrders()
-      var result = ordersResponse.data
-      for (let index = 0; index < result.length; index++) {
-        const volumeResponse = await OrdersService.getOrderVolume(result[index].order_id)
-        result[index].volume = volumeResponse.data
-      }
-      this.result = result
-    },
     loadAvailableVehicles () {
       VehicleService.getAvailableVehicles().then(
         response => {
@@ -134,7 +125,6 @@ export default {
       this.result.quantity = 1
       this.totalItems = searchOrdersResponse.data.totalItems
       this.rows = this.totalItems
-      console.log(this.result)
 
       for (let index = 0; index < result.length; index++) {
         const volumeResponse = await OrdersService.getOrderVolume(result[index].order_id)
