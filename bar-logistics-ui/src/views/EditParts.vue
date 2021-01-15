@@ -110,13 +110,17 @@ export default {
     // eslint-disable-next-line camelcase
     addParts () {
       if (this.newpart_name !== '' && this.newpart_price !== '' && this.newpart_volume !== '') {
-        PartsService.addPart(this.newpart_name, this.parts_locations.selectedOption, this.newpart_price, this.newpart_volume)
+        PartsService.addPart(this.newpart_name, this.parts_locations.selectedOption, this.newpart_price, this.newpart_volume).then(
+          response => {
+            this.newpart_name = ''
+            this.parts_locations.selectedOption = this.parts_locations.options[0]
+            this.newpart_price = ''
+            this.newpart_volume = ''
+            var temppartmessage = response.data.message
+            setTimeout(function () { alert(temppartmessage) }, 100)
+            this.searchParts()
+          })
       }
-      this.newpart_name = ''
-      this.parts_locations.selectedOption = this.parts_locations.options[0]
-      this.newpart_price = ''
-      this.newpart_volume = ''
-      this.searchParts()
     }
   }
 }

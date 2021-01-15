@@ -71,12 +71,11 @@ public class PartsController {
         Parts finalPart = part;
         parts = parts.stream().filter(p -> p.getPart_num().equals(finalPart.getPart_num())).collect(Collectors.toList());
 
-        response.put("Генериран номер на частта:", parts.get(0).getPart_num());
 
-        if (true) {
-            response.put("message", "Частта е успешно записана!");
+        if (part.getPart_num() != null) {
+            response.put("message", "Part has been added!");
         } else {
-            response.put("message", "Частта е успешно редактирана!");
+            response.put("message", "Error! Part was not added!");
         }
 
         return new ResponseEntity<>(response, HttpStatus.OK);
