@@ -96,12 +96,16 @@ export default router
 router.beforeEach((to, from, next) => {
   const publicPages = ['/login', '/register', '/home', '/about', '/']
   const authRequired = !publicPages.includes(to.path)
+  // eslint-disable-next-line no-unused-vars
+  const adminPages = ['/orders', '/editparts', '/admin']
   const loggedIn = localStorage.getItem('user')
 
   // trying to access a restricted page + not logged in
   // redirect to login page
   if (authRequired && !loggedIn) {
     next('/login')
+  } else if (adminPages.includes(to.path) && loggedIn && JSON.parse(localStorage.getItem('user')).roles[0] !== 'ROLE_ADMIN') {
+    next('/home')
   } else {
     next()
   }

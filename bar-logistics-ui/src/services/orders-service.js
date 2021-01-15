@@ -1,10 +1,13 @@
 import axios from 'axios'
+import authHeader from '../services/auth-header'
 
 const API_URL = 'http://localhost:8080/api/test'
 
 class OrdersService {
   getAllOrders () {
-    return axios.get(API_URL + '/admin/orders/all')
+    return axios.get(API_URL + '/admin/orders/all', {
+      headers: authHeader()
+    })
   }
 
   // eslint-disable-next-line camelcase
@@ -12,7 +15,8 @@ class OrdersService {
     return axios.get(API_URL + '/admin/orders/all/detailed', {
       params: {
         order_id
-      }
+      },
+      headers: authHeader()
     })
   }
 
@@ -22,7 +26,7 @@ class OrdersService {
       params: {
         order_id
       },
-      headers: { 'Access-Control-Allow-Origin': '*' }
+      headers: authHeader()
     })
   }
 
@@ -32,7 +36,7 @@ class OrdersService {
       params: {
         part_id: part_id, quantity: quantity
       },
-      headers: { 'Access-Control-Allow-Origin': '*' }
+      headers: authHeader()
     })
   }
 
@@ -41,7 +45,8 @@ class OrdersService {
     return axios.get(API_URL + '/user/orders/myorders', {
       params: {
         userId
-      }
+      },
+      headers: authHeader()
     })
   }
 
@@ -51,20 +56,30 @@ class OrdersService {
         username,
         parts,
         price
-      }
+      },
+      headers: authHeader()
     })
   }
 
   orderInProcess (orderId, vehicleId) {
-    return axios.post(API_URL + '/admin/orders/adminSend', null, { params: { orderId, vehicleId } })
+    return axios.post(API_URL + '/admin/orders/adminSend', null, {
+      params: { orderId, vehicleId },
+      headers: authHeader()
+    })
   }
 
   orderDelivered (orderId) {
-    return axios.post(API_URL + '/admin/orders/delivered', null, { params: { orderId } })
+    return axios.post(API_URL + '/admin/orders/delivered', null, {
+      params: { orderId },
+      headers: authHeader()
+    })
   }
 
   getOrdersPage (currentPage, perPage) {
-    return axios.get(API_URL + '/admin/orders/search/pages', { params: { currentPage: currentPage, perPage: perPage }, headers: { 'Access-Control-Allow-Origin': '*' } })
+    return axios.get(API_URL + '/admin/orders/search/pages', {
+      params: { currentPage: currentPage, perPage: perPage },
+      headers: authHeader()
+    })
   }
 }
 
