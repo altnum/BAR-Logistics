@@ -1,15 +1,17 @@
 <template>
   <div>
     <br/>
-    <div>
-      <input type="text"  v-model="newpart_name" v-validate="'required|min:2|max:30'" name="pName"  placeholder="part_name">
+    <div class="addPart">
+      <h3 class="title1">Add new part:</h3>
+      <input type="text"  v-model="newpart_name" v-validate="'required|min:2|max:30'" name="pName"  placeholder="Choose part name">
       <select v-for="location in parts_locations" v-model="parts_locations.selectedOption" :key="location.options.name" class="form-control" name="locations">
+        <option value="" disabled selected hidden>Select your option</option>
         <option v-for="option in parts_locations.options" :value="option.name" :key="option.name">
           {{ option.name }}
         </option>
       </select>
-      <input type="text" v-model="newpart_price" v-validate="'required|min:1|max:30'" name="pPrice" placeholder="price">
-      <input type="text" v-model="newpart_volume" v-validate="'required|min:1|max:30'" name="pVolume" placeholder="volume">
+      <input type="text" v-model="newpart_price" v-validate="'required|min:1|max:30'" name="pPrice" placeholder="Choose price">
+      <input type="text" v-model="newpart_volume" v-validate="'required|min:1|max:30'" name="pVolume" placeholder="Choose volume">
       <button class="btn btn-success" v-on:click="addParts">Add</button>
     </div>
     <button class="btn" v-on:click="searchParts">Search by filter</button>
@@ -127,18 +129,6 @@ export default {
 </script>
 
 <style scoped>
-.buttonCart {
-  background-color: mediumseagreen;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  width: 30%;
-}
-
 .btn {
   background-color: slategrey;
   color: white;
@@ -149,4 +139,41 @@ export default {
   margin-bottom: 10px;
 }
 
+input[type=text], select {
+  width: 40%;
+  padding: 15px 15px;
+  margin: 8px 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px 30px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.addPart {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+location {
+  height: 20px;
+}
+title1 {
+  margin-left: 50px;
+}
 </style>

@@ -105,11 +105,11 @@ public class OrdersController {
             Optional<VehicleInventory> vehicle = vehicleInventoryRepository.findById(vehicleId);
 
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            String date = ordersRepository.findById(orderId).get().getOrder_date();
-            Date date1 = formatter.parse(date);
+            Date date = new Date(System.currentTimeMillis());
+            String date1 = formatter.format(date);
 
-            Date shipDate = new Date(date1.getTime() + 3600 * (distance / vehicle.get().getType().getAvg_speed() * 1000));
-
+            Date shipDate = new Date(date.getTime() + 3600 * (distance / vehicle.get().getType().getAvg_speed() * 1000));
+            ordersRepository.changeOrderDate(orderId, date1);
             ordersRepository.changeShipDate(orderId, formatter.format(shipDate));
         }
     }
