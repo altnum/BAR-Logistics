@@ -30,7 +30,7 @@
     </div>
     <div>
       <strong>My orders:</strong>
-      <b-table class="table" id="myOrdersTABLE" striped hover bordered :items="result" :fields="fields">
+      <b-table class="table" id="myOrdersTable" striped hover bordered :items="result" :fields="fields" :current-page="currentPage">
         <template v-slot:cell(ship_date)="row">
           <div v-if="row.item.status !==  'pending'">
             {{ row.item.ship_date }}
@@ -47,6 +47,14 @@
           />
         </template>
       </b-table>
+      <b-pagination
+        v-model="currentPage"
+        pills
+        :total-rows="rows"
+        :per-page="perPage"
+        @input="searchMyOrdersTable"
+        aria-controls="myOrdersTable">
+      </b-pagination>
     </div>
   </div>
 </template>
@@ -54,6 +62,7 @@
 <script>
 import user from '../assets/avatar.jpg'
 import OrdersService from '../services/orders-service.js'
+import PartsService from '../services/parts-service'
 
 export default {
   name: 'Profile',
@@ -145,6 +154,20 @@ export default {
       }
 
       return Math.round(subs)
+    },
+    async searchMyOrders () {
+      const searchMyOrdersResponse = await OrdersService.getCurrUserOrders(this.currentPage, this.perPage)
+      var response = searchMyOrdersResponse.data.result
+      this.result = response.data.result
+      this.result.checkVal = false
+      this.result.quantity = 1
+      this.totalItems = searchMyOrdersResponse.data.totalItems
+      this.rows = this.totalItems
+
+      for (let i = 0; i < response.data.length; i++) {
+        response.data[i].value = this.getPercentageCompletion(response.data[i].order_date, response.data[i].ship_date, response.data[i].order_id, response.data[i].status)
+      }
+      this.result = response
     }
   }
 }
