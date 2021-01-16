@@ -36,6 +36,11 @@ class PartsService {
   addPart (part_name, locations, part_price, part_volume) {
     return axios.post(API_URL + '/admin/parts/save', null, { params: { part_name: part_name, location: locations, price: part_price, volume: part_volume }, headers: authHeader() })
   }
+
+  // eslint-disable-next-line camelcase
+  editParts (part_num, part_name, locations, part_price, part_volume, pictureId) {
+    return axios.post(API_URL + '/admin/parts/edit', null, { params: { part_num: part_num, part_name: part_name, location: locations, price: part_price, volume: part_volume, picture: pictureId }, headers: authHeader() })
+  }
 }
 
 export default new PartsService()

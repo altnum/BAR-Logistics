@@ -34,7 +34,7 @@ public interface OrdersRepository extends JpaRepository<Orders, Integer> {
     @Query("SELECT o FROM Orders o WHERE o.user_id.id = :user_id")
     Page<Orders> findMyPageOrders(Pageable page, Long user_id);
 
-    @Query("SELECT o FROM Orders_parts o where o.order_id = :orderId")
+    @Query("SELECT o FROM Orders_parts o WHERE o.order_id = :orderId")
     List<Orders_parts> getOrdersWithVolume (Integer orderId);
 
     @Transactional

@@ -57,6 +57,7 @@
     </div>
     <button class="back" v-on:click="$router.go(-1)">Back</button>
     <button class="upload" v-on:click="attemptUpload">Upload</button>
+    <button class="save" v-on:click="editPart">Save</button>
     <template>
       <div class="pictureInputd">
         <picture-input
@@ -70,7 +71,7 @@
           buttonClass="btn"
           :customStrings="{
         upload: '<h1>Bummer!</h1>',
-        drag: 'Drag a ?? GIF or GTFO'
+        drag: 'Drag a GIF or GTFO'
       }">
         </picture-input>
       </div>
@@ -97,7 +98,8 @@ export default {
           selectedOption: '',
           selectedOptionIndex: ''
         }
-      ]
+      ],
+      imageId: ''
     }
   },
   beforeRouteEnter (to, from, next) {
@@ -120,14 +122,17 @@ export default {
 
       this.result = response.data
     },
-    onChange (image) {
+    async onChange (image) {
       console.log('New picture selected!')
       if (image) {
         console.log('Picture loaded.')
-        this.image = image
+        await this.changeImg(image)
       } else {
         console.log('FileReader API not supported: use the <form>, Luke!')
       }
+    },
+    changeImg (image) {
+      this.image = image
     },
     changeResultDistance () {
       for (let i = 0; i < this.parts_locations.options.length; i++) {
@@ -137,19 +142,22 @@ export default {
         }
       }
     },
-    attemptUpload () {
+    async attemptUpload () {
       if (this.image) {
-        FormDataPost('http://localhost:8080/api/admin/parts/picture', this.image)
+        const base64Response = await fetch(this.image)
+        const blob = await base64Response.blob()
+        FormDataPost('http://localhost:8080/api/admin/parts/picture', blob, 'file')
           .then(response => {
-            if (response.data.success) {
-              this.image = ''
-              console.log('Image uploaded successfully')
-            }
+            console.log(response.data)
+            this.imageId = response.data
           })
           .catch(err => {
             console.error(err)
           })
       }
+    },
+    editPart () {
+      PartsService.editParts(this.result.part_num, this.result.part_name, this.result.location.name, this.result.price, this.result.volume, this.imageId)
     }
   }
 }
