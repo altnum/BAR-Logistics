@@ -42,7 +42,7 @@ export default {
   name: 'PartDetails',
   data () {
     return {
-      result: [{ part_num: '', part_name: '', location: { name: '', distances_from_bar: '' }, price: '', volume: '' }],
+      result: '',
       image: basketParts
     }
   },
@@ -61,6 +61,7 @@ export default {
 }
 </script>
 <style>
+
 .information1 {
   position: absolute;
   top: 50%;
