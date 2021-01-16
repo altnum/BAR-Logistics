@@ -8,6 +8,7 @@ import com.bar.BARLogistics.repositories.PartsLocationsRepository;
 import com.bar.BARLogistics.repositories.PartsRepository;
 import com.bar.BARLogistics.repositories.PicturesRepository;
 import com.bar.BARLogistics.repositories.VehicleInventoryRepository;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -15,7 +16,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import javax.persistence.Lob;
+import javax.servlet.MultipartConfigElement;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.util.*;
@@ -23,9 +27,9 @@ import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
+@EnableWebMvc
 @RequestMapping("/api")
 public class PartsController {
-
     private  PartsRepository partsRepository;
     private  VehicleInventoryRepository vehicleInventoryRepository;
     private  PartsLocationsRepository partsLocationsRepository;
@@ -35,7 +39,7 @@ public class PartsController {
         this.partsRepository = partsRepository;
         this.vehicleInventoryRepository = vehicleInventoryRepository;
         this.partsLocationsRepository = partsLocationsRepository;
-        this.partsRepository = partsRepository;
+        this.picturesRepository = picturesRepository;
     }
 
     @GetMapping("/user/parts/all")
@@ -86,27 +90,35 @@ public class PartsController {
 
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
+
+    @PostMapping(value="/admin/parts/picture", consumes = "multipart/form-data")
+    public Integer savePicture(@RequestParam("file") MultipartFile file1) throws IOException {
+        String path = file1.getOriginalFilename();
+        String type = file1.getContentType();
+        byte[] img = file1.getBytes();
+
+        Pictures picture = new Pictures(path, type);
+
+        picture = picturesRepository.save(picture);
+
+        picturesRepository.setImg(picture.getId(), img);
+
+        return picture.getId();
+    }
+
     @PostMapping("/admin/parts/edit")
-    public ResponseEntity<?> savePart( Integer part_num,  String part_name, String location,
-                                       Double price,  Integer volume, @RequestParam(required = false) Integer picture) {
+    public ResponseEntity<?> savePart(BigInteger part_num,  String part_name, String location,
+                                      Double price,  Integer volume, @RequestParam(required = false) Integer picture) {
 
         Map<String, Object> response = new HashMap<>();
 
         try {
             partsRepository.changePartsData(part_num, part_name, location, price, volume, picture);
             response.put("message", "Part has been edited!");
-        }catch(Exception e){
+        } catch (Exception e) {
             response.put("message", "Error! Part was not edited!");
         }
-
-        return new ResponseEntity<>(response, HttpStatus.OK);
-    }
-    @PostMapping("/admin/parts/picture")
-    public ResponseEntity<?> savePicture(@RequestParam() MultipartFile file) throws IOException {
-
-        picturesRepository.setPicture(file.getOriginalFilename(), file.getContentType(), file.getBytes());
-
-        Map<String, Object> response = new HashMap<>();
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 

@@ -1,13 +1,11 @@
 package com.bar.BARLogistics.repositories;
 
 import com.bar.BARLogistics.entities.Parts;
-import org.apache.coyote.Response;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.http.ResponseEntity;
 
 import javax.transaction.Transactional;
 import java.math.BigInteger;
@@ -30,10 +28,10 @@ public interface PartsRepository extends JpaRepository<Parts, BigInteger> {
     @Modifying
     @Query("UPDATE Parts " +
             "SET part_name = :part_name, " +
-            " location = :location, " +
+            " location.name = :location, " +
             " price = :price, " +
             " volume = :volume, " +
-            " picture = :pictureid " +
+            " picture.id = :pictureid " +
             "WHERE part_num = :part_num")
-    void changePartsData (Integer part_num, String part_name, String location, Double price, Integer volume, Integer pictureid);
+    void changePartsData (BigInteger part_num, String part_name, String location, Double price, Integer volume, Integer pictureid);
 }
