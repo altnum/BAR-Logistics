@@ -3,7 +3,12 @@
     <header class="jumbotron">
       <h1 class="title">Product details</h1>
     </header>
-    <img :src="image" width="450" alt="image"/>
+    <div v-if="displayFile.img == null">
+      <img :src="image" width="450" alt="image"/>
+    </div>
+    <div v-else>
+      <img v-bind:src="'data:image/jpeg;base64, ' + displayFile.img" width="450" alt="image"/>
+    </div>
     <div class="information1">
       <div class="info">
         <p>Part number: <br/>
@@ -12,7 +17,7 @@
       <div class="info">
         <p>Name of the part: <br/></p>
         <input
-          v-model="result.part_name"
+          v-model="newpart_name"
           v-validate="'required'"
           type="text"
           class="form-control"
@@ -36,7 +41,7 @@
         <p>Price of the product:</p>
       </div>
       <input
-        v-model="result.price"
+        v-model="newpart_price"
         v-validate="'required'"
         type="text"
         class="form-control"
@@ -47,7 +52,7 @@
         <p>Volume:</p>
       </div>
       <input
-        v-model="result.volume"
+        v-model="newpart_volume"
         v-validate="'required'"
         type="text"
         class="form-control"
@@ -99,7 +104,16 @@ export default {
           selectedOptionIndex: ''
         }
       ],
-      imageId: ''
+      imageId: '',
+      displayFile: [{
+        id: '',
+        path: '',
+        type: '',
+        img: null
+      }],
+      newpart_name: '',
+      newpart_price: '',
+      newpart_volume: ''
     }
   },
   beforeRouteEnter (to, from, next) {
@@ -119,8 +133,15 @@ export default {
       const response2 = await PartsService.getPartsLocation()
       this.parts_locations.options = response2.data
       this.parts_locations.selectedOption = response.data.location.name
-
       this.result = response.data
+      this.newpart_name = this.result.part_name
+      this.newpart_price = this.result.price
+      this.newpart_volume = this.result.volume
+      if (this.result.picture) {
+        this.displayFile = this.result.picture
+      } else {
+        this.image = basketParts
+      }
     },
     async onChange (image) {
       console.log('New picture selected!')
@@ -157,7 +178,11 @@ export default {
       }
     },
     editPart () {
-      PartsService.editParts(this.result.part_num, this.result.part_name, this.result.location.name, this.result.price, this.result.volume, this.imageId)
+      PartsService.editParts(this.result.part_num, this.newpart_name, this.parts_locations.selectedOption, this.newpart_price, this.newpart_volume, this.imageId).then(response => {
+        var temppartmessage = response.data.message
+        setTimeout(function () { alert(temppartmessage) })
+        this.$router.push('editparts')
+      })
     }
   }
 }
@@ -184,6 +209,10 @@ export default {
 
 .upload {
   margin-left: 800px;
+}
+.save {
+  top: 30%;
+  margin-left: 200px;
 }
 
 </style>

@@ -3,7 +3,12 @@
     <header class="jumbotron">
       <h1 class="title">Product details</h1>
     </header>
-    <img :src="image" width="450" alt="image"/>
+    <div v-if="displayFile.img == null">
+      <img :src="image" width="450" alt="image"/>
+    </div>
+    <div v-else>
+      <img v-bind:src="'data:image/jpeg;base64, ' + displayFile.img" width="450" alt="image"/>
+    </div>
     <div class="information1">
    <div class="info">
      <p>Part number: <br/>
@@ -43,7 +48,13 @@ export default {
   data () {
     return {
       result: '',
-      image: basketParts
+      image: basketParts,
+      displayFile: [{
+        id: '',
+        path: '',
+        type: '',
+        img: null
+      }]
     }
   },
   beforeRouteEnter (to, from, next) {
@@ -56,6 +67,11 @@ export default {
   methods: {
     setData (response) {
       this.result = response.data
+      if (this.result.picture) {
+        this.displayFile = this.result.picture
+      } else {
+        this.image = basketParts
+      }
     }
   }
 }

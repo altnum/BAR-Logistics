@@ -3,7 +3,7 @@
     <br/>
     <div class="addPart">
       <h3 class="title1">Add new part:</h3>
-      <input type="text"  v-model="newpart_name" v-validate="'required|min:2|max:30'" name="pName"  placeholder="Choose part name">
+      <input type="text" v-model="newpart_name" v-validate="'required|min:2|max:30'" name="pName"  placeholder="Choose part name">
       <select v-for="location in parts_locations" v-model="parts_locations.selectedOption" :key="location.options.name" class="select" name="locations">
         <option v-for="option in parts_locations.options" :value="option.name" :key="option.name">
           {{ option.name }}
