@@ -27,7 +27,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34c38314-6388-434e-bdd2-1e3ec6ae334b" name="Default Changelist" comment="" />
+    <list default="true" id="34c38314-6388-434e-bdd2-1e3ec6ae334b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/repositories/PicturesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/repositories/PicturesRepository.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,10 +41,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
-        <option value="Class" />
         <option value="Vue Single File Component" />
         <option value="JavaScript File" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -167,7 +171,8 @@
       <workItem from="1610647303107" duration="2000000" />
       <workItem from="1610733787159" duration="210000" />
       <workItem from="1610735649516" duration="816000" />
-      <workItem from="1610801745782" duration="14771000" />
+      <workItem from="1610800971497" duration="9719000" />
+      <workItem from="1610812752792" duration="4373000" />
     </task>
     <servers />
   </component>
@@ -189,16 +194,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="2428" y="384" key="#ESLint" timestamp="1610815760045">
-      <screen x="1920" y="0" width="1280" height="984" />
-    </state>
-    <state x="2428" y="384" key="#ESLint/0.0.1536.824/1920.0.1280.984@1920.0.1280.984" timestamp="1610815760045" />
-    <state x="2267" y="226" width="585" height="534" key="find.popup" timestamp="1610735965595">
-      <screen x="1920" y="0" width="1280" height="984" />
-    </state>
-    <state x="2267" y="226" width="585" height="534" key="find.popup/0.0.1536.824/1920.0.1280.984@1920.0.1280.984" timestamp="1610735965595" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -206,11 +201,6 @@
           <url>file://$PROJECT_DIR$/bar-logistics-ui/src/views/Parts.vue</url>
           <line>6</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/OrdersController.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/security/jwt/JwtUtils.java</url>

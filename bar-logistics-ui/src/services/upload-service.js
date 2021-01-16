@@ -5,8 +5,6 @@ export default function (url, file, name = 'avatar') {
     throw new TypeError(`Expected a string, got ${typeof url}`)
   }
 
-  // You can add checks to ensure the url is valid, if you wish
-
   const formData = new FormData()
   formData.append(name, file)
   const config = {

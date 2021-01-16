@@ -39,7 +39,6 @@ export default {
       for (let index = 0; index < currResult.length; index++) {
         var currentPrice = await OrdersService.getOrderPartsPrice(currResult[index].part_id, currResult[index].quantity)
         currResult[index].price = currentPrice.data
-        console.log(currentPrice.data)
       }
       this.result = currResult
     }
