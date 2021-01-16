@@ -3,7 +3,7 @@
     <header class="jumbotron">
       <h1 class="title">Product details</h1>
     </header>
-    <img :src="basketParts" width="450" alt="image"/>
+    <img :src="image" width="450" alt="image"/>
     <div class="information1">
    <div class="info">
      <p>Part number: <br/>
@@ -30,6 +30,7 @@
       <b>{{ result.volume }}</b></p>
     </div>
     </div>
+    <button class="btn" v-on:click="$router.go(-1)">Back</button>
   </div>
 </template>
 
@@ -41,8 +42,8 @@ export default {
   name: 'PartDetails',
   data () {
     return {
-      result: '',
-      basketParts: basketParts
+      result: [{ part_num: '', part_name: '', location: { name: '', distances_from_bar: '' }, price: '', volume: '' }],
+      image: basketParts
     }
   },
   beforeRouteEnter (to, from, next) {
@@ -55,7 +56,6 @@ export default {
   methods: {
     setData (response) {
       this.result = response.data
-      console.log(this.result)
     }
   }
 }

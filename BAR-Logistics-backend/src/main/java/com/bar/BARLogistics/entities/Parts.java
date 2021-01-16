@@ -25,18 +25,19 @@ public class Parts {
     @Column(name = "volume")
     private Integer volume;
 
+    @ManyToOne
+    @JoinColumn(name = "picture")
+    private Pictures picture;
+
     public Parts() {
     }
 
-    public Parts(BigInteger part_num) {
-        this.part_num = part_num;
-    }
-
-    public Parts(String part_name, PartsLocations location, double price, Integer volume) {
+    public Parts(String part_name, PartsLocations location, double price, Integer volume, Pictures picture) {
         this.part_name = part_name;
         this.location = location;
         this.price = price;
         this.volume = volume;
+        this.picture = picture;
     }
 
     public BigInteger getPart_num() {
@@ -77,5 +78,13 @@ public class Parts {
 
     public void setVolume(Integer volume) {
         this.volume = volume;
+    }
+
+    public Pictures getPicture() {
+        return picture;
+    }
+
+    public void setPicture(Pictures picture) {
+        this.picture = picture;
     }
 }

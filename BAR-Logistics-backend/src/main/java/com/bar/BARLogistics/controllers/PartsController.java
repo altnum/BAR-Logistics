@@ -3,8 +3,10 @@ package com.bar.BARLogistics.controllers;
 import com.bar.BARLogistics.entities.Capitals;
 import com.bar.BARLogistics.entities.Parts;
 import com.bar.BARLogistics.entities.PartsLocations;
+import com.bar.BARLogistics.entities.Pictures;
 import com.bar.BARLogistics.repositories.PartsLocationsRepository;
 import com.bar.BARLogistics.repositories.PartsRepository;
+import com.bar.BARLogistics.repositories.PicturesRepository;
 import com.bar.BARLogistics.repositories.VehicleInventoryRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -25,11 +27,13 @@ public class PartsController {
     private  PartsRepository partsRepository;
     private  VehicleInventoryRepository vehicleInventoryRepository;
     private  PartsLocationsRepository partsLocationsRepository;
+    private PicturesRepository picturesRepository;
 
-    public PartsController(PartsRepository partsRepository, VehicleInventoryRepository vehicleInventoryRepository, PartsLocationsRepository partsLocationsRepository) {
+    public PartsController(PartsRepository partsRepository, VehicleInventoryRepository vehicleInventoryRepository, PartsLocationsRepository partsLocationsRepository, PicturesRepository picturesRepository) {
         this.partsRepository = partsRepository;
         this.vehicleInventoryRepository = vehicleInventoryRepository;
         this.partsLocationsRepository = partsLocationsRepository;
+        this.partsRepository = partsRepository;
     }
 
     @GetMapping("/user/parts/all")
@@ -63,7 +67,7 @@ public class PartsController {
 
         PartsLocations partsLocations = partsLocationsRepository.findPartsLocationsByName(location);
 
-        Parts part = new Parts(part_name, partsLocations, price, volume);
+        Parts part = new Parts(part_name, partsLocations, price, volume, null);
         part = partsRepository.save(part);
         Map<String, Object> response = new HashMap<>();
 
@@ -80,6 +84,30 @@ public class PartsController {
 
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+    @PostMapping("/admin/parts/edit")
+    public ResponseEntity<?> savePart(@RequestParam() String part_name, @RequestParam() String location,
+                                      @RequestParam() Double price, @RequestParam() Integer volume, @RequestParam(required = false) Pictures picture) {
+
+        PartsLocations partsLocations = partsLocationsRepository.findPartsLocationsByName(location);
+
+        Parts part = new Parts(part_name, partsLocations, price, volume, picture);
+        part = partsRepository.save(part);
+        Map<String, Object> response = new HashMap<>();
+
+        List<Parts> parts = partsRepository.findAll();
+        Parts finalPart = part;
+        parts = parts.stream().filter(p -> p.getPart_num().equals(finalPart.getPart_num())).collect(Collectors.toList());
+
+
+        if (part.getPart_num() != null) {
+            response.put("message", "Part has been edited!");
+        } else {
+            response.put("message", "Error! Part was not edited!");
+        }
+
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
     @GetMapping("/user/parts/search/pages")
     public ResponseEntity<?> paginateParts
             (@RequestParam(value = "currentPage", defaultValue = "1") int currentPage,

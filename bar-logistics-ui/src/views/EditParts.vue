@@ -32,7 +32,7 @@
         {{ row.item.price }}
       </template>
       <template v-slot:cell(preview)="row">
-        <router-link :to="{ name: 'partsDetails', params: {part_num: row.item.part_num} }" class="btn-group">Open</router-link>
+        <router-link :to="{ name: 'admineditpartdetails', params: {part_num: row.item.part_num} }" class="btn-group">Edit</router-link>
       </template>
       <template v-slot:cell(remove)="row">
         <button class="btn btn-danger"

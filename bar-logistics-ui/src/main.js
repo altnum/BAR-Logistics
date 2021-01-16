@@ -19,6 +19,7 @@ import {
   faSignOutAlt
 } from '@fortawesome/free-solid-svg-icons'
 import ProgressBar from 'vuejs-progress-bar'
+import PictureInput from 'vue-picture-input'
 
 library.add(faHome, faUser, faUserPlus, faSignInAlt, faSignOutAlt)
 
@@ -26,6 +27,7 @@ Vue.config.productionTip = false
 
 Vue.use(ProgressBar)
 Vue.use(VeeValidate)
+Vue.use(PictureInput)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.component('b-pagination', BPagination)
 Vue.component('b-table', BTable)
