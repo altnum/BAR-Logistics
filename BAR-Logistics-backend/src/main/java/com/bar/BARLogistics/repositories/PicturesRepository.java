@@ -14,6 +14,6 @@ public interface PicturesRepository extends JpaRepository<Pictures, Integer> {
 
     @Transactional
     @Modifying
-    @Query("UPDATE Pictures SET path = :path WHERE type = :type AND img = :img")
-    void setPicture(String path, String type, byte[] img);
+    @Query("UPDATE Pictures SET img = :img WHERE id = :pictureId")
+    void setImg (Integer pictureId, byte[] img);
 }

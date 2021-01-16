@@ -1,6 +1,7 @@
 package com.bar.BARLogistics.entities;
 
 import org.hibernate.annotations.Type;
+import org.hibernate.type.BinaryType;
 
 import javax.persistence.*;
 
@@ -18,18 +19,23 @@ public class Pictures {
     @Column(name = "type")
     private String type;
 
-    @Lob //large object type
+    @Lob
+    @Type(type="org.hibernate.type.BinaryType")
     @Column(name = "img")
     private byte[] img;
 
     public Pictures() {
     }
 
-    public Pictures(Integer id, String path, String type, byte[] img) {
-        this.id = id;
+    public Pictures(String path, String type, byte[] img) {
         this.path = path;
         this.type = type;
         this.img = img;
+    }
+
+    public Pictures(String path, String type) {
+        this.path = path;
+        this.type = type;
     }
 
     public Integer getId() {
