@@ -87,23 +87,15 @@ public class PartsController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
     @PostMapping("/admin/parts/edit")
-    public ResponseEntity<?> savePart(@RequestParam() String part_name, @RequestParam() String location,
-                                      @RequestParam() Double price, @RequestParam() Integer volume, @RequestParam(required = false) Pictures picture) {
+    public ResponseEntity<?> savePart( Integer part_num,  String part_name, String location,
+                                       Double price,  Integer volume, @RequestParam(required = false) Integer picture) {
 
-        PartsLocations partsLocations = partsLocationsRepository.findPartsLocationsByName(location);
-
-        Parts part = new Parts(part_name, partsLocations, price, volume, picture);
-        part = partsRepository.save(part);
         Map<String, Object> response = new HashMap<>();
 
-        List<Parts> parts = partsRepository.findAll();
-        Parts finalPart = part;
-        parts = parts.stream().filter(p -> p.getPart_num().equals(finalPart.getPart_num())).collect(Collectors.toList());
-
-
-        if (part.getPart_num() != null) {
+        try {
+            partsRepository.changePartsData(part_num, part_name, location, price, volume, picture);
             response.put("message", "Part has been edited!");
-        } else {
+        }catch(Exception e){
             response.put("message", "Error! Part was not edited!");
         }
 
