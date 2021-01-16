@@ -104,8 +104,6 @@ public class PartsController {
 
         picturesRepository.setImg(picture.getId(), img);
 
-        //byte[] pCheck = picturesRepository.findPicturesBy(picture.getId()).getImg();
-
         return picture.getId();
     }
 
@@ -115,10 +113,10 @@ public class PartsController {
 
         Map<String, Object> response = new HashMap<>();
 
-        try {
+        if (part_num != null && part_name != "" && location != null && price != null && volume != null) {
             partsRepository.changePartsData(part_num, part_name, location, price, volume, picture);
             response.put("message", "Part has been edited!");
-        } catch (Exception e) {
+        } else {
             response.put("message", "Error! Part was not edited!");
         }
         return new ResponseEntity<>(response, HttpStatus.OK);
