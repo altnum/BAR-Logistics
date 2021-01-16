@@ -14,7 +14,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.math.BigInteger;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -105,6 +107,14 @@ public class PartsController {
             response.put("message", "Error! Part was not edited!");
         }
 
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+    @PostMapping("/admin/parts/picture")
+    public ResponseEntity<?> savePicture(@RequestParam() MultipartFile file) throws IOException {
+
+        picturesRepository.setPicture(file.getOriginalFilename(), file.getContentType(), file.getBytes());
+
+        Map<String, Object> response = new HashMap<>();
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 

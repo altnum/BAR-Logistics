@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import javax.transaction.Transactional;
 
 public interface PicturesRepository extends JpaRepository<Pictures, Integer> {
+
     @Query("SELECT p FROM Pictures p WHERE p.id = :id")
     Pictures findPicturesBy(Integer id);
 
