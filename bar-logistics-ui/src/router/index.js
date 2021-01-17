@@ -108,7 +108,6 @@ export default router
 router.beforeEach((to, from, next) => {
   const publicPages = ['/login', '/register', '/home', '/about', '/']
   const authRequired = !publicPages.includes(to.path)
-  // eslint-disable-next-line no-unused-vars
   const adminPages = ['/orders', '/editparts', '/admin', '/admineditpartdetails']
   const loggedIn = localStorage.getItem('user')
 

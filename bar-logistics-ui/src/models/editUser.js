@@ -3,8 +3,8 @@ export default class EditUser {
     this.id = id
     this.username = username
     this.email = email
-    this.firstname = firstname
-    this.lastname = lastname
+    this.first_name = firstname
+    this.last_name = lastname
     this.address = address
   }
 }

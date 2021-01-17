@@ -14,7 +14,7 @@
         <b><label for="currentUser">Edit current username:</label></b><br/>
         <input type="text"
           v-model="newUsername"
-          v-validate="'required|min:6|max:40'"
+          v-validate="'required|min:3|max:40'"
           class="form-control"
           name="currentUser"
           :placeholder="this.currentUsername"
@@ -24,7 +24,7 @@
       <input
         type="email"
         v-model="newEmail"
-        v-validate="'required|min:6|max:40'"
+        v-validate="'required|min:3|max:40'"
         class="form-control"
         name="currentEmail"
         :placeholder="this.currentEmail"
@@ -39,7 +39,7 @@
       <b><label for="currentUser">Edit current first name:</label></b><br/>
       <input type="text"
              v-model="newFirstName"
-             v-validate="'required|min:6|max:40'"
+             v-validate="'required|min:3|max:40'"
              class="form-control"
              name="currentFirstName"
              :placeholder="this.currentFirstName"
@@ -48,7 +48,7 @@
       <b><label for="currentUser">Edit current last name:</label></b><br/>
       <input type="text"
              v-model="newLastName"
-             v-validate="'required|min:6|max:40'"
+             v-validate="'required|min:3|max:40'"
              class="form-control"
              name="currentLastName"
              :placeholder="this.currentLastName"
@@ -82,6 +82,8 @@ export default {
       currentUsername: '',
       currentEmail: '',
       currentAddress: '',
+      currentLastName: '',
+      currentFirstName: '',
       capitals: [
         {
           options: [],
@@ -129,12 +131,14 @@ export default {
 
           this.$store.dispatch('auth/editProfile', this.user1).then(
             data => {
-              this.message = data.message
+              setTimeout(function () { alert(data) }, 800)
               this.successful = true
+              this.$store.dispatch('auth/logout')
+              this.$router.push('/').catch(() => {})
             },
             error => {
               this.message =
-                (error.response && error.response.data.message) ||
+                (error.response && error.response.data) ||
               error.message ||
               error.toString()
               this.successful = false
