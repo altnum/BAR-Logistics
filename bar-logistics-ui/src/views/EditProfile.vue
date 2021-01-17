@@ -7,8 +7,11 @@
     </header>
     <img :src="user" width="500" alt="image" align="center" class="imageUser"/>
     <h3 class="profileInfo">Your profile info:</h3> <br/>
+
+    <form name="editProfile" @submit.prevent="saveProfile">
+    <div v-if="!successful">
     <div class="info">
-        <b><label for="currentUser">Current username:</label></b><br/>
+        <b><label for="currentUser">Edit current username:</label></b><br/>
         <input type="text"
           v-model="newUsername"
           v-validate="'required|min:6|max:40'"
@@ -16,29 +19,53 @@
           name="currentUser"
           :placeholder="this.currentUsername"
         /><br/>
-      <b><label>Current email:</label></b><br/>
-      <input type="text"
+      <div v-if="submitted && errors.has('currentUser')" class="alert-danger">{{errors.first('currentUser')}}</div>
+      <b><label>Edit current email:</label></b><br/>
+      <input
+        type="email"
         v-model="newEmail"
         v-validate="'required|min:6|max:40'"
         class="form-control"
         name="currentEmail"
         :placeholder="this.currentEmail"
       /><br/>
-      <b><label for="address">Current address:</label></b><br/>
-      <select v-for="capital in capitals" v-model="newAddress" :key="capital.options.name" class="form-control" name="address">
+      <div v-if="submitted && errors.has('currentEmail')" class="alert-danger">{{errors.first('currentEmail')}}</div>
+      <b><label for="address">Edit current address:</label></b><br/>
+      <select v-for="capital in capitals" v-model="capitals.selectedOption" :key="capital.options.name" class="form-control" name="address">
         <option v-for="option in capitals.options" :value="option.name" :key="option.name" class="form-control" name="selectedCapital">
           {{option.name}}
         </option>
       </select>
+      <b><label for="currentUser">Edit current first name:</label></b><br/>
+      <input type="text"
+             v-model="newFirstName"
+             v-validate="'required|min:6|max:40'"
+             class="form-control"
+             name="currentFirstName"
+             :placeholder="this.currentFirstName"
+      /><br/>
+      <div v-if="submitted && errors.has('currentFirstName')" class="alert-danger">{{errors.first('currentFirstName')}}</div>
+      <b><label for="currentUser">Edit current last name:</label></b><br/>
+      <input type="text"
+             v-model="newLastName"
+             v-validate="'required|min:6|max:40'"
+             class="form-control"
+             name="currentLastName"
+             :placeholder="this.currentLastName"
+      /><br/>
+      <div v-if="submitted && errors.has('currentLastName')" class="alert-danger">{{errors.first('currentLastName')}}</div>
       <button class="btn btn-success" v-on:click="saveProfile">Save</button>
     </div>
+    </div>
+    </form>
+<div v-if="message" class="alert" :class="successful ? 'alert-success': 'alert-danger'">{{message}}</div>
   </div>
 </template>
 
 <script>
 import user from '../assets/avatar.jpg'
 import CapitalsService from '../services/capitals-service'
-import UserService from '../services/user.service'
+import EditUser from '../models/editUser'
 export default {
   beforeRouteEnter (to, from, next) {
     CapitalsService.getAllCapitals(to.params.name).then(
@@ -63,7 +90,13 @@ export default {
       ],
       newUsername: '',
       newEmail: '',
-      newAddress: ''
+      newAddress: '',
+      newFirstName: '',
+      newLastName: '',
+      message: '',
+      submitted: false,
+      successful: false,
+      user1: new EditUser('', '', '', '', '', '')
     }
   },
   name: 'EditProfile',
@@ -76,24 +109,38 @@ export default {
     setData (response) {
       this.capitals.options = response.data
       this.capitals.selectedOption = JSON.parse(localStorage.getItem('user')).address.name
+      this.newUsername = JSON.parse(localStorage.getItem('user')).username
+      this.newEmail = JSON.parse(localStorage.getItem('user')).email
+      this.newFirstName = JSON.parse(localStorage.getItem('user')).first_name
+      this.newLastName = JSON.parse(localStorage.getItem('user')).last_name
     },
     saveProfile () {
-      console.log(user.id)
-      console.log('bbb' + this.newUsername)
-      console.log('aaaaa' + this.newAddress)
-      if (this.newUsername !== '' || this.newUsername !== '') {
-        UserService.saveProfile(this.newUsername,
-          this.newEmail, this.newAddress).then(
-          response => {
-            this.newUsername = ''
-            this.newEmail = ''
-            this.newAddress = ''
-            var message = response.data.message
-            console.log('aaaaa' + response)
-            setTimeout(function () { alert(message) }, 200)
-            this.getUserBoard()
-          })
-      }
+      this.message = ''
+      this.submitted = true
+      this.$validator.validate().then(isValid => {
+        if (isValid) {
+          var id = JSON.parse(localStorage.getItem('user')).id
+          this.user1.id = id.toString()
+          this.user1.username = this.newUsername
+          this.user1.email = this.newEmail
+          this.user1.address = this.capitals.selectedOption
+          this.user1.first_name = this.newFirstName
+          this.user1.last_name = this.newLastName
+
+          this.$store.dispatch('auth/editProfile', this.user1).then(
+            data => {
+              this.message = data.message
+              this.successful = true
+            },
+            error => {
+              this.message =
+                (error.response && error.response.data.message) ||
+              error.message ||
+              error.toString()
+              this.successful = false
+            })
+        }
+      })
     }
   },
   mounted () {

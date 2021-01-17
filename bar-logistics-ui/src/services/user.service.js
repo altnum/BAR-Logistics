@@ -16,8 +16,8 @@ class UserService {
     return axios.get(API_URL + 'admin', { headers: authHeader() })
   }
 
-  saveProfile (username, email, address) {
-    return axios.post(API_URL + 'user/editProfile/save', null, { params: { username: username, email: email, address: address, headers: authHeader() } })
+  saveProfile (id, username, email, address, firstname, lastname) {
+    return axios.post(API_URL + 'user/editProfile/save', { id: id, username: username, email: email, address: address, firstname: firstname, lastname: lastname }, { headers: authHeader() })
   }
 }
 

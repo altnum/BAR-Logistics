@@ -1,4 +1,5 @@
 import AuthService from '../services/auth.service'
+import UserService from '../services/user.service'
 
 const user = JSON.parse(localStorage.getItem('user'))
 const initialState = user
@@ -25,6 +26,16 @@ export const auth = {
       AuthService.logout()
       commit('logout')
     },
+    editProfile ({ commit }, user) {
+      return UserService.saveProfile(user)
+        .then(response => {
+          commit('editSuccess')
+          return Promise.resolve(response.data)
+        },
+        error => {
+          return Promise.reject(error)
+        })
+    },
     register ({ commit }, user) {
       return AuthService.register(user).then(
         response => {
@@ -39,6 +50,9 @@ export const auth = {
     }
   },
   mutations: {
+    editSuccess (state) {
+      state.status.loggedIn = true
+    },
     loginSuccess (state, user) {
       state.status.loggedIn = true
       state.user = user

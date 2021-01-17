@@ -177,27 +177,4 @@ public class PartsController {
 
         return locations;
     }
-
-    @PostMapping("/user/editProfile/save")
-    public ResponseEntity<?> updateProfile(@RequestParam() String username, @RequestParam() String email, @RequestParam() String address) {
-
-        Capitals c =  new Capitals();
-        c.setName(address);
-        User user = new User();
-        user.setEmail(email);
-        user.setPassword("123");
-        user.setUsername(username);
-        user.setAddress(c);
-        System.out.println(address);
-        userRepository.save(user);
-        Map<String, Object> response = new HashMap<>();
-        if (user.getUsername()!= null) {
-            response.put("message", "Profile has been updated!");
-        } else {
-            response.put("message", "Profile was not updated!");
-        }
-
-        return new ResponseEntity<>(response, HttpStatus.OK);
-    }
-
 }

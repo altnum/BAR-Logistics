@@ -7,6 +7,7 @@ import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import OrdersDetails from '../views/OrdersDetails'
 import EditParts from '../views/EditParts'
+import AdminEditPartDetails from '../views/AdminEditPartDetails'
 import EditProfile from '../views/EditProfile'
 
 Vue.use(VueRouter)
@@ -87,6 +88,11 @@ const routes = [
     component: EditParts
   },
   {
+    path: '/admineditpartdetails',
+    name: 'admineditpartdetails',
+    component: AdminEditPartDetails
+  },
+  {
     path: '/editprofile',
     name: 'editprofile',
     component: EditProfile
@@ -102,12 +108,16 @@ export default router
 router.beforeEach((to, from, next) => {
   const publicPages = ['/login', '/register', '/home', '/about', '/']
   const authRequired = !publicPages.includes(to.path)
+  // eslint-disable-next-line no-unused-vars
+  const adminPages = ['/orders', '/editparts', '/admin', '/admineditpartdetails']
   const loggedIn = localStorage.getItem('user')
 
   // trying to access a restricted page + not logged in
   // redirect to login page
   if (authRequired && !loggedIn) {
     next('/login')
+  } else if (adminPages.includes(to.path) && loggedIn && JSON.parse(localStorage.getItem('user')).roles[0] !== 'ROLE_ADMIN') {
+    next('/home')
   } else {
     next()
   }
