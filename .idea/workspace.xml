@@ -28,14 +28,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34c38314-6388-434e-bdd2-1e3ec6ae334b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/additional/PartsPictures/download.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/payload/request/EditProfileRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/additional/BARLogistics.sql" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/additional/BARLogistics.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/additional/BARLogistics2.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/repositories/PartsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/repositories/PartsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/AdminEditPartDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/AdminEditPartDetails.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/PartDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/PartDetails.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Register.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +45,8 @@
         <option value="Enum" />
         <option value="Vue Single File Component" />
         <option value="JavaScript File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -109,6 +106,17 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BarLogisticsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="BAR-Logistics-backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.bar.BARLogistics.BarLogisticsApplication" />
@@ -183,6 +191,7 @@
       <workItem from="1610828561177" duration="10041000" />
       <workItem from="1610841167706" duration="1000" />
       <workItem from="1610841378726" duration="1644000" />
+      <workItem from="1610883929505" duration="16048000" />
     </task>
     <servers />
   </component>
@@ -205,6 +214,14 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="2428" y="384" key="#ESLint" timestamp="1610897454208">
+      <screen x="1920" y="0" width="1280" height="984" />
+    </state>
+    <state x="2428" y="384" key="#ESLint/0.0.1536.824/1920.0.1280.984@1920.0.1280.984" timestamp="1610897454208" />
+    <state x="2365" y="176" key="#com.intellij.ide.util.MemberChooser" timestamp="1610898109590">
+      <screen x="1920" y="0" width="1280" height="984" />
+    </state>
+    <state x="2365" y="176" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1280.984@1920.0.1280.984" timestamp="1610898109590" />
     <state width="1237" height="149" key="GridCell.Tab.0.bottom" timestamp="1610843025933">
       <screen x="1920" y="0" width="1280" height="984" />
     </state>
@@ -237,6 +254,10 @@
       <screen x="1920" y="0" width="1280" height="984" />
     </state>
     <state width="1237" height="149" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1280.984@1920.0.1280.984" timestamp="1610843025933" />
+    <state x="2290" y="274" width="585" height="534" key="find.popup" timestamp="1610892665500">
+      <screen x="1920" y="0" width="1280" height="984" />
+    </state>
+    <state x="2290" y="274" width="585" height="534" key="find.popup/0.0.1536.824/1920.0.1280.984@1920.0.1280.984" timestamp="1610892665500" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

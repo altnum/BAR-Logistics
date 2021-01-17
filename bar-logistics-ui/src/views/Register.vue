@@ -171,7 +171,7 @@ export default {
               },
               error => {
                 this.message =
-                  (error.response && error.response.data) ||
+                  (error.response && error.response.data.message) ||
                   error.message ||
                   error.toString()
                 this.successful = false
