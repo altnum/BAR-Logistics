@@ -208,7 +208,11 @@ export default {
 }
 
 .upload {
-  margin-left: 800px;
+  margin-left: 1000px;
+}
+.save {
+  top: 30%;
+  margin-left: 200px;
 }
 
 </style>
