@@ -28,19 +28,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34c38314-6388-434e-bdd2-1e3ec6ae334b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/EditProfile.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/additional/PartsPictures/download.jfif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/OrdersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/additional/BARLogistics.sql" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/additional/BARLogistics.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/additional/BARLogistics2.sql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/services/auth.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/auth.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/services/orders-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/orders-service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/services/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/user.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/BoardAdmin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/BoardAdmin.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/EditParts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/EditParts.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/OrdersDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/OrdersDetails.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/repositories/PartsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/repositories/PartsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/AdminEditPartDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/AdminEditPartDetails.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/PartDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/PartDetails.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Profile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Profile.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,10 +46,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -113,34 +108,7 @@
       <recent name="E:\Ina\PROJECT\BAR-Logistics\bar-logistics-ui\src\assets" />
     </key>
   </component>
-  <component name="RestClientSettings">
-    <option name="REQUEST_HISTORY">
-      <list>
-        <RestClientRequest>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:8080/api/test/user/editProfile/save" />
-          <option name="urlPath" value="" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Spring Boot.BarLogisticsApplication">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="generated-requests#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" runType="Run single request">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="BarLogisticsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="BAR-Logistics-backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.bar.BARLogistics.BarLogisticsApplication" />
@@ -148,11 +116,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="HTTP Request.generated-requests#1" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -211,6 +174,15 @@
       <workItem from="1610646916815" duration="198000" />
       <workItem from="1610647303107" duration="15318000" />
       <workItem from="1610647303107" duration="2000000" />
+      <workItem from="1610733787159" duration="210000" />
+      <workItem from="1610735649516" duration="816000" />
+      <workItem from="1610800971497" duration="9719000" />
+      <workItem from="1610812752792" duration="4373000" />
+      <workItem from="1610818908212" duration="3772000" />
+      <workItem from="1610822719817" duration="5782000" />
+      <workItem from="1610828561177" duration="10041000" />
+      <workItem from="1610841167706" duration="1000" />
+      <workItem from="1610841378726" duration="1644000" />
     </task>
     <servers />
   </component>
@@ -232,6 +204,40 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
+  <component name="WindowStateProjectService">
+    <state width="1237" height="149" key="GridCell.Tab.0.bottom" timestamp="1610843025933">
+      <screen x="1920" y="0" width="1280" height="984" />
+    </state>
+    <state width="1237" height="149" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1280.984@1920.0.1280.984" timestamp="1610843025933" />
+    <state width="1237" height="149" key="GridCell.Tab.0.center" timestamp="1610843025932">
+      <screen x="1920" y="0" width="1280" height="984" />
+    </state>
+    <state width="1237" height="149" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1280.984@1920.0.1280.984" timestamp="1610843025932" />
+    <state width="1237" height="149" key="GridCell.Tab.0.left" timestamp="1610843025932">
+      <screen x="1920" y="0" width="1280" height="984" />
+    </state>
+    <state width="1237" height="149" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1280.984@1920.0.1280.984" timestamp="1610843025932" />
+    <state width="1237" height="149" key="GridCell.Tab.0.right" timestamp="1610843025933">
+      <screen x="1920" y="0" width="1280" height="984" />
+    </state>
+    <state width="1237" height="149" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1280.984@1920.0.1280.984" timestamp="1610843025932" />
+    <state width="1237" height="149" key="GridCell.Tab.1.bottom" timestamp="1610843025933">
+      <screen x="1920" y="0" width="1280" height="984" />
+    </state>
+    <state width="1237" height="149" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1280.984@1920.0.1280.984" timestamp="1610843025933" />
+    <state width="1237" height="149" key="GridCell.Tab.1.center" timestamp="1610843025933">
+      <screen x="1920" y="0" width="1280" height="984" />
+    </state>
+    <state width="1237" height="149" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1280.984@1920.0.1280.984" timestamp="1610843025933" />
+    <state width="1237" height="149" key="GridCell.Tab.1.left" timestamp="1610843025933">
+      <screen x="1920" y="0" width="1280" height="984" />
+    </state>
+    <state width="1237" height="149" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1280.984@1920.0.1280.984" timestamp="1610843025933" />
+    <state width="1237" height="149" key="GridCell.Tab.1.right" timestamp="1610843025933">
+      <screen x="1920" y="0" width="1280" height="984" />
+    </state>
+    <state width="1237" height="149" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1280.984@1920.0.1280.984" timestamp="1610843025933" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -240,38 +246,10 @@
           <line>6</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/bar-logistics-ui/src/services/user.service.js</url>
-          <line>19</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/bar-logistics-ui/src/services/parts-service.js</url>
-          <line>33</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/bar-logistics-ui/src/services/parts-service.js</url>
-          <line>32</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/OrdersController.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/OrdersController.java</url>
-          <line>120</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java</url>
-          <line>140</line>
-          <option name="timeStamp" value="20" />
+          <url>file://$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/security/jwt/JwtUtils.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -283,5 +261,8 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/BAR_Logistics$BarLogisticsApplication.ic" NAME="BarLogisticsApplication Coverage Results" MODIFIED="1610825941487" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

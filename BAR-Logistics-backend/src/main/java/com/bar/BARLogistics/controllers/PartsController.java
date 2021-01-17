@@ -4,37 +4,47 @@ import com.bar.BARLogistics.entities.Capitals;
 import com.bar.BARLogistics.entities.Parts;
 import com.bar.BARLogistics.entities.PartsLocations;
 import com.bar.BARLogistics.models.User;
+import com.bar.BARLogistics.entities.Pictures;
 import com.bar.BARLogistics.repositories.PartsLocationsRepository;
 import com.bar.BARLogistics.repositories.PartsRepository;
 import com.bar.BARLogistics.repositories.UserRepository;
+import com.bar.BARLogistics.repositories.PicturesRepository;
 import com.bar.BARLogistics.repositories.VehicleInventoryRepository;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import javax.persistence.Lob;
+import javax.servlet.MultipartConfigElement;
+import java.io.IOException;
 import java.math.BigInteger;
 import java.util.*;
 import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/test")
+@EnableWebMvc
+@RequestMapping("/api")
 public class PartsController {
-
     private  PartsRepository partsRepository;
     private  VehicleInventoryRepository vehicleInventoryRepository;
     private  PartsLocationsRepository partsLocationsRepository;
     private  UserRepository userRepository;
+    private PicturesRepository picturesRepository;
 
     public PartsController(PartsRepository partsRepository, VehicleInventoryRepository vehicleInventoryRepository,
-                           PartsLocationsRepository partsLocationsRepository, UserRepository userRepository) {
+                PartsLocationsRepository partsLocationsRepository, PicturesRepository picturesRepository, UserRepository userRepository) {
         this.partsRepository = partsRepository;
         this.vehicleInventoryRepository = vehicleInventoryRepository;
         this.partsLocationsRepository = partsLocationsRepository;
         this.userRepository = userRepository;
+        this.picturesRepository = picturesRepository;
     }
 
     @GetMapping("/user/parts/all")
@@ -68,13 +78,13 @@ public class PartsController {
 
         PartsLocations partsLocations = partsLocationsRepository.findPartsLocationsByName(location);
 
-        Parts part = new Parts(part_name, partsLocations, price, volume);
+        Parts part = new Parts(part_name, partsLocations, price, volume, null);
         part = partsRepository.save(part);
         Map<String, Object> response = new HashMap<>();
 
-        /*List<Parts> parts = partsRepository.findAll();
+        List<Parts> parts = partsRepository.findAll();
         Parts finalPart = part;
-        parts = parts.stream().filter(p -> p.getPart_num().equals(finalPart.getPart_num())).collect(Collectors.toList());*/
+        parts = parts.stream().filter(p -> p.getPart_num().equals(finalPart.getPart_num())).collect(Collectors.toList());
 
 
         if (part.getPart_num() != null) {
@@ -85,6 +95,41 @@ public class PartsController {
 
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
+
+    @PostMapping(value="/admin/parts/picture", consumes = "multipart/form-data")
+    public Integer savePicture(@RequestParam("file") MultipartFile file1) throws IOException {
+        String path = file1.getOriginalFilename();
+        String type = file1.getContentType();
+        byte[] img = file1.getBytes();
+
+        Pictures picture = new Pictures(path, type);
+
+        picture = picturesRepository.save(picture);
+
+        picturesRepository.setImg(picture.getId(), img);
+
+        return picture.getId();
+    }
+
+    @PostMapping("/admin/parts/edit")
+    public ResponseEntity<?> savePart(BigInteger part_num,  String part_name, String location,
+                                      Double price,  Integer volume, @RequestParam(required = false) Integer picture) {
+
+        Map<String, Object> response = new HashMap<>();
+
+        if (part_num != null && part_name != "" && location != null && price != null && volume != null && picture == null) {
+            partsRepository.changePartsData(part_num, part_name, location, price, volume);
+            response.put("message", "Part has been edited!");
+        } else if (picture != null){
+            partsRepository.attachPhoto(part_num, picture);
+            response.put("message", "Part has been edited!");
+        } else {
+            response.put("message", "Error! Part was not edited!");
+        }
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
     @GetMapping("/user/parts/search/pages")
     public ResponseEntity<?> paginateParts
             (@RequestParam(value = "currentPage", defaultValue = "1") int currentPage,
