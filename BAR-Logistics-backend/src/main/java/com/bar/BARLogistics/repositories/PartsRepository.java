@@ -30,8 +30,16 @@ public interface PartsRepository extends JpaRepository<Parts, BigInteger> {
             "SET part_name = :part_name, " +
             " location.name = :location, " +
             " price = :price, " +
-            " volume = :volume, " +
-            " picture.id = :pictureid " +
+            " volume = :volume " +
             "WHERE part_num = :part_num")
-    void changePartsData (BigInteger part_num, String part_name, String location, Double price, Integer volume, Integer pictureid);
+    void changePartsData (BigInteger part_num, String part_name, String location, Double price, Integer volume);
+
+    @Transactional
+    @Modifying
+    @Query("UPDATE Parts " +
+            "SET picture.id = :pictureid " +
+            "WHERE part_num = :part_num")
+    void attachPhoto (BigInteger part_num, Integer pictureid);
+
+
 }

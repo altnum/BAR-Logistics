@@ -113,8 +113,11 @@ public class PartsController {
 
         Map<String, Object> response = new HashMap<>();
 
-        if (part_num != null && part_name != "" && location != null && price != null && volume != null) {
-            partsRepository.changePartsData(part_num, part_name, location, price, volume, picture);
+        if (part_num != null && part_name != "" && location != null && price != null && volume != null && picture == null) {
+            partsRepository.changePartsData(part_num, part_name, location, price, volume);
+            response.put("message", "Part has been edited!");
+        } else if (picture != null){
+            partsRepository.attachPhoto(part_num, picture);
             response.put("message", "Part has been edited!");
         } else {
             response.put("message", "Error! Part was not edited!");
