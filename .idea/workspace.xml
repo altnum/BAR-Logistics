@@ -28,25 +28,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88202258-9298-432e-a0f8-efc55cca0a20" name="Default Changelist" comment="Merge branch 'master' of https://github.com/BAR-TU/BAR-Logistics&#10;&#10;# Conflicts:&#10;#&#9;bar-logistics-ui/src/views/EditParts.vue">
-      <change afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/additional/PartsPictures/284690792_033.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/models/editUser.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/EditProfile.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/OrdersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/services/auth.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/auth.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/services/orders-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/orders-service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/services/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/user.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/store/auth.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/store/auth.module.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/AdminEditPartDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/AdminEditPartDetails.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/BoardAdmin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/BoardAdmin.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/EditParts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/EditParts.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/OrdersDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/OrdersDetails.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/BoardUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/BoardUser.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Orders.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Orders.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/PartDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/PartDetails.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Profile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Profile.vue" afterDir="false" />
     </list>
@@ -60,9 +46,9 @@
       <list>
         <option value="Enum" />
         <option value="Vue Single File Component" />
-        <option value="JavaScript File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -122,17 +108,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BarLogisticsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="BAR-Logistics-backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.bar.BARLogistics.BarLogisticsApplication" />
@@ -207,7 +182,8 @@
       <workItem from="1610828561177" duration="10041000" />
       <workItem from="1610841167706" duration="1000" />
       <workItem from="1610841378726" duration="1644000" />
-      <workItem from="1610883219490" duration="274000" />
+      <workItem from="1610881203467" duration="1233000" />
+      <workItem from="1610906180417" duration="5085000" />
     </task>
     <servers />
   </component>
@@ -229,44 +205,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
-  <component name="WindowStateProjectService">
-    <state width="455" height="466" key="DebuggerActiveHint" timestamp="1610903478605">
-      <screen x="1920" y="0" width="1280" height="984" />
-    </state>
-    <state width="455" height="466" key="DebuggerActiveHint/0.0.1536.824/1920.0.1280.984@1920.0.1280.984" timestamp="1610903478605" />
-    <state width="1237" height="224" key="GridCell.Tab.0.bottom" timestamp="1610906501418">
-      <screen x="1920" y="0" width="1280" height="984" />
-    </state>
-    <state width="1237" height="224" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1280.984@1920.0.1280.984" timestamp="1610906501418" />
-    <state width="1237" height="224" key="GridCell.Tab.0.center" timestamp="1610906501418">
-      <screen x="1920" y="0" width="1280" height="984" />
-    </state>
-    <state width="1237" height="224" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1280.984@1920.0.1280.984" timestamp="1610906501418" />
-    <state width="1237" height="224" key="GridCell.Tab.0.left" timestamp="1610906501418">
-      <screen x="1920" y="0" width="1280" height="984" />
-    </state>
-    <state width="1237" height="224" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1280.984@1920.0.1280.984" timestamp="1610906501418" />
-    <state width="1237" height="224" key="GridCell.Tab.0.right" timestamp="1610906501418">
-      <screen x="1920" y="0" width="1280" height="984" />
-    </state>
-    <state width="1237" height="224" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1280.984@1920.0.1280.984" timestamp="1610906501418" />
-    <state width="1237" height="224" key="GridCell.Tab.1.bottom" timestamp="1610906501418">
-      <screen x="1920" y="0" width="1280" height="984" />
-    </state>
-    <state width="1237" height="224" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1280.984@1920.0.1280.984" timestamp="1610906501418" />
-    <state width="1237" height="224" key="GridCell.Tab.1.center" timestamp="1610906501418">
-      <screen x="1920" y="0" width="1280" height="984" />
-    </state>
-    <state width="1237" height="224" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1280.984@1920.0.1280.984" timestamp="1610906501418" />
-    <state width="1237" height="224" key="GridCell.Tab.1.left" timestamp="1610906501418">
-      <screen x="1920" y="0" width="1280" height="984" />
-    </state>
-    <state width="1237" height="224" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1280.984@1920.0.1280.984" timestamp="1610906501418" />
-    <state width="1237" height="224" key="GridCell.Tab.1.right" timestamp="1610906501418">
-      <screen x="1920" y="0" width="1280" height="984" />
-    </state>
-    <state width="1237" height="224" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1280.984@1920.0.1280.984" timestamp="1610906501418" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -274,6 +212,11 @@
           <url>file://$PROJECT_DIR$/bar-logistics-ui/src/views/Parts.vue</url>
           <line>6</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/UserController.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
