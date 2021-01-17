@@ -29,7 +29,6 @@ export const auth = {
     editProfile ({ commit }, user) {
       return UserService.saveProfile(user)
         .then(response => {
-          commit('editSuccess')
           return Promise.resolve(response.data)
         },
         error => {

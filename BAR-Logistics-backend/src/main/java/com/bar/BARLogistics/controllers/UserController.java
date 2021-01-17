@@ -19,31 +19,33 @@ import java.util.Map;
 @RequestMapping("/api")
 public class UserController {
     private UserRepository userRepository;
+
     public UserController(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-    @PostMapping("/user/editProfile/save")
-    public ResponseEntity<?> updateProfile(@Valid @RequestBody EditProfileRequest editProfileRequest) {
 
-        if(!userRepository.findById(Long.valueOf(editProfileRequest.getId())).get().getUsername().equals(editProfileRequest.getUsername())) {
+    @PostMapping("/user/editprofile/save")
+    public ResponseEntity<?> updateProfile(@Valid @RequestBody EditProfileRequest editProfileRequest) {
+        String userN = userRepository.findById(Long.valueOf(editProfileRequest.getId())).get().getUsername();
+        if (!userN.equals(editProfileRequest.getUsername())) {
             if (userRepository.existsByUsername(editProfileRequest.getUsername())) {
                 return ResponseEntity
                         .badRequest()
-                        .body(new MessageResponse("Error: Username is already taken!"));
+                        .body("Error: Username is already taken!");
             } else {
                 userRepository.editUsername(Long.valueOf(editProfileRequest.getId()), editProfileRequest.getUsername());
             }
         }
-        if(!userRepository.findById(Long.valueOf(editProfileRequest.getId())).get().getEmail().equals(editProfileRequest.getEmail())) {
+        if (!userRepository.findById(Long.valueOf(editProfileRequest.getId())).get().getEmail().equals(editProfileRequest.getEmail())) {
             if (userRepository.existsByEmail(editProfileRequest.getEmail())) {
                 return ResponseEntity
                         .badRequest()
-                        .body(new MessageResponse("Error: Email is already in use!"));
+                        .body("Error: Email is already in use!");
             } else {
                 userRepository.editUserEmail(Long.valueOf(editProfileRequest.getId()), editProfileRequest.getEmail());
             }
         }
-        userRepository.editUserInformation(Long.valueOf(editProfileRequest.getId()), editProfileRequest.getEmail(), editProfileRequest.getFirst_name(), editProfileRequest.getLast_name());
+        userRepository.editUserInformation(Long.valueOf(editProfileRequest.getId()), editProfileRequest.getAddress(), editProfileRequest.getFirst_name(), editProfileRequest.getLast_name());
         return ResponseEntity.ok("User is edited successfully!");
     }
 }
