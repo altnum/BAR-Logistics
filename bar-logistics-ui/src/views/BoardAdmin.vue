@@ -11,7 +11,6 @@
         <div class="title2">
           <h2 class="s"><i>AUTOMOTIVE PARTS SHIPPING & LOGISTICS</i></h2>
         </div>
-
       </header>
         <span class="title1">View current orders:   </span><br/>
         <router-link to="/orders" tag="button" class="button1">Confirm Orders</router-link>
@@ -99,6 +98,8 @@ export default {
   display: inline-block;
   font-size: 20px;
   width: 20%;
+  margin-bottom: 20px;
+  display: inline;
 }
 .s {
   font-size: 20px;

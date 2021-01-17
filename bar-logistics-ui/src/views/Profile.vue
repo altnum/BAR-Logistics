@@ -67,7 +67,6 @@ export default {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-  margin-bottom: 30px;
 }
 .buttonEdit {
   background-color: green;

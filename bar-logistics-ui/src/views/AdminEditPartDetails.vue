@@ -3,6 +3,8 @@
     <header class="jumbotron">
       <h1 class="title">Product details</h1>
     </header>
+    <div class="editInformation">
+
     <div v-if="displayFile.img == null">
       <img :src="image" width="450" alt="image"/>
     </div>
@@ -10,11 +12,14 @@
       <img v-bind:src="'data:image/jpeg;base64, ' + displayFile.img" width="450" alt="image"/>
     </div>
     <div class="information1">
-      <div class="info">
+      <h2 align="center">Edit part details:</h2>
+      <br/>
+      <div>
         <p>Part number: <br/>
           <b>{{ result.part_num }}</b></p>
       </div>
-      <div class="info">
+      <br/>
+      <div>
         <p>Name of the part: <br/></p>
         <input
           v-model="newpart_name"
@@ -25,7 +30,8 @@
           :placeholder="this.result.part_name"
         />
       </div>
-      <div class="info">
+      <br/><br/>
+      <div>
         <p>Location, from where the product can be distributed: <br/></p>
       </div>
       <select v-on:change="changeResultDistance" v-for="location in parts_locations" v-model="parts_locations.selectedOption" :key="location.options.name" class="select" name="locations">
@@ -33,11 +39,14 @@
           {{ option.name }}
         </option>
       </select>
-      <div class="info">
+      <br/>
+      <br/>
+      <div>
         <p>Distance from BAR Logistics center: <br/>
           <b>{{ result.location.distances_from_bar }} km.</b></p>
       </div>
-      <div class="info">
+    <br/>
+      <div>
         <p>Price of the product:</p>
       </div>
       <input
@@ -48,7 +57,8 @@
         name="partName"
         :placeholder="this.result.price"
       />
-      <div class="info">
+      <br/><br/>
+      <div>
         <p>Volume:</p>
       </div>
       <input
@@ -59,28 +69,35 @@
         name="partName"
         :placeholder="this.result.volume"
       />
-    </div>
-    <button class="back" v-on:click="$router.go(-1)">Back</button>
-    <button class="upload" v-on:click="attemptUpload">Upload</button>
-    <button class="save" v-on:click="editPart">Save</button>
-    <template>
-      <div class="pictureInputd">
-        <picture-input
-          ref="pictureInput"
-          @change="onChange"
-          width="200"
-          height="200"
-          margin="16"
-          accept="image/jpeg,image/png"
-          size="10"
-          buttonClass="btn"
-          :customStrings="{
+      <br/><br/>
+
+      <template>
+        <i>Upload image of the product:</i>
+        <div class="pictureInputd">
+          <picture-input
+            ref="pictureInput"
+            @change="onChange"
+            width="200"
+            height="200"
+            margin="16"
+            accept="image/jpeg,image/png"
+            size="10"
+            buttonClass="btn"
+            :customStrings="{
         upload: '<h1>Bummer!</h1>',
         drag: 'Drag a GIF or GTFO'
       }">
-        </picture-input>
+          </picture-input>
+        </div>
+      </template>
+      <button class="upload" v-on:click="attemptUpload">Upload</button>
+      <button class="save" v-on:click="editPart">Save</button>
+    </div>
+      <div class="buttonsGroup">
+        <button class="back" v-on:click="$router.go(-1)">Back</button>
       </div>
-    </template>
+    </div>
+
   </div>
 </template>
 
@@ -193,26 +210,66 @@ export default {
   position: absolute;
   top: 50%;
   left: 55%;
-  transform: translate(-50%, -50%);
-  margin-top: 200px;
+  margin-top: 550px;
   font-size: 18px;
   text-align: left;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  padding: 20px;
+  margin-left: 100px;
+  width: 500px;
 }
 
 .pictureInputd {
-  margin-left: 800px;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .back {
-  margin-left: 800px;
+  background-color: slategrey;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 30px;
+  cursor: pointer;
 }
-
 .upload {
-  margin-left: 1000px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  alignment: center;
+  margin-left: 200px;
+  margin-right: 20px;
 }
 .save {
-  margin-top: 100px;
-  margin-left: 200px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.editInformation {
+  display: inline-block;
+  margin-top: 50px;
+  background-color: #f2f2f2;
 }
 
+.buttonsGroup{
+  display: inline-block;
+  position: absolute;
+  left: auto;
+}
 </style>

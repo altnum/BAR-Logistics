@@ -42,7 +42,7 @@
         <input v-model="row.item.order_id1" :placeholder="inputHolder">
       </template>
       <template v-slot:cell(confirm)="row">
-        <button class="btn" v-on:click="sendCurrOrder(row.item.order_id1, row.item.id)">Send</button>
+        <button class="buttonSend" v-on:click="sendCurrOrder(row.item.order_id1, row.item.id)">Send</button>
       </template>
     </b-table>
   </div>
@@ -137,5 +137,17 @@ export default {
 </script>
 
 <style scoped>
+.buttonSend {
+  background-color: cadetblue;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  width: 80%;
 
+}
 </style>

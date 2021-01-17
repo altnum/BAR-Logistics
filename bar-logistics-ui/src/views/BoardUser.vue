@@ -5,7 +5,9 @@
         <strong>Welcome, {{currentUser.first_name}} {{currentUser.last_name }}!</strong>
       </h3>
     </header>
+    <div class="imageUser">
     <img :src="user" width="500" alt="image" align="center"/>
+    </div>
     <h3 class="profileInfo">Your profile info:</h3>
     <div class="info">
       <p>
@@ -163,3 +165,8 @@ export default {
   }
 }
 </script>
+<style>
+.picUser {
+
+}
+</style>
