@@ -28,37 +28,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34c38314-6388-434e-bdd2-1e3ec6ae334b" name="Default Changelist" comment="">
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/EditParts.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/entities/Parts.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/entities/Parts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/services/parts-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/parts-service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/BoardAdmin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/BoardAdmin.vue" afterDir="false" />
-=======
-<<<<<<< HEAD
-=======
->>>>>>> b7ade5378c14eeef6b0d1566596b1b97f3e9cb96
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/EditProfile.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/OrdersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/repositories/OrdersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/repositories/OrdersRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/services/auth.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/auth.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/services/orders-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/orders-service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Cart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Orders.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Orders.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/services/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/services/user.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/BoardAdmin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/BoardAdmin.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/EditParts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/EditParts.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/OrdersDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/OrdersDetails.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/PartDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/PartDetails.vue" afterDir="false" />
-<<<<<<< HEAD
-=======
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Orders.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Orders.vue" afterDir="false" />
->>>>>>> 38828369c16afa02854a3eca6d556cbdd1625153
->>>>>>> 252b1fbd7266d406d9c031695b299f8efa73e7bf
-=======
->>>>>>> b7ade5378c14eeef6b0d1566596b1b97f3e9cb96
+      <change beforePath="$PROJECT_DIR$/bar-logistics-ui/src/views/Profile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/bar-logistics-ui/src/views/Profile.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,8 +53,8 @@
         <option value="Enum" />
         <option value="Interface" />
         <option value="JavaScript File" />
-        <option value="Class" />
         <option value="Vue Single File Component" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -131,7 +113,20 @@
       <recent name="E:\Ina\PROJECT\BAR-Logistics\bar-logistics-ui\src\assets" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080/api/test/user/editProfile/save" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.BarLogisticsApplication">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -143,6 +138,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="generated-requests#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="BarLogisticsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="BAR-Logistics-backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.bar.BARLogistics.BarLogisticsApplication" />
@@ -150,6 +148,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.generated-requests#1" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -206,15 +209,8 @@
       <workItem from="1610619864765" duration="11701000" />
       <workItem from="1610646745588" duration="149000" />
       <workItem from="1610646916815" duration="198000" />
-<<<<<<< HEAD
       <workItem from="1610647303107" duration="15318000" />
-=======
       <workItem from="1610647303107" duration="2000000" />
-<<<<<<< HEAD
->>>>>>> 38828369c16afa02854a3eca6d556cbdd1625153
->>>>>>> 252b1fbd7266d406d9c031695b299f8efa73e7bf
-=======
->>>>>>> b7ade5378c14eeef6b0d1566596b1b97f3e9cb96
     </task>
     <servers />
   </component>
@@ -244,20 +240,38 @@
           <line>6</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/bar-logistics-ui/src/services/user.service.js</url>
+          <line>19</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/bar-logistics-ui/src/services/parts-service.js</url>
+          <line>33</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/bar-logistics-ui/src/services/parts-service.js</url>
+          <line>32</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/OrdersController.java</url>
           <line>48</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/security/jwt/JwtUtils.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/OrdersController.java</url>
           <line>120</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/BAR-Logistics-backend/src/main/java/com/bar/BARLogistics/controllers/PartsController.java</url>
+          <line>140</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

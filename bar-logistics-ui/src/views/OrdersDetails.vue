@@ -1,40 +1,14 @@
 <template>
   <div>
-    {{ result }}
-  </div>
-</template>
-
-<template>
-  <div>
     <header>
       <h1>Orders details</h1>
     </header>
     <b-table class="table" id="ordersTable" striped hover boarded
              :items="result">
     </b-table>
+    <button class="btn" v-on:click="$router.go(-1)">Back</button>
   </div>
 </template>
-<b-table class="table" id="ordersTable" striped hover bordered
-         :items="result"
-         :fields="fields">
-<template v-slot:cell(ship_date)="row">
-  <div v-if="row.item.status !==  'pending'">
-    {{ row.item.ship_date }}
-  </div>
-  <div v-else>-----</div>
-</template>
-<template v-slot:cell(preview)="row">
-  <router-link :to="{ name: 'ordersDetails', params: {order_id: row.item.order_id} }" class="btn-group">Open</router-link>
-</template>
-<template v-slot:cell(user_id)="row">
-  {{ row.item.user_id.first_name }}
-  {{ row.item.user_id.last_name }}
-</template>
-<template v-slot:cell(price)="row">
-  {{ row.item.price }} лв.
-</template>
-</b-table>
-
 <script>
 import OrdersService from '@/services/orders-service'
 
@@ -46,7 +20,8 @@ export default {
         {
           order_id: '',
           part_id: '',
-          quantity: ''
+          quantity: '',
+          price: ''
         }
     }
   },
@@ -58,13 +33,22 @@ export default {
     })
   },
   methods: {
-    setData (response) {
-      this.result = response.data
+    async setData (response) {
+      var currResult = response.data
+      for (let index = 0; index < currResult.length; index++) {
+        var currentPrice = await OrdersService.getOrderPartsPrice(currResult[index].part_id, currResult[index].quantity)
+        currResult[index].price = currentPrice.data
+        console.log(currentPrice.data)
+      }
+      this.result = currResult
     }
   }
 }
 </script>
 
 <style scoped>
-
+.btn
+{
+  background-color: lavender;
+}
 </style>

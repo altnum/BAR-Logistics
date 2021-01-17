@@ -7,6 +7,7 @@ import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import OrdersDetails from '../views/OrdersDetails'
 import EditParts from '../views/EditParts'
+import EditProfile from '../views/EditProfile'
 
 Vue.use(VueRouter)
 
@@ -84,6 +85,11 @@ const routes = [
     path: '/editparts',
     name: 'editparts',
     component: EditParts
+  },
+  {
+    path: '/editprofile',
+    name: 'editprofile',
+    component: EditProfile
   }
 ]
 

@@ -3,29 +3,30 @@
     <header class="jumbotron">
       <h1 class="title">Product details</h1>
     </header>
+
     <img :src="basketParts" width="450" alt="image"/>
     <div class="information1">
-   <div class="info">
+   <div>
      <p>Part number: <br/>
        <b>{{ result.part_num }}</b></p>
    </div>
-    <div class="info">
+    <div>
       <p>Name of the part: <br/>
         <b>{{ result.part_name }}</b></p>
     </div>
-    <div class="info">
+    <div>
     <p>Location, from where the product can be distributed: <br/>
       <b>{{ result.location.name }}</b></p>
     </div>
-    <div class="info">
+    <div>
       <p>Distance from BAR Logistics center: <br/>
         <b>{{ result.location.distances_from_bar }} km.</b></p>
     </div>
-    <div class="info">
+    <div>
       <p>Price of the product: <br/>
         <b>{{ result.price }}</b></p>
     </div>
-    <div class="info">
+    <div>
     <p>Volume: <br/>
       <b>{{ result.volume }}</b></p>
     </div>
@@ -62,13 +63,11 @@ export default {
 </script>
 <style>
 .information1 {
-  position: absolute;
   top: 50%;
   left: 55%;
-  transform: translate(-50%, -50%);
-  margin-top: 200px;
   font-size: 18px;
   text-align: left;
+  display: inline-block;
 }
 
 </style>

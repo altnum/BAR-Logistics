@@ -3,8 +3,10 @@ package com.bar.BARLogistics.controllers;
 import com.bar.BARLogistics.entities.Capitals;
 import com.bar.BARLogistics.entities.Parts;
 import com.bar.BARLogistics.entities.PartsLocations;
+import com.bar.BARLogistics.models.User;
 import com.bar.BARLogistics.repositories.PartsLocationsRepository;
 import com.bar.BARLogistics.repositories.PartsRepository;
+import com.bar.BARLogistics.repositories.UserRepository;
 import com.bar.BARLogistics.repositories.VehicleInventoryRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -25,11 +27,14 @@ public class PartsController {
     private  PartsRepository partsRepository;
     private  VehicleInventoryRepository vehicleInventoryRepository;
     private  PartsLocationsRepository partsLocationsRepository;
+    private  UserRepository userRepository;
 
-    public PartsController(PartsRepository partsRepository, VehicleInventoryRepository vehicleInventoryRepository, PartsLocationsRepository partsLocationsRepository) {
+    public PartsController(PartsRepository partsRepository, VehicleInventoryRepository vehicleInventoryRepository,
+                           PartsLocationsRepository partsLocationsRepository, UserRepository userRepository) {
         this.partsRepository = partsRepository;
         this.vehicleInventoryRepository = vehicleInventoryRepository;
         this.partsLocationsRepository = partsLocationsRepository;
+        this.userRepository = userRepository;
     }
 
     @GetMapping("/user/parts/all")
@@ -67,16 +72,15 @@ public class PartsController {
         part = partsRepository.save(part);
         Map<String, Object> response = new HashMap<>();
 
-        List<Parts> parts = partsRepository.findAll();
+        /*List<Parts> parts = partsRepository.findAll();
         Parts finalPart = part;
-        parts = parts.stream().filter(p -> p.getPart_num().equals(finalPart.getPart_num())).collect(Collectors.toList());
+        parts = parts.stream().filter(p -> p.getPart_num().equals(finalPart.getPart_num())).collect(Collectors.toList());*/
 
-        response.put("Генериран номер на частта:", parts.get(0).getPart_num());
 
-        if (true) {
-            response.put("message", "Частта е успешно записана!");
+        if (part.getPart_num() != null) {
+            response.put("message", "Part has been added!");
         } else {
-            response.put("message", "Частта е успешно редактирана!");
+            response.put("message", "Error! Part was not added!");
         }
 
         return new ResponseEntity<>(response, HttpStatus.OK);
@@ -127,6 +131,28 @@ public class PartsController {
         locations = locations.stream().sorted(Comparator.comparing(PartsLocations::getName)).collect(Collectors.toList());
 
         return locations;
+    }
+
+    @PostMapping("/user/editProfile/save")
+    public ResponseEntity<?> updateProfile(@RequestParam() String username, @RequestParam() String email, @RequestParam() String address) {
+
+        Capitals c =  new Capitals();
+        c.setName(address);
+        User user = new User();
+        user.setEmail(email);
+        user.setPassword("123");
+        user.setUsername(username);
+        user.setAddress(c);
+        System.out.println(address);
+        userRepository.save(user);
+        Map<String, Object> response = new HashMap<>();
+        if (user.getUsername()!= null) {
+            response.put("message", "Profile has been updated!");
+        } else {
+            response.put("message", "Profile was not updated!");
+        }
+
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
 }

@@ -133,6 +133,14 @@ public class OrdersController {
         return  currentVolume;
     }
 
+    @GetMapping("user/orders/getorderprice")
+    public Double returnOrdersPartsPrice(@RequestParam BigInteger part_id, @RequestParam Integer quantity) {
+        Double calculatePrice;
+        calculatePrice = partsRepository.findPartsByPart_num(part_id).getPrice() * quantity;
+
+        return  calculatePrice;
+    }
+
     @PostMapping("/admin/orders/delivered")
     public void deliverOrder (@RequestParam Integer orderId) {
         if ("processing".equals(ordersRepository.findById(orderId).get().getStatus())) {
@@ -143,23 +151,6 @@ public class OrdersController {
 
     @GetMapping("/admin/orders/search/pages")
     public ResponseEntity<?> paginateOrders
-            (@RequestParam(value = "currentPage", defaultValue = "1") int currentPage,
-             @RequestParam(value = "perPage", defaultValue = "10") int perPage){
-
-        Pageable pageable = PageRequest.of(currentPage -1, perPage);
-        Page<Orders> orders = ordersRepository.findPageOrders(pageable);
-
-        Map<String, Object> response = new HashMap<>();
-        response.put("result", orders.getContent());
-        response.put("currentPage", orders.getNumber());
-        response.put("totalItems", orders.getTotalElements());
-        response.put("totalPages", orders.getTotalPages());
-
-        return new ResponseEntity<>(response, HttpStatus.OK);
-    }
-
-    @GetMapping("/user/orders/myorders")
-    public ResponseEntity<?> paginateMyOrders
             (@RequestParam(value = "currentPage", defaultValue = "1") int currentPage,
              @RequestParam(value = "perPage", defaultValue = "10") int perPage){
 

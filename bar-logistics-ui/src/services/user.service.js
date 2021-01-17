@@ -15,6 +15,10 @@ class UserService {
   getAdminBoard () {
     return axios.get(API_URL + 'admin', { headers: authHeader() })
   }
+
+  saveProfile (username, email, address) {
+    return axios.post(API_URL + 'user/editProfile/save', null, { params: { username: username, email: email, address: address, headers: authHeader() } })
+  }
 }
 
 export default new UserService()
