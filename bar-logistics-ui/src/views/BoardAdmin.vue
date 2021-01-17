@@ -99,7 +99,6 @@ export default {
   font-size: 20px;
   width: 20%;
   margin-bottom: 20px;
-  display: inline;
 }
 .s {
   font-size: 20px;

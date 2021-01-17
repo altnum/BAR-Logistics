@@ -166,7 +166,4 @@ export default {
 }
 </script>
 <style>
-.picUser {
-
-}
 </style>

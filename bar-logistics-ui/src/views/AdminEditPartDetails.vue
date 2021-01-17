@@ -208,16 +208,16 @@ export default {
 <style>
 .information1 {
   position: absolute;
-  top: 50%;
-  left: 55%;
-  margin-top: 550px;
+  left: 40%;
   font-size: 18px;
   text-align: left;
   border-radius: 5px;
   background-color: #f7f7f7;
   padding: 20px;
-  margin-left: 100px;
   width: 500px;
+  display: inline-block;
+  top: 60%;
+  left: 50%;
 }
 
 .pictureInputd {
@@ -263,7 +263,6 @@ export default {
 }
 .editInformation {
   display: inline-block;
-  margin-top: 50px;
   background-color: #f2f2f2;
 }
 
