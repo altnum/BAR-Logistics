@@ -8,6 +8,7 @@ import Register from '../views/Register.vue'
 import OrdersDetails from '../views/OrdersDetails'
 import EditParts from '../views/EditParts'
 import AdminEditPartDetails from '../views/AdminEditPartDetails'
+import EditProfile from '../views/EditProfile'
 
 Vue.use(VueRouter)
 
@@ -90,6 +91,11 @@ const routes = [
     path: '/admineditpartdetails',
     name: 'admineditpartdetails',
     component: AdminEditPartDetails
+  },
+  {
+    path: '/editprofile',
+    name: 'editprofile',
+    component: EditProfile
   }
 ]
 

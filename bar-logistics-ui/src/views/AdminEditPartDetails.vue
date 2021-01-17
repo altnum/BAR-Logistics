@@ -211,7 +211,7 @@ export default {
   margin-left: 1000px;
 }
 .save {
-  top: 30%;
+  margin-top: 100px;
   margin-left: 200px;
 }
 

@@ -77,7 +77,6 @@ export default {
 }
 </script>
 <style>
-
 .information1 {
   position: absolute;
   top: 50%;
@@ -86,6 +85,7 @@ export default {
   margin-top: 200px;
   font-size: 18px;
   text-align: left;
+  display: inline-block;
 }
 
 </style>

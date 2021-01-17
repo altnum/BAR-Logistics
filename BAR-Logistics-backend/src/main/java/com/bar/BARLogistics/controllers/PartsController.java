@@ -3,9 +3,11 @@ package com.bar.BARLogistics.controllers;
 import com.bar.BARLogistics.entities.Capitals;
 import com.bar.BARLogistics.entities.Parts;
 import com.bar.BARLogistics.entities.PartsLocations;
+import com.bar.BARLogistics.models.User;
 import com.bar.BARLogistics.entities.Pictures;
 import com.bar.BARLogistics.repositories.PartsLocationsRepository;
 import com.bar.BARLogistics.repositories.PartsRepository;
+import com.bar.BARLogistics.repositories.UserRepository;
 import com.bar.BARLogistics.repositories.PicturesRepository;
 import com.bar.BARLogistics.repositories.VehicleInventoryRepository;
 import org.springframework.context.annotation.Bean;
@@ -33,12 +35,15 @@ public class PartsController {
     private  PartsRepository partsRepository;
     private  VehicleInventoryRepository vehicleInventoryRepository;
     private  PartsLocationsRepository partsLocationsRepository;
+    private  UserRepository userRepository;
     private PicturesRepository picturesRepository;
 
-    public PartsController(PartsRepository partsRepository, VehicleInventoryRepository vehicleInventoryRepository, PartsLocationsRepository partsLocationsRepository, PicturesRepository picturesRepository) {
+    public PartsController(PartsRepository partsRepository, VehicleInventoryRepository vehicleInventoryRepository,
+                PartsLocationsRepository partsLocationsRepository, PicturesRepository picturesRepository, UserRepository userRepository) {
         this.partsRepository = partsRepository;
         this.vehicleInventoryRepository = vehicleInventoryRepository;
         this.partsLocationsRepository = partsLocationsRepository;
+        this.userRepository = userRepository;
         this.picturesRepository = picturesRepository;
     }
 
@@ -172,5 +177,4 @@ public class PartsController {
 
         return locations;
     }
-
 }
