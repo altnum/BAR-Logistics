@@ -5,7 +5,9 @@
         <strong>Welcome, {{currentUser.first_name}} {{currentUser.last_name }}!</strong>
       </h3>
     </header>
+    <div class="imageUser">
     <img :src="user" width="500" alt="image" align="center"/>
+    </div>
     <h3 class="profileInfo">Your profile info:</h3>
     <div class="info">
       <p>
@@ -93,7 +95,7 @@ export default {
         }
       },
       result: [{ order_id: '', status: '', order_date: '', ship_date: '', price: '', preview: '', progress: '', value: 0 }],
-      fields: [{ key: 'order_id', label: 'Order №' }, { key: 'ship_date', label: 'Delivery Date' }, { key: 'price', sortable: true, label: 'Price in BGN' }, { key: 'status', label: 'Status' }, { key: 'preview', label: '' }, { key: 'progress', label: 'Progress (%):' }],
+      fields: [{ key: 'order_id', label: 'Order №' }, { key: 'ship_date', label: 'Delivery Date' }, { key: 'price', sortable: true, label: 'Price in BGN' }, { key: 'status', sortable: true, label: 'Status' }, { key: 'preview', label: '' }, { key: 'progress', label: 'Progress (%):' }],
       user: user,
       currentPage: 1,
       perPage: 5,
@@ -163,3 +165,5 @@ export default {
   }
 }
 </script>
+<style>
+</style>

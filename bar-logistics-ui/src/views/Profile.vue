@@ -27,6 +27,7 @@
     <ul>
       <li v-for="(role,index) in currentUser.roles" :key="index">{{role}}</li>
     </ul>
+      <router-link to="/editProfile" tag="button" class="buttonEdit" style="background-color: #4CAF50" margin="20px">Edit profile</router-link>
   </div>
   </div>
 </template>
@@ -66,6 +67,9 @@ export default {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-  margin-bottom: 30px;
+}
+.buttonEdit {
+  background-color: green;
+  alignment: right;
 }
 </style>

@@ -92,6 +92,10 @@ class OrdersService {
       headers: authHeader()
     })
   }
+
+  getMyOrdersPage (currentPage, perPage) {
+    return axios.get(API_URL + '/admin/orders/search/pages', { params: { currentPage: currentPage, perPage: perPage }, headers: { 'Access-Control-Allow-Origin': '*' } })
+  }
 }
 
 export default new OrdersService()

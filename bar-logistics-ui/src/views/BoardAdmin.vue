@@ -11,7 +11,6 @@
         <div class="title2">
           <h2 class="s"><i>AUTOMOTIVE PARTS SHIPPING & LOGISTICS</i></h2>
         </div>
-
       </header>
         <span class="title1">View current orders:   </span><br/>
         <router-link to="/orders" tag="button" class="button1">Confirm Orders</router-link>
@@ -20,37 +19,6 @@
         <span class="title1">Add or Remove parts:   </span><br/>
         <router-link to="/editparts" tag="button" class="button1">Edit Parts</router-link>
       </header>
-  </div>
-  <div>
-    <template>
-      <div class="container">
-        <form>
-          <label>Name</label>
-          <input
-            type="text"
-            v-model="name"
-            name="name"
-            placeholder="Your Name"
-          >
-          <label>Email</label>
-          <input
-            type="email"
-            v-model="email"
-            name="email"
-            placeholder="Your Email"
-          >
-          <label>Message</label>
-          <textarea
-            name="message"
-            v-model="message"
-            cols="30" rows="5"
-            placeholder="Message">
-          </textarea>
-
-          <input type="submit" value="Send">
-        </form>
-      </div>
-    </template>
   </div>
   </div>
 </template>
@@ -130,9 +98,9 @@ export default {
   display: inline-block;
   font-size: 20px;
   width: 20%;
+  margin-bottom: 20px;
 }
 .s {
   font-size: 20px;
 }
-
 </style>

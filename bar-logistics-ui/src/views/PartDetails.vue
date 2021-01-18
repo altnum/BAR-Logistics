@@ -9,33 +9,34 @@
     <div v-else>
       <img v-bind:src="'data:image/jpeg;base64, ' + displayFile.img" width="450" alt="image"/>
     </div>
-    <div class="information1">
-   <div class="info">
+    <div class="information2">
+      <i><h3 align="center">Product information:</h3></i>
+   <div>
      <p>Part number: <br/>
        <b>{{ result.part_num }}</b></p>
    </div>
-    <div class="info">
+    <div>
       <p>Name of the part: <br/>
         <b>{{ result.part_name }}</b></p>
     </div>
-    <div class="info">
+    <div>
     <p>Location, from where the product can be distributed: <br/>
       <b>{{ result.location.name }}</b></p>
     </div>
-    <div class="info">
+    <div>
       <p>Distance from BAR Logistics center: <br/>
         <b>{{ result.location.distances_from_bar }} km.</b></p>
     </div>
-    <div class="info">
+    <div>
       <p>Price of the product: <br/>
         <b>{{ result.price }}</b></p>
     </div>
-    <div class="info">
+    <div>
     <p>Volume: <br/>
       <b>{{ result.volume }}</b></p>
     </div>
     </div>
-    <button class="btn" v-on:click="$router.go(-1)">Back</button>
+    <button class="back" v-on:click="$router.go(-1)">Back</button>
   </div>
 </template>
 
@@ -77,15 +78,16 @@ export default {
 }
 </script>
 <style>
-
-.information1 {
+.information2 {
   position: absolute;
-  top: 50%;
-  left: 55%;
+  top: 60%;
+  left: 60%;
   transform: translate(-50%, -50%);
   margin-top: 200px;
   font-size: 18px;
   text-align: left;
+  display: inline-block;
+  background-color: #f7f7f7;
+  padding: 20px;
 }
-
 </style>
