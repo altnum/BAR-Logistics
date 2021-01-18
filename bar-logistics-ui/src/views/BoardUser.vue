@@ -95,7 +95,7 @@ export default {
         }
       },
       result: [{ order_id: '', status: '', order_date: '', ship_date: '', price: '', preview: '', progress: '', value: 0 }],
-      fields: [{ key: 'order_id', label: 'Order №' }, { key: 'ship_date', label: 'Delivery Date' }, { key: 'price', sortable: true, label: 'Price in BGN' }, { key: 'status', label: 'Status' }, { key: 'preview', label: '' }, { key: 'progress', label: 'Progress (%):' }],
+      fields: [{ key: 'order_id', label: 'Order №' }, { key: 'ship_date', label: 'Delivery Date' }, { key: 'price', sortable: true, label: 'Price in BGN' }, { key: 'status', sortable: true, label: 'Status' }, { key: 'preview', label: '' }, { key: 'progress', label: 'Progress (%):' }],
       user: user,
       currentPage: 1,
       perPage: 5,
