@@ -49,40 +49,6 @@ export default {
 }
 </script>
 
-<script>
-import emailjs from 'emailjs-com';
-
-export default {
-  name: 'ContactUs',
-  data() {
-    return {
-      name: '',
-      email: '',
-      message: ''
-    }
-  },
-  methods: {
-    sendEmail(e) {
-      try {
-        emailjs.sendForm('service_bar', 'template_yt6rx0v',
-          'user_KCM8XuWUwpKj18QxPwDec', {
-            name: this.name,
-            email: this.email,
-            message: this.message
-          })
-
-      } catch(error) {
-        console.log({error})
-      }
-      // Reset form field
-      this.name = ''
-      this.email = ''
-      this.message = ''
-    },
-  }
-}
-</script>
-
 <style>
 .title1 {
   font-size: 30px;
